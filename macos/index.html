@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play on macOS - Firefly</title>
+    <link rel="stylesheet" href="../instructions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="platform-header">
+            <i class="fab fa-apple"></i>
+            <h1>Play on macOS</h1>
+        </div>
+        <div class="instructions-content">
+            <ol>
+                <li>Open <strong>Finder</strong>, click "Go" in the menu bar, then select "Go to Folder...".</li>
+                <li>Enter the following path and click "Go":<pre><code>/private/etc/hosts</code></pre></li>
+                <li>Copy the `hosts` file to your Desktop.</li>
+                <li>Open the copied `hosts` file on your Desktop with a text editor.</li>
+                <li>Add the following two lines to the end of the file:
+                    <pre><code>188.166.224.5 www.growtopia1.com
+188.166.224.5 www.growtopia2.com</code></pre>
+                </li>
+                <li>Save the file and move it back to `/private/etc/`, replacing the original file (you will need to enter your password).</li>
+                <li>Start Growtopia and enjoy!</li>
+            </ol>
+        </div>
+    </div>
+    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    <script src="../instructions.js"></script>
+</body>
+</html>

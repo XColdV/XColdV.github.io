@@ -1,0 +1,143 @@
+/* Import the same font for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- Reusing Firefly Color Palette --- */
+:root {
+    --bg-color: #0d1117;
+    --primary-accent: #23a6d5;
+    --text-color: #e0e0e0;
+    --card-bg: #161b22;
+    --border-color: rgba(35, 166, 213, 0.2);
+    --code-bg: #010409;
+}
+
+/* --- Basic Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column; /* Allow header and footer content */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* --- Main Instructions Container --- */
+.container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 3rem;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+.platform-header i {
+    font-size: 4rem;
+    color: var(--primary-accent);
+}
+
+.platform-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* --- Content Styling --- */
+.instructions-content h2 {
+    font-size: 1.8rem;
+    color: var(--primary-accent);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.instructions-content ol {
+    padding-left: 20px; /* Indent list items */
+}
+
+.instructions-content li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.instructions-content li::marker {
+    color: var(--primary-accent);
+    font-weight: bold;
+}
+
+.instructions-content a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.instructions-content a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* --- Code Block Styling --- */
+pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    white-space: pre-wrap; /* Allow long lines to wrap */
+    word-wrap: break-word;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #a5d6ff; /* Light blue for code text */
+    font-size: 1rem;
+}
+
+/* --- Back Button --- */
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--primary-accent);
+}
+
+.back-link i {
+    margin-right: 0.5rem;
+}
+
+/* --- Page Load Fade-In Animation --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container, .back-link {
+    /* Apply the animation */
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
