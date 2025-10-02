@@ -162,7 +162,7 @@ body {
 /* --- Results Grid & Item Cards --- */
 .results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Increased size */
     gap: 20px;
     margin-top: 20px;
 }
@@ -186,18 +186,17 @@ body {
     border-color: var(--glow-green);
 }
 
+/* In find/style.css */
 .item-sprite {
-    width: 32px;  /* Set to the NATIVE sprite size */
-    height: 32px; /* Set to the NATIVE sprite size */
+    width: 32px;
+    height: 32px;
     
-    transform: scale(2); /* Visually enlarge it 2x (32px * 2 = 64px) */
-    transform-origin: top left; /* Scale from the corner to not mess up layout */
+    transform: scale();
+    transform-origin: center; /* THIS IS THE FIX */
     
     margin-bottom: 10px;
     background-repeat: no-repeat;
     image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
 }
 .item-name {
     font-size: 14px;
@@ -261,25 +260,26 @@ body {
 }
 
 .modal-sprite-large {
-    width: 32px;  /* Set to the NATIVE sprite size */
-    height: 32px; /* Set to the NATIVE sprite size */
+    width: 32px;
+    height: 32px;
     
-    transform: scale(3); /* Visually enlarge it 3x (32px * 3 = 96px) */
-    transform-origin: top left; /* Scale from the corner to not mess up layout */
+    transform: scale;
+    transform-origin: center; /* THIS IS THE FIX */
     
     margin: 0;
     flex-shrink: 0;
     background-color: var(--dark-bg);
     border: 1px solid var(--border-color);
-    border-radius: 4px; /* Adjusted for the smaller base size */
+    border-radius: 4px;
 }
+
+/* You can also revert this rule, removing the padding-left */
 .modal-header h2 {
     margin: 0;
-    padding-left: 32px; /* Add space to account for the scaled sprite */
+    /* padding-left: 32px; NO LONGER NEEDED */
     color: var(--glow-green);
     text-shadow: 0 0 8px var(--glow-green);
 }
-
 .modal-body h3 {
     margin-top: 0;
     color: white;
