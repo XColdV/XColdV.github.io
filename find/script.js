@@ -30,6 +30,7 @@ async function initializeDatabase() {
             .map(line => {
                 const parts = line.split('\\');
                 const itemObject = {};
+                
                 let breakHits = 0;
                 const breakHitsRaw = parts[16] || '0';
                 if (breakHitsRaw.includes('r')) {
@@ -38,10 +39,14 @@ async function initializeDatabase() {
                     breakHits = (parseInt(breakHitsRaw) || 0) / 6;
                 }
 
+                const rttexName = parts[7] || '';
+
                 itemObject.id = parseInt(parts[1]) || 0;
                 itemObject.action_type = parts[4] || 'N/A';
                 itemObject.name = parts[6] || 'Unknown';
-                itemObject.texture = (parts[7] || '').replace('.rttex', '.png');
+                // NEW: We now create two texture properties
+                itemObject.baseTexture = rttexName.replace('.rttex', '.png');
+                itemObject.iconTexture = rttexName.replace('.rttex', '_icon.png');
                 itemObject.textureX = parseInt(parts[11]) || 0;
                 itemObject.textureY = parseInt(parts[12]) || 0;
                 itemObject.break_hits = breakHits;
@@ -56,14 +61,20 @@ async function initializeDatabase() {
         resultsContainer.innerHTML = `<p style="color: red;">Error: Could not load item data.</p>`;
     }
 }
+
+// REPLACE your old displayItems function with this one.
 function displayItems(itemsToDisplay) {
     resultsContainer.innerHTML = '';
-    const validItems = itemsToDisplay.filter(item => item.texture && item.texture.length > 0);
 
-    if (validItems.length === 0) {
-        if (searchInput.value.trim().length > 0) {
-            resultsContainer.innerHTML = `<p>No items found with a valid image.</p>`;
-        }
+    if (itemsToDisplay.length === 0 && searchInput.value.trim().length > 0) {
+        resultsContainer.innerHTML = `<p>No items found matching your search.</p>`;
+        return;
+    }
+    
+    const validItems = itemsToDisplay.filter(item => item.baseTexture && item.baseTexture.length > 0);
+
+    if (validItems.length === 0 && itemsToDisplay.length > 0) {
+        resultsContainer.innerHTML = `<p>Found matching items, but they are missing image data in the database.</p>`;
         return;
     }
 
@@ -73,16 +84,21 @@ function displayItems(itemsToDisplay) {
 
         const sprite = document.createElement('div');
         sprite.className = 'item-sprite';
-        sprite.style.backgroundImage = `url('../game/${item.texture}')`;
+        
+        // THE MAGIC TRICK:
+        // This tells CSS to try loading the icon texture first. If it fails (404 error),
+        // it will automatically load the base texture as a fallback.
+        sprite.style.backgroundImage = `url('../game/${item.iconTexture}'), url('../game/${item.baseTexture}')`;
+        
         sprite.style.backgroundPosition = `-${item.textureX * 32}px -${item.textureY * 32}px`;
 
         const name = document.createElement('p');
         name.className = 'item-name';
         name.textContent = item.name.replace(/`/g, '');
 
-        // --- NEW: Add a click event listener to each card ---
         card.addEventListener('click', () => {
-            showItemDetails(item);
+            // We need to update this function call as well
+            showItemDetails(item); 
         });
 
         card.appendChild(sprite);
@@ -91,20 +107,18 @@ function displayItems(itemsToDisplay) {
     });
 }
 
-// --- NEW: Function to show the modal with item details ---
+// ALSO, make a small update to showItemDetails to use the new texture logic
 function showItemDetails(item) {
-    // Populate the modal with the item's data
     modalItemName.textContent = item.name.replace(/`/g, '');
     modalItemId.textContent = item.id;
     modalRarity.textContent = item.rarity > 0 ? item.rarity : 'N/A';
     modalActionType.textContent = item.action_type;
-    modalBreakHits.textContent = item.break_hits > 0 ? `${item.break_hits} hits` : 'N/A';
-
-    // Set the sprite image and position
-    modalSprite.style.backgroundImage = `url('../game/${item.texture}')`;
-    modalSprite.style.backgroundPosition = `-${item.textureX * 32}px -${item.textureY * 32}px`;
+    modalBreakHits.textContent = item.break_hits > 0 ? `${item.break_hits.toFixed(2)} hits` : 'N/A';
     
-    // Display the modal
+    // UPDATE THIS LINE:
+    modalSprite.style.backgroundImage = `url('../game/${item.iconTexture}'), url('../game/${item.baseTexture}')`;
+    
+    modalSprite.style.backgroundPosition = `-${item.textureX * 32}px -${item.textureY * 32}px`;
     modalOverlay.style.display = 'flex';
 }
 
