@@ -172,6 +172,64 @@ body {
     box-shadow: 0 0 25px var(--primary-accent), 0 0 40px var(--secondary-accent);
 }
 
+#about {
+    background: var(--card-bg);
+}
+
+#about p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#about p strong {
+    color: var(--glow-green);
+    font-weight: 600;
+}
+
+/* --- Modern Vision Statement --- */
+.vision-statement {
+    position: relative; /* Needed for the background quote icon */
+    background: rgba(13, 17, 23, 0.5); /* A darker, semi-transparent background */
+    border-left: 3px solid var(--primary-accent); /* A slightly thinner, glowing border */
+    padding: 2rem 2.5rem;
+    margin-top: 3rem !important;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the large quote icon doesn't spill out */
+    box-shadow: 0 0 20px rgba(0, 255, 195, 0.1); /* Subtle glow effect */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Add a hover effect to enhance the glow */
+.vision-statement:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 195, 0.25);
+}
+
+/* The text inside the blockquote */
+.vision-statement p {
+    position: relative; /* Required to place it above the background icon */
+    z-index: 1; /* Puts the text on a higher layer */
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* The giant decorative quote icon in the background */
+.vision-statement::before {
+    content: '"'; /* The quote character */
+    position: absolute; /* Takes it out of the normal document flow */
+    z-index: 0; /* Puts it on the bottom layer, behind the text */
+    top: -20px;
+    left: 10px;
+    font-size: 10rem; /* Makes it very large */
+    font-weight: 700;
+    color: var(--primary-accent);
+    opacity: 0.05; /* Makes it very faint and unobtrusive */
+    line-height: 1;
+}
 
 /* --- Platform Selection --- */
 .platform-selection {
@@ -224,6 +282,7 @@ body {
     color: #fff;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
+
 
 .content-section p {
     font-size: 1.1rem;
@@ -461,3 +520,4 @@ body {
     .features-grid { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr; }
 }
+
