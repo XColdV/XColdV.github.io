@@ -2,51 +2,45 @@
 const searchInput = document.getElementById('searchInput');
 const resultsContainer = document.getElementById('resultsContainer');
 
+// --- NEW: References for our Modal elements ---
+const modalOverlay = document.getElementById('modalOverlay');
+const modalClose = document.getElementById('modalClose');
+const modalSprite = document.getElementById('modalSprite');
+const modalItemName = document.getElementById('modalItemName');
+const modalItemId = document.getElementById('modalItemId');
+const modalRarity = document.getElementById('modalRarity');
+const modalActionType = document.getElementById('modalActionType');
+const modalBreakHits = document.getElementById('modalBreakHits');
+
+
 // An array to hold all our parsed item data
 let allItems = [];
 
 // --- Main function to load and process the data ---
 async function initializeDatabase() {
     try {
-        // Fetch the item database file. The path is relative to the HTML file.
-        // Since index.html is in /find/, we go up one level ('../') to the root.
         const response = await fetch('../firefly_correcteds.txt');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const textData = await response.text();
-
-        // Split the text file into individual lines
         const lines = textData.split('\n');
 
-        // Define the structure of our data based on your provided format
-        const dataKeys = [
-            'add_item', 'id', 'editable_type', 'item_category', 'action_type',
-            'hit_sound_type', 'name', 'texture', 'texture_hash', 'item_kind',
-            'val1', 'texture_x', 'texture_y', 'spread_type', 'is_stripey_wallpaper',
-            'collision_type', 'break_hits', 'drop_chance', 'clothing_type', 'rarity',
-            'max_amount', 'extra_file', 'extra_file_hash', 'audio_volume', 'pet_name',
-            'pet_prefix', 'pet_suffix', 'pet_ability', 'seed_base', 'seed_overlay',
-            'tree_base', 'tree_leaves', 'seed_color', 'seed_overlay_color',
-            'grow_time', 'val2', 'is_rayman', 'extra_options', 'texture2',
-            'extra_options2', 'data_position_80', 'punch_options', 'data_version_12',
-            'int_version_13', 'int_version_14', 'data_version_15', 'str_version_15',
-            'str_version_16', 'int_version_17', 'int_version_18', 'int_version_19',
-            'int_version_21', 'str_version_22'
-        ];
-
-        // Process each line and turn it into a structured object
         allItems = lines
             .map(line => line.trim())
-            .filter(line => line.length > 0) // Ignore empty lines
+            .filter(line => line.length > 0)
             .map(line => {
                 const parts = line.split('|');
+                // --- UPDATED: We are now capturing more data from each line ---
                 const itemObject = {};
-                // We only need a few key pieces of data for this tool
+                itemObject.id = parseInt(parts[1]) || 0;
+                itemObject.action_type = parts[4] || 'N/A';
                 itemObject.name = parts[6] || 'Unknown';
                 itemObject.texture = parts[7] || '';
                 itemObject.textureX = parseInt(parts[11]) || 0;
                 itemObject.textureY = parseInt(parts[12]) || 0;
+                itemObject.break_hits = parseInt(parts[16]) / 6 || 0; // Dividing by 6 as is standard
+                itemObject.rarity = parseInt(parts[19]) || 0;
                 return itemObject;
             });
 
@@ -54,69 +48,89 @@ async function initializeDatabase() {
 
     } catch (error) {
         console.error("Failed to load item database:", error);
-        resultsContainer.innerHTML = `<p style="color: red;">Error: Could not load item data. Please check the console for details.</p>`;
+        resultsContainer.innerHTML = `<p style="color: red;">Error: Could not load item data.</p>`;
     }
 }
 
 // --- Function to display items on the page ---
 function displayItems(itemsToDisplay) {
-    // Clear any previous results first
     resultsContainer.innerHTML = '';
+    const validItems = itemsToDisplay.filter(item => item.texture && item.texture.length > 0);
 
-    if (itemsToDisplay.length === 0) {
-        resultsContainer.innerHTML = `<p>No items found.</p>`;
+    if (validItems.length === 0) {
+        if (searchInput.value.trim().length > 0) {
+            resultsContainer.innerHTML = `<p>No items found with a valid image.</p>`;
+        }
         return;
     }
 
-    // Create and append an HTML element for each item
-    itemsToDisplay.forEach(item => {
-        // Create the main card container
+    validItems.forEach(item => {
         const card = document.createElement('div');
         card.className = 'item-card';
 
-        // Create the sprite display element
         const sprite = document.createElement('div');
         sprite.className = 'item-sprite';
-        
-        // This is the magic part! We set the background image and position it.
-        // We go up one directory ('../') to get to the root, then into '/game/'.
         sprite.style.backgroundImage = `url('../game/${item.texture}')`;
-        // The position is negative because we are moving the IMAGE, not the container.
-        // We multiply by 32 because each sprite is 32x32 pixels.
         sprite.style.backgroundPosition = `-${item.textureX * 32}px -${item.textureY * 32}px`;
-        
-        // Create the name paragraph
+
         const name = document.createElement('p');
         name.className = 'item-name';
-        name.textContent = item.name.replace(/`/g, ''); // Remove backticks from name
+        name.textContent = item.name.replace(/`/g, '');
 
-        // Append the sprite and name to the card, and the card to the container
+        // --- NEW: Add a click event listener to each card ---
+        card.addEventListener('click', () => {
+            showItemDetails(item);
+        });
+
         card.appendChild(sprite);
         card.appendChild(name);
         resultsContainer.appendChild(card);
     });
 }
 
+// --- NEW: Function to show the modal with item details ---
+function showItemDetails(item) {
+    // Populate the modal with the item's data
+    modalItemName.textContent = item.name.replace(/`/g, '');
+    modalItemId.textContent = item.id;
+    modalRarity.textContent = item.rarity > 0 ? item.rarity : 'N/A';
+    modalActionType.textContent = item.action_type;
+    modalBreakHits.textContent = item.break_hits > 0 ? `${item.break_hits} hits` : 'N/A';
+
+    // Set the sprite image and position
+    modalSprite.style.backgroundImage = `url('../game/${item.texture}')`;
+    modalSprite.style.backgroundPosition = `-${item.textureX * 32}px -${item.textureY * 32}px`;
+    
+    // Display the modal
+    modalOverlay.style.display = 'flex';
+}
+
+// --- NEW: Function to hide the modal ---
+function hideItemDetails() {
+    modalOverlay.style.display = 'none';
+}
 
 // --- Event Listener for the search input ---
 searchInput.addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
-
-    // If the search bar is empty, don't show any results
     if (searchTerm === '') {
         resultsContainer.innerHTML = '';
         return;
     }
-
-    // Filter the 'allItems' array to find matches
-    const filteredItems = allItems.filter(item => 
+    const filteredItems = allItems.filter(item =>
         item.name.toLowerCase().includes(searchTerm)
     );
-
-    // Display the filtered results
     displayItems(filteredItems);
 });
 
+// --- NEW: Event listeners for closing the modal ---
+modalClose.addEventListener('click', hideItemDetails);
+modalOverlay.addEventListener('click', (event) => {
+    // Only close if the user clicks on the overlay itself, not the content inside
+    if (event.target === modalOverlay) {
+        hideItemDetails();
+    }
+});
 
 // --- Start the application ---
 initializeDatabase();
