@@ -187,13 +187,18 @@ body {
 }
 
 .item-sprite {
-    width: 64px;
-    height: 64px;
+    width: 32px;  /* Set to the NATIVE sprite size */
+    height: 32px; /* Set to the NATIVE sprite size */
+    
+    transform: scale(2); /* Visually enlarge it 2x (32px * 2 = 64px) */
+    transform-origin: top left; /* Scale from the corner to not mess up layout */
+    
     margin-bottom: 10px;
     background-repeat: no-repeat;
     image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
-
 .item-name {
     font-size: 14px;
     font-weight: 300;
@@ -256,17 +261,21 @@ body {
 }
 
 .modal-sprite-large {
-    width: 96px;
-    height: 96px;
+    width: 32px;  /* Set to the NATIVE sprite size */
+    height: 32px; /* Set to the NATIVE sprite size */
+    
+    transform: scale(3); /* Visually enlarge it 3x (32px * 3 = 96px) */
+    transform-origin: top left; /* Scale from the corner to not mess up layout */
+    
     margin: 0;
     flex-shrink: 0;
     background-color: var(--dark-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 4px; /* Adjusted for the smaller base size */
 }
-
 .modal-header h2 {
     margin: 0;
+    padding-left: 32px; /* Add space to account for the scaled sprite */
     color: var(--glow-green);
     text-shadow: 0 0 8px var(--glow-green);
 }
