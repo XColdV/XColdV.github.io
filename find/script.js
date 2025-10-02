@@ -17,6 +17,7 @@ const modalBreakHits = document.getElementById('modalBreakHits');
 let allItems = [];
 
 // --- Main function to load and process the data ---
+// --- Main function to load and process the data ---
 async function initializeDatabase() {
     try {
         const response = await fetch('../firefly_correcteds.txt');
@@ -30,16 +31,19 @@ async function initializeDatabase() {
             .map(line => line.trim())
             .filter(line => line.length > 0)
             .map(line => {
-                const parts = line.split('|');
-                // --- UPDATED: We are now capturing more data from each line ---
+                // THIS IS THE ONLY LINE THAT CHANGED!
+                const parts = line.split('\\'); 
+
                 const itemObject = {};
                 itemObject.id = parseInt(parts[1]) || 0;
                 itemObject.action_type = parts[4] || 'N/A';
                 itemObject.name = parts[6] || 'Unknown';
-                itemObject.texture = parts[7] || '';
+                // Your example uses .rttex, but we assume the game folder has .png.
+                // This line will change the extension to .png for the URL.
+                itemObject.texture = (parts[7] || '').replace('.rttex', '.png');
                 itemObject.textureX = parseInt(parts[11]) || 0;
                 itemObject.textureY = parseInt(parts[12]) || 0;
-                itemObject.break_hits = parseInt(parts[16]) / 6 || 0; // Dividing by 6 as is standard
+                itemObject.break_hits = parseInt(parts[16]) / 6 || 0;
                 itemObject.rarity = parseInt(parts[19]) || 0;
                 return itemObject;
             });
