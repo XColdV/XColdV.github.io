@@ -1,0 +1,91 @@
+/* --- General Body & Theme Styling --- */
+body {
+    background-color: #121018; /* A very dark purple, like a night sky */
+    color: #e0e0e0; /* Light grey text for readability */
+    font-family: 'Poppins', sans-serif; /* A clean, modern font */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #e040fb; /* A vibrant magenta, like Firefly's accents */
+    font-weight: 600;
+    text-shadow: 0 0 8px #e040fb; /* A nice glow effect */
+}
+
+p {
+    color: #b0a8c8; /* A lighter, muted purple */
+}
+
+/* --- Search Bar Styling --- */
+.search-container {
+    margin: 30px 0;
+}
+
+#searchInput {
+    width: 50%;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #1e1a2a;
+    border: 2px solid #5a4f78;
+    border-radius: 50px; /* Fully rounded for a modern look */
+    color: #e0e0e0;
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #e040fb;
+    box-shadow: 0 0 15px #e040fb; /* Glow effect on focus */
+}
+
+/* --- Results Grid Styling --- */
+.results-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many items as possible */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px; /* Space between the item cards */
+    margin-top: 20px;
+}
+
+/* --- Individual Item Card Styling --- */
+.item-card {
+    background-color: #1e1a2a;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3c3552;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(224, 64, 251, 0.2);
+}
+
+.item-sprite {
+    width: 64px;  /* Display the 32x32 sprite scaled up 2x */
+    height: 64px;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    /* This is crucial for keeping pixel art sharp and not blurry! */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    word-wrap: break-word; /* Prevents long names from overflowing */
+}
