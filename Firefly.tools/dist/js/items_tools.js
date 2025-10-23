@@ -99,6 +99,9 @@ function hash_buffer(buffer, element, text) {
  */
 function hexStringToArrayBuffer(pos, hexString) { //https://gist.github.com/don/871170d88cf6b9007f7663fdbc23fe09
     // remove the space
+    if (!hexString || hexString.length === 0) {
+        return new Uint8Array(); // Or return []
+    }
     hexString = hexString.replace(/ /g, '');
     if (hexString.length % 2 != 0) console.log('WARNING: expecting an even number of characters in the hexString');
 
