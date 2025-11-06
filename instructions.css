@@ -1,13 +1,15 @@
 /* Import the same font for consistency */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* --- Reusing Firefly Color Palette --- */
+/* --- USING THE *SAME* HOTARU INTERACTIVE PALETTE --- */
 :root {
-    --bg-color: #0d1117;
-    --primary-accent: #23a6d5;
-    --text-color: #e0e0e0;
-    --card-bg: #161b22;
-    --border-color: rgba(35, 166, 213, 0.2);
+    --bg-color: #050505;
+    --primary-accent: #F5D970; /* Gold */
+    --secondary-accent: #4D9DE0; /* Blue */
+    --text-color: #EAEAEA;
+    --text-muted: #AAAAAA;
+    --card-bg: rgba(20, 20, 20, 0.7);
+    --border-color: rgba(245, 217, 112, 0.2);
     --code-bg: #010409;
 }
 
@@ -18,16 +20,15 @@
     box-sizing: border-box;
 }
 
+/* * The body is no longer centered.
+ * It's now just a normal page, letting the
+ * navbar, content, and footer flow naturally.
+*/
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    display: flex;
-    flex-direction: column; /* Allow header and footer content */
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
-    padding: 2rem;
 }
 
 /* --- Main Instructions Container --- */
@@ -37,9 +38,13 @@ body {
     border-radius: 12px;
     padding: 2rem 3rem;
     max-width: 800px;
-    width: 100%;
+    width: 90%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     text-align: left;
+    margin: 2rem auto; /* Center it on the page */
+    
+    /* This pushes it down from the fixed navbar */
+    margin-top: 100px; 
 }
 
 .platform-header {
@@ -53,7 +58,7 @@ body {
 
 .platform-header i {
     font-size: 4rem;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold */
 }
 
 .platform-header h1 {
@@ -64,7 +69,7 @@ body {
 /* --- Content Styling --- */
 .instructions-content h2 {
     font-size: 1.8rem;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold */
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -77,15 +82,16 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .instructions-content li::marker {
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold */
     font-weight: bold;
 }
 
 .instructions-content a {
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold */
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
@@ -124,20 +130,139 @@ code {
 }
 
 .back-link:hover {
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold */
 }
 
 .back-link i {
     margin-right: 0.5rem;
 }
 
-/* --- Page Load Fade-In Animation --- */
+/* --- Page Load/Exit Animations --- */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Apply the fade-in animation */
 .container, .back-link {
-    /* Apply the animation */
     animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* This is the class your instructions.js adds */
+body.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+/* ... existing code ... */
+body.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* --- NEW: Android Method Tabs --- */
+
+.method-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-muted);
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(2px); /* Aligns with the bottom border */
+}
+
+.tab-button:hover {
+    color: var(--text-color);
+}
+
+.tab-button.active {
+    color: var(--primary-accent);
+    border-bottom-color: var(--primary-accent);
+}
+
+.tab-button i {
+    margin-right: 8px;
+}
+
+.method-content {
+    display: none;
+    animation: fadeIn 0.5s ease; /* Use existing fadeIn animation */
+}
+
+.method-content.active {
+    display: block;
+}
+
+
+/* --- NEW: Download & Copy Buttons --- */
+
+.download-button {
+    display: inline-block;
+    background: #25D366; /* Green for download */
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.download-button i {
+    margin-right: 10px;
+}
+
+.copy-block {
+    display: flex;
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.copy-block input[type="text"] {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 12px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.copy-button {
+    background: var(--primary-accent);
+    border: none;
+    color: var(--bg-color);
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.copy-button:hover {
+    background: #fff; /* White hover */
+}
+
+.copy-button i {
+    font-size: 1rem;
 }

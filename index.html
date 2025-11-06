@@ -3,53 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firefly - A Growtopia Private Server</title>
+    <title>Hotaru Interactive - Growtopia Private Servers</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <a href="#home" class="nav-logo">Firefly</a>
+    <div id="loader-wrapper">
+        <div class="loader-icon"></div>
+    </div>
+   <nav class="navbar">
+        <a href="#home" class="nav-logo">
+        <img src="assets/Circle.png" alt="Hotaru Interactive Logo" class="nav-logo-icon">
+        <img src="assets/hotaru_transparent2.png" alt="Hotaru Interactive" class="nav-logo-text">
+        </a>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="find/">Item Finder</a> 
-            <a href="#videos">Videos</a>
-            <a href="#faq">FAQ</a>
-            <a href="#community">Community</a>
+            <a href="#home"><i class="fas fa-home fa-fw"></i> Home</a>
+            <a href="#games"><i class="fas fa-gamepad fa-fw"></i> Our Games</a>
+            <a href="#about"><i class="fas fa-circle-info fa-fw"></i> About Firefly</a>
+            <a href="#staff"><i class="fas fa-users fa-fw"></i> The Team</a>
+            <a href="#community"><i class="fas fa-comments fa-fw"></i> Community</a>
         </div>
         <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
 
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1>Firefly Private Server</h1>
-            <p class="hero-tagline">Where Growtopia Meets Gacha Magic</p>
+            <h1>Hotaru Interactive</h1>
+            <p class="hero-tagline">Crafting New Adventures in Growtopia</p>
             <p class="hero-description">
-                Inspired by the thrilling gacha mechanics of <strong>Honkai: Star Rail</strong> and beloved RPG systems, 
-                Firefly reimagines Growtopia with wish banners, rare 5-star items, and a progression system 
-                that keeps you coming back for more. Experience the thrill of the pull, the joy of collecting, 
-                and the excitement of building your perfect inventory in a world where every login brings new possibilities.
+                We're the passionate team behind the revolutionary Firefly GTPS, dedicated to building unique, 
+                high-quality private server experiences. Explore our projects and join our growing community.
             </p>
-            <button class="cta-button">Join Now</button>
+            <a href="#games" class="cta-button">Explore Our Games</a>
         </div>
     </section>
 
     <section id="platform-selection" class="platform-selection hidden">
         <h2>Choose Your Platform</h2>
         <div class="platform-icons">
-            <a href="/windows" class="platform-icon windows"><i class="fab fa-windows"></i><span>Windows</span></a>
-            <a href="/macos" class="platform-icon macos"><i class="fab fa-apple"></i><span>macOS</span></a>
-            <a href="/android" class="platform-icon android"><i class="fab fa-android"></i><span>Android</span></a>
-            <a href="/ios" class="platform-icon ios"><i class="fab fa-app-store-ios"></i><span>iOS</span></a>
+            <a href="/firefly/windows/" class="platform-icon windows"><i class="fab fa-windows"></i><span>Windows</span></a>
+            <a href="/firefly/macos/" class="platform-icon macos"><i class="fab fa-apple"></i><span>macOS</span></a>
+            <a href="/firefly/android/" class="platform-icon android"><i class="fab fa-android"></i><span>Android</span></a>
+            <a href="/firefly/ios/" class="platform-icon ios"><i class="fab fa-app-store-ios"></i><span>iOS</span></a>
         </div>
     </section>
 
     <div class="main-content">
+        <section id="games" class="content-section animate-on-scroll">
+            <div class="section-container">
+                <h2><i class="fas fa-dice-d20"></i> Our Games</h2>
+                <div class="games-grid">
+                    <div class="game-card animate-on-scroll">
+                        <img src="assets/firefly/Firefly.png" alt="Firefly GTPS Logo" class="game-logo">
+                        <h3>Firefly GTPS</h3>
+                        <span class="game-status version">Version 1.1</span>
+                        <p>Where Growtopia Meets Gacha Magic! The first true gacha experience, inspired by Honkai: Star Rail.</p>
+                        <button class="cta-button firefly-join"><i class="fas fa-download"></i> Join Now</button>
+                        <a href="#about" class="learn-more-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="game-card animate-on-scroll delay-1">
+                        <img src="assets/evernight/Evernight.png" alt="Evernight GTPS Logo" class="game-logo">
+                        <h3>Evernight GTPS</h3>
+                        <span class="game-status soon">Coming Soon!</span>
+                        <p>A new adventure is being crafted by the Hotaru Interactive team. Stay tuned for updates!</p>
+                        <a href="/discord" class="cta-button">Get Updates on Discord</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="content-section animate-on-scroll">
             <div class="section-container">
-                <h2>Our Vision: Gacha Meets Growtopia</h2>
+               <h2><i class="fas fa-book-open"></i> About Firefly: Gacha Meets Growtopia</h2>
                 <p>
                     Launched on <strong>February 19, 2024</strong>, Firefly Private Server was born from a simple dream: 
                     to blend the addictive gacha mechanics of games like <strong>Honkai: Star Rail</strong>, 
@@ -57,15 +82,8 @@
                 </p>
                 <p>
                     Our mission is bold—<strong>we're building the first true gacha experience within Growtopia</strong>. 
-                    Imagine pulling for limited 5-star items with unique animations, managing your primogems (or our equivalent!), 
-                    strategizing around pity systems, and collecting exclusive characters—all while building, trading, and 
-                    socializing in the world you love.
-                </p>
-                <p>
-                    For nearly a year, our passionate team has poured countless hours into crafting custom items, 
-                    implementing wish banner systems, hosting engaging events, and listening to community feedback. 
-                    We're not just running a server—<strong>we're cultivating an experience</strong> where every player 
-                    can feel the rush of a legendary pull and the satisfaction of completing their collection.
+                    Imagine pulling for limited 5-star items, strategizing around pity systems, and collecting 
+                    exclusive items—all while building, trading, and socializing in the world you love.
                 </p>
                 <blockquote class="vision-statement">
                     <p>
@@ -78,36 +96,52 @@
 
         <section id="features" class="content-section animate-on-scroll">
             <div class="section-container">
-                <h2>Revolutionary Features</h2>
+                <h2><i class="fas fa-wand-magic-sparkles"></i> Firefly's Revolutionary Features</h2>
                 <p class="features-subtitle">Experience mechanics no other Growtopia server dares to implement.</p>
                 <div class="features-grid">
-                    <div class="feature-card animate-on-scroll"> <i class="fas fa-star"></i>
+                    
+                    <div class="feature-card animate-on-scroll"> 
+                        <i class="fas fa-star"></i>
                         <h3>Real Gacha System</h3>
-                        <p>Pull from rotating wish banners featuring limited 5-star items! We've implemented pity systems, guaranteed mechanics, and stunning pull animations. Feel the dopamine rush with every wish—just like Honkai: Star Rail!</p>
+                        <p>Pull from rotating wish banners featuring limited 5-star items! We've implemented pity systems, guaranteed mechanics, and stunning pull animations.</p>
                     </div>
-                    <div class="feature-card animate-on-scroll delay-1"> <i class="fas fa-gem"></i>
+                    
+                    <div class="feature-card animate-on-scroll delay-1"> 
+                        <i class="fas fa-gem"></i>
                         <h3>5-Star Rarity Tier</h3>
-                        <p>Hunt for legendary 5-star items with unique sprites, effects, and prestige. From ultra-rare wings to exclusive blocks, our custom rarity system adds depth and collection goals you've never seen in Growtopia.</p>
+                        <p>Hunt for legendary 5-star items with unique sprites, effects, and prestige. Our custom rarity system adds depth and collection goals.</p>
                     </div>
-                    <div class="feature-card animate-on-scroll delay-2"> <i class="fas fa-trophy"></i>
+                    
+                    <div class="feature-card animate-on-scroll delay-2"> 
+                        <i class="fas fa-trophy"></i>
                         <h3>Pity & Guarantee System</h3>
-                        <p>Never feel cheated! Our gacha includes soft and hard pity systems ensuring you'll get your desired 5-star within a set number of pulls. Bad luck protection that respects your time and effort!</p>
+                        <p>Never feel cheated! Our gacha includes soft and hard pity systems ensuring you'll get your desired 5-star. Bad luck protection that respects your time!</p>
                     </div>
-                    <div class="feature-card animate-on-scroll"> <i class="fas fa-palette"></i>
+                    
+                    <div class="feature-card animate-on-scroll"> 
+                        <i class="fas fa-palette"></i>
                         <h3>50+ Custom Items</h3>
-                        <p>Discover an enormous library of custom-designed items, from seasonal cosmetics to game-changing tools. Our artist team works tirelessly to expand the item database every update.</p>
+                        <p>Discover an enormous library of custom-designed items, from seasonal cosmetics to game-changing tools. Expanded every update.</p>
                     </div>
-                    <div class="feature-card animate-on-scroll delay-2"> <i class="fas fa-fish"></i>
+
+                    <div class="feature-card animate-on-scroll delay-1"> 
+                        <i class="fas fa-dungeon"></i>
+                        <h3>RPG Dungeon System</h3>
+                        <p>Battle monsters in dungeons to earn Monster Remnants. Build your character with gacha-like stats (Crit Rate, Crit DMG, ATK) and watch your 5-star items unleash their true effects!</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll delay-2"> 
+                        <i class="fas fa-fish"></i>
                         <h3>Live Events</h3>
                         <p>Participate in Fishing Events, Gift Of Odyssey, Automated Work System events and alot more!</p>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <section id="videos" class="content-section animate-on-scroll">
             <div class="section-container">
-                <h2>Watch the Journey Unfold</h2>
+                <h2><i class="fas fa-video"></i> Firefly in Action</h2>
                 <p>Get a glimpse of Firefly Private Server in action!</p>
                 <div class="video-grid">
                     <div class="video-responsive">
@@ -123,32 +157,60 @@
             </div>
         </section>
 
+        <section id="staff" class="content-section animate-on-scroll">
+            <div class="section-container">
+                <h2><i class="fas fa-id-badge"></i> Meet the Hotaru Interactive Team</h2>
+                <p>The dedicated people bringing these projects to life.</p>
+                <div class="staff-grid">
+                    
+                    <div class="staff-card animate-on-scroll">
+                        <img src="assets/profile_picture/sfxlight.png" alt="sfxlight" class="staff-avatar">
+                        <h3>sfxlight</h3>
+                        <p class="staff-role">Lead Developer</p>
+                    </div>
+                    
+                    <div class="staff-card animate-on-scroll delay-1">
+                        <img src="assets/profile_picture/tenet.png" alt="tenet" class="staff-avatar">
+                        <h3>tenet</h3>
+                        <p class="staff-role">Co-Lead Developer</p>
+                    </div>
+                    
+                    <div class="staff-card animate-on-scroll delay-2">
+                        <img src="assets/profile_picture/helper.jpg" alt="Helpers" class="staff-avatar">
+                        <h3>Our Helpers</h3>
+                        <p class="staff-role">Community & Support Staff</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="content-section animate-on-scroll">
             <div class="section-container">
-                <h2>Frequently Asked Questions</h2>
+                <h2><i class="fas fa-circle-question"></i> Firefly FAQ</h2>
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question">What is a Growtopia Private Server?</button>
                         <div class="faq-answer">
-                            <p>A Growtopia Private Server is a fan-made server that operates independently from the official Growtopia game. It often features custom items, unique gameplay mechanics, and exclusive events not found in the original game. Firefly Server takes this a step further with custom gacha and 5-star item systems!</p>
+                            <p>A Growtopia Private Server is a fan-made server that operates independently... Firefly Server takes this a step further with custom gacha and 5-star item systems!</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">How do I join the Firefly Private Server?</button>
                         <div class="faq-answer">
-                            <p>To join, simply click the "Join Now" button above, select your platform (Windows, macOS, Android, iOS), and follow the installation instructions on the respective platform page. Make sure to join our Discord for the latest updates and support!</p>
+                            <p>To join, simply click the "Join Now" button in the "Our Games" section above, select your platform (Windows, macOS, Android, iOS), and follow the installation instructions.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">Is Firefly Server free to play?</button>
                         <div class="faq-answer">
-                            <p>Yes, Firefly Private Server is completely free to play! We focus on creating an enjoyable and fair experience for all our players.</p>
+                            <p>Yes, Firefly Private Server is completely free to play!</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">What makes Firefly Server unique?</button>
                         <div class="faq-answer">
-                            <p>Firefly Server is proud to be the first Growtopia private server to implement a gacha banner system and a 5-star item rarity system. We also offer a vast array of custom items, regular engaging events like Fishing and Geiger events, and a vibrant community!</p>
+                            <p>Firefly Server is proud to be the first Growtopia private server to implement a gacha banner system and a 5-star item rarity system.</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +219,7 @@
 
         <section id="community" class="content-section animate-on-scroll">
             <div class="section-container">
-                <h2>Join the Community</h2>
+                <h2><i class="fas fa-satellite-dish"></i> Join the Community</h2>
                 <p>Connect with other players, get the latest news, and participate in exclusive events!</p>
                 <div class="community-buttons">
                     <a href="/discord" class="community-button discord">
@@ -172,9 +234,32 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Firefly Team. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column about">
+                <h3>Hotaru Interactive</h3>
+                <p>Crafting new adventures in Growtopia. Home of Firefly GTPS and Evernight GTPS.</p>
+            </div>
+            <div class="footer-column links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#games">Our Games</a></li>
+                    <li><a href="#about">About Firefly</a></li>
+                    <li><a href="#staff">The Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-column community">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="/discord" target="_blank"><i class="fab fa-discord"></i> Discord Server</a></li>
+                    <li><a href="/whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Group</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hotaru Interactive. All Rights Reserved.</p>
+        </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

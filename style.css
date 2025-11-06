@@ -1,31 +1,31 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* --- Firefly HSR Theme Palette --- */
+/* --- NEW Hotaru Interactive Palette --- */
 :root {
-    --bg-color: #0A0C10; /* Deep charcoal black */
-    --primary-accent: #00ffc3; /* Glowing mint-green */
-    --secondary-accent: #ff7eb9; /* Soft magenta */
-    --text-color: #d1d5db; /* Soft off-white */
-    --text-muted: #888;
-    --card-bg: rgba(22, 27, 34, 0.6); /* Semi-transparent dark blue for glass effect */
-    --border-color: rgba(0, 255, 195, 0.2); /* Mint-green border */
+    --bg-color: #050505; /* Deep, pure black */
+    --primary-accent: #F5D970; /* The gold from your logo */
+    --secondary-accent: #4D9DE0; /* The blue from your logo */
+    --text-color: #EAEAEA; /* A slightly softer white */
+    --text-muted: #AAAAAA; /* Lighter muted text for the black bg */
+    --card-bg: rgba(20, 20, 20, 0.7); /* Darker, glassy card */
+    --border-color: rgba(245, 217, 112, 0.2); /* Faint gold border */
 }
 
 /* --- Keyframe Animations --- */
 
-/* Floating fireflies effect */
+/* Floating fireflies effect (will now glow gold!) */
 @keyframes float {
     0% { transform: translateY(0px) translateX(0px); opacity: 0.7; }
     50% { transform: translateY(-30px) translateX(15px); opacity: 1; }
     100% { transform: translateY(0px) translateX(0px); opacity: 0.7; }
 }
 
-/* Background Aurora Gradient Animation */
+/* Background Aurora Gradient Animation (UPDATED) */
 @keyframes aurora-gradient {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 
@@ -44,17 +44,18 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* --- Animated Aurora Background --- */
+/* --- Animated Aurora Background (UPDATED) --- */
 .main-content {
-    background: linear-gradient(-45deg, #0a0c10, #161b22, #0d2538, #00343a);
-	background-size: 400% 400%;
-	animation: aurora-gradient 15s ease infinite;
+    /* New gradient: Black, to dark blue, to dark gold, back to black */
+    background: linear-gradient(-45deg, #000000, #020f1a, #1a1400, #0a0c10);
+    background-size: 400% 400%;
+    animation: aurora-gradient 15s ease infinite;
     position: relative;
     z-index: 1;
 }
 
 
-/* --- Navigation Bar --- */
+/* --- Navigation Bar (UPDATED) --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -63,7 +64,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background: rgba(13, 17, 23, 0.5); /* More transparent for glass effect */
+    background: rgba(10, 10, 10, 0.5); /* Darker glass effect */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px); /* For Safari */
     border-bottom: 1px solid var(--border-color);
@@ -74,7 +75,7 @@ body {
 .nav-logo {
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Will be gold */
     text-decoration: none;
     text-shadow: 0 0 8px var(--primary-accent);
 }
@@ -92,7 +93,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold hover */
     text-shadow: 0 0 5px var(--primary-accent);
 }
 
@@ -131,9 +132,9 @@ body {
 
 .firefly {
     position: absolute;
-    background-color: var(--primary-accent);
+    background-color: var(--primary-accent); /* NOW GOLD */
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary-accent), 0 0 20px var(--primary-accent);
+    box-shadow: 0 0 10px var(--primary-accent), 0 0 20px var(--primary-accent); /* NOW GOLD */
     animation: float 5s ease-in-out infinite;
 }
 
@@ -143,7 +144,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     color: #fff;
-    text-shadow: 0 0 10px var(--primary-accent), 0 0 25px var(--primary-accent);
+    text-shadow: 0 0 10px var(--primary-accent), 0 0 25px var(--primary-accent); /* Gold shadow */
 }
 
 .hero-content p {
@@ -155,7 +156,7 @@ body {
 }
 
 .cta-button {
-    background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+    background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent)); /* Gold-to-Blue */
     color: white;
     border: none;
     padding: 16px 45px;
@@ -164,12 +165,12 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 255, 195, 0.5);
+    box-shadow: 0 0 15px rgba(245, 217, 112, 0.5); /* Gold glow */
 }
 
 .cta-button:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 25px var(--primary-accent), 0 0 40px var(--secondary-accent);
+    box-shadow: 0 0 25px var(--primary-accent), 0 0 40px var(--secondary-accent); /* Gold/Blue glow */
 }
 
 #about {
@@ -184,32 +185,30 @@ body {
 }
 
 #about p strong {
-    color: var(--glow-green);
+    color: var(--primary-accent); /* Gold */
     font-weight: 600;
 }
 
 /* --- Modern Vision Statement --- */
 .vision-statement {
-    position: relative; /* Needed for the background quote icon */
-    background: rgba(13, 17, 23, 0.5); /* A darker, semi-transparent background */
-    border-left: 3px solid var(--primary-accent); /* A slightly thinner, glowing border */
+    position: relative; 
+    background: rgba(13, 17, 23, 0.5); 
+    border-left: 3px solid var(--primary-accent); /* Gold border */
     padding: 2rem 2.5rem;
     margin-top: 3rem !important;
     border-radius: 8px;
-    overflow: hidden; /* Ensures the large quote icon doesn't spill out */
-    box-shadow: 0 0 20px rgba(0, 255, 195, 0.1); /* Subtle glow effect */
+    overflow: hidden; 
+    box-shadow: 0 0 20px rgba(245, 217, 112, 0.1); /* Subtle gold glow */
     transition: box-shadow 0.3s ease;
 }
 
-/* Add a hover effect to enhance the glow */
 .vision-statement:hover {
-    box-shadow: 0 0 35px rgba(0, 255, 195, 0.25);
+    box-shadow: 0 0 35px rgba(245, 217, 112, 0.25); /* Brighter gold glow */
 }
 
-/* The text inside the blockquote */
 .vision-statement p {
-    position: relative; /* Required to place it above the background icon */
-    z-index: 1; /* Puts the text on a higher layer */
+    position: relative; 
+    z-index: 1; 
     font-size: 1.1rem;
     font-style: italic;
     line-height: 1.8;
@@ -217,17 +216,16 @@ body {
     margin: 0;
 }
 
-/* The giant decorative quote icon in the background */
 .vision-statement::before {
-    content: '"'; /* The quote character */
-    position: absolute; /* Takes it out of the normal document flow */
-    z-index: 0; /* Puts it on the bottom layer, behind the text */
+    content: '"'; 
+    position: absolute; 
+    z-index: 0; 
     top: -20px;
     left: 10px;
-    font-size: 10rem; /* Makes it very large */
+    font-size: 10rem; 
     font-weight: 700;
-    color: var(--primary-accent);
-    opacity: 0.05; /* Makes it very faint and unobtrusive */
+    color: var(--primary-accent); /* Faint gold quote */
+    opacity: 0.05; 
     line-height: 1;
 }
 
@@ -249,18 +247,18 @@ body {
 .platform-selection h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold */
 }
 .platform-icons { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
 .platform-icon { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--text-color); transition: transform 0.3s ease, color 0.3s ease; }
 .platform-icon i { font-size: 4rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px transparent; transition: text-shadow 0.3s ease; }
 .platform-icon span { font-size: 1rem; }
-.platform-icon:hover { transform: scale(1.1); }
+.platform-icon:hover { 
+    transform: scale(1.1); 
+    color: var(--primary-accent); /* Gold hover on all icons */
+}
 .platform-icon:hover i { text-shadow: 0 0 15px currentColor; }
-.platform-icon.windows:hover { color: #00a4ef; }
-.platform-icon.macos:hover { color: #c7c7c7; }
-.platform-icon.android:hover { color: #a4c639; }
-.platform-icon.ios:hover { color: #55b7f8; }
+/* Removed the platform-specific hover colors */
 
 
 /* --- General Content Sections --- */
@@ -311,12 +309,12 @@ body {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 25px var(--border-color);
+    box-shadow: 0 0 25px var(--border-color); /* Gold glow */
 }
 
 .feature-card i {
     font-size: 3rem;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Gold icons */
     margin-bottom: 1.5rem;
     text-shadow: 0 0 15px var(--primary-accent);
 }
@@ -348,7 +346,7 @@ body {
 
 .video-responsive:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 20px var(--border-color);
+    box-shadow: 0 0 20px var(--border-color); /* Gold glow */
 }
 
 .video-responsive iframe {
@@ -396,8 +394,8 @@ body {
     transition: transform 0.4s ease;
 }
 .faq-question.active {
-    background-color: rgba(0, 255, 195, 0.1);
-    color: var(--primary-accent);
+    background-color: rgba(245, 217, 112, 0.1); /* Faint gold bg */
+    color: var(--primary-accent); /* Gold text */
 }
 .faq-question.active::after {
     transform: rotate(45deg);
@@ -449,14 +447,95 @@ body {
 
 /* --- Footer --- */
 .footer {
+    padding: 4rem 5% 0; /* Add padding to the top */
+    background-color: var(--bg-color); /* Matches the deep black bg */
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    color: #fff; /* White title */
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Adds the little gold underline */
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-accent);
+}
+
+.footer-column p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-right: 1rem; /* So text doesn't hit edge */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-accent); /* Gold hover */
+    transform: translateX(5px);
+}
+
+.footer-column ul li a i {
+    margin-right: 10px; /* Space for discord/whatsapp icons */
+    font-size: 1.1rem;
+    width: 20px; /* Aligns the text */
+}
+
+.footer-bottom {
     text-align: center;
-    padding: 2rem;
-    background-color: var(--bg-color);
+    padding: 2rem 0;
     border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
+/* Responsive fix for the footer text */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+    .footer-column h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-column p {
+        padding-right: 0;
+    }
+}
 
 /* --- Scroll Animation --- */
 .animate-on-scroll {
@@ -497,7 +576,7 @@ body {
         right: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(10, 12, 16, 0.95); /* Almost solid background */
+        background: rgba(10, 10, 10, 0.95); /* Darker */
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
@@ -521,3 +600,289 @@ body {
     .video-grid { grid-template-columns: 1fr; }
 }
 
+
+/* === NEW STYLES FOR HOTARU INTERACTIVE (UPDATED) === */
+
+/* Navbar Logo (UPDATED) */
+.navbar .nav-logo {
+    display: flex;        /* Makes images sit side-by-side */
+    align-items: center;  /* Vertically centers them */
+    gap: 10px;            /* Space between the circle and the text */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* NEW: Style for your Circle.png */
+.nav-logo-icon {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    border-radius: 50%; /* Ensures it's a circle */
+}
+
+/* NEW: Style for your text logo */
+.nav-logo-text {
+    height: 30px; /* A bit shorter than the circle looks best */
+    width: auto;
+    object-fit: contain;
+}
+/* Hero "Learn More" Button */
+.hero-section .cta-button {
+    text-decoration: none;
+}
+
+/* Our Games Section */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.game-card {
+    background: var(--card-bg); /* Updated to new variable */
+    border: 1px solid var(--border-color); /* Updated to new variable */
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.game-logo {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 15px; /* Rounded corners for the game logos */
+}
+
+.game-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.game-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted); /* Updated to new variable */
+    margin-bottom: 1.5rem;
+    min-height: 60px; /* Keeps cards aligned */
+}
+
+.game-status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.game-status.version {
+    background-color: var(--secondary-accent); /* UPDATED from green to blue */
+    color: #fff;
+}
+
+.game-status.soon {
+    background-color: #ffc107; /* This yellow is fine, fits the gold theme */
+    color: #333;
+}
+
+.game-card .cta-button {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    display: inline-block; 
+    padding: 12px 0; 
+    box-sizing: border-box; 
+}
+
+.learn-more-link {
+    color: var(--secondary-accent); /* UPDATED from hardcoded blue */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.learn-more-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Staff Section */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.staff-card {
+    background: var(--card-bg); /* Updated to new variable */
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color); /* Updated to new variable */
+}
+
+/* --- NEW: Staff Avatar Styling --- */
+
+.staff-avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* Prevents the image from stretching */
+    border-radius: 50%;  /* Makes it a perfect circle */
+    border: 3px solid var(--border-color); /* Faint gold border */
+    margin-bottom: 1.5rem; /* Space between pic and name */
+    background-color: var(--card-bg); /* Fallback bg if image is transparent */
+    box-shadow: 0 0 15px rgba(245, 217, 112, 0.2); /* Subtle glow */
+}
+
+.staff-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #fff;
+}
+.staff-role {
+    font-size: 1rem;
+    color: var(--secondary-accent); /* UPDATED from hardcoded blue */
+    font-weight: 500;
+    font-style: italic;
+}
+.nav-links a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Section Heading Icons */
+.content-section h2 i {
+    margin-right: 12px;
+    font-size: 0.8em; /* Makes icon slightly smaller than heading */
+    color: var(--primary-accent); /* Match your gold theme */
+    vertical-align: middle; /* Aligns icon nicely with text */
+}
+
+/* Game Card Button Icons */
+.game-card .cta-button i {
+    margin-right: 8px;
+}
+
+.learn-more-link i {
+    margin-left: 5px;
+    font-size: 0.8em; /* Make it subtle */
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: var(--bg-color); /* Matches your deep black bg */
+    z-index: 9999; /* On top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* This makes it fade out */
+    transition: opacity 0.75s ease, visibility 0.75s ease;
+}
+
+.loader-icon {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--border-color); /* Faint gold ring */
+    border-top-color: var(--primary-accent); /* Bright gold spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* The spinning animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* * By default, hide all main site content.
+ * We'll show it with JS once the page is loaded.
+ */
+body:not(.loaded) .navbar,
+body:not(.loaded) #home,
+body:not(.loaded) .main-content,
+body:not(.loaded) .footer {
+    opacity: 0;
+}
+
+/* * When JS adds the 'loaded' class to the body:
+ * 1. Hide the loader
+ * 2. Show the content
+ */
+body.loaded #loader-wrapper {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.loaded .navbar,
+body.loaded #home,
+body.loaded .main-content,
+body.loaded .footer {
+    opacity: 1;
+    transition: opacity 0.75s ease; /* Nice fade-in */
+}
+
+/* --- NEW: Hero Text Staggered Animation --- */
+
+/* 1. Define the "fade in and slide up" animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Set the starting state for all hero content */
+/* (This ensures they are hidden *before* the animation runs) */
+#home .hero-content > * {
+    opacity: 0;
+}
+
+/* 3. Trigger the animations when the page is loaded */
+/* The 'animation-delay' creates the stagger effect. */
+
+body.loaded #home h1 {
+    /* animation: [name] [duration] [easing] [delay] [fill-mode] */
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+body.loaded #home .hero-tagline {
+    animation: fadeInUp 0.6s ease-out 0.6s forwards;
+}
+
+body.loaded #home .hero-description {
+    animation: fadeInUp 0.6s ease-out 0.8s forwards;
+}
+
+body.loaded #home .cta-button {
+    animation: fadeInUp 0.6s ease-out 1.0s forwards;
+}
+.transition-fade {
+    transition: 0.4s opacity ease;
+}
+
+/* This runs when a page is LEAVING */
+html.is-leaving .transition-fade {
+    opacity: 0;
+}
+
+/* This runs when a page is ENTERING */
+html.is-animating .transition-fade {
+    opacity: 1; /* Swup 4 default */
+}

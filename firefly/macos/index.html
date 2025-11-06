@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-fade">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play on macOS - Hotaru Interactive</title>
+    
+    <!-- Paths updated to ../../ -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../instructions.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Swup wrapper for seamless transitions -->
+    <main id="swup">
+
+        <!-- Navbar (paths updated to ../../) -->
+        <nav class="navbar">
+            <a href="../../index.html#home" class="nav-logo">
+                <img src="../../assets/Circle.png" alt="Hotaru Interactive Logo" class="nav-logo-icon">
+                <img src="../../assets/hotaru_transparent2.png" alt="Hotaru Interactive" class="nav-logo-text">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home"><i class="fas fa-home fa-fw"></i> Home</a>
+                <a href="../../index.html#games"><i class="fas fa-gamepad fa-fw"></i> Our Games</a>
+                <a href="../../index.html#about"><i class="fas fa-circle-info fa-fw"></i> About Firefly</a>
+                <a href="../../index.html#staff"><i class="fas fa-users fa-fw"></i> The Team</a>
+                <a href="../../index.html#community"><i class="fas fa-comments fa-fw"></i> Community</a>
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+        
+        <!-- macOS-Specific Content -->
+        <div class="container">
+            <div class="platform-header">
+                <i class="fab fa-apple"></i>
+                <h1>Play on macOS</h1>
+            </div>
+            <div class="instructions-content">
+                <ol>
+                    <li>Open <strong>Finder</strong>, click "Go" in the menu bar, then select "Go to Folder...".</li>
+                    <li>Enter the following path and click "Go":<pre><code>/private/etc/hosts</code></pre></li>
+                    <li>Copy the `hosts` file to your Desktop.</li>
+                    <li>Open the copied `hosts` file on your Desktop with a text editor.</li>
+                    <li>Add the following two lines to the end of the file:
+                        <pre><code>103.150.227.49 www.growtopia1.com
+103.150.227.49 www.growtopia2.com</code></pre>
+                    </li>
+                    <li>Save the file and move it back to `/private/etc/`, replacing the original file (you will need to enter your password).</li>
+                    <li>Start Growtopia and enjoy!</li>
+                </ol>
+            </div>
+            <a href="../../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+        <!-- End Content -->
+
+        <!-- Footer (paths updated to ../../) -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column about">
+                    <h3>Hotaru Interactive</h3>
+                    <p>Crafting new adventures in Growtopia. Home of Firefly GTPS and Evernight GTPS.</p>
+                </div>
+                <div class="footer-column links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html#home">Home</a></li>
+                        <li><a href="../../index.html#games">Our Games</a></li>
+                        <li><a href="../../index.html#about">About Firefly</a></li>
+                        <li><a href="../../index.html#staff">The Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column community">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="/discord" target="_blank"><i class="fab fa-discord"></i> Discord Server</a></li>
+                        <li><a href="/whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Group</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hotaru Interactive. All Rights Reserved.</p>
+            </div>
+        </footer>
+    
+    </main> <!-- End swup wrapper -->
+
+    <!-- Swup and main script -->
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="../../script.js"></script>
+</body>
+</html>

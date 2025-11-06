@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-fade">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play on Android - Hotaru Interactive</title>
+    
+    <!-- Paths updated to ../../ -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../instructions.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Swup wrapper for seamless transitions -->
+    <main id="swup">
+
+        <!-- Navbar (paths updated to ../../) -->
+        <nav class="navbar">
+            <a href="../../index.html#home" class="nav-logo">
+                <img src="../../assets/Circle.png" alt="Hotaru Interactive Logo" class="nav-logo-icon">
+                <img src="../../assets/hotaru_transparent2.png" alt="Hotaru Interactive" class="nav-logo-text">
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html#home"><i class="fas fa-home fa-fw"></i> Home</a>
+                <a href="../../index.html#games"><i class="fas fa-gamepad fa-fw"></i> Our Games</a>
+                <a href="../../index.html#about"><i class="fas fa-circle-info fa-fw"></i> About Firefly</a>
+                <a href="../../index.html#staff"><i class="fas fa-users fa-fw"></i> The Team</a>
+                <a href="../../index.html#community"><i class="fas fa-comments fa-fw"></i> Community</a>
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+        
+        <!-- Android-Specific Content -->
+        <div class="container">
+            <div class="platform-header">
+                <i class="fab fa-android"></i>
+                <h1>Play on Android</h1>
+            </div>
+
+            <!-- NEW: Tab Navigation -->
+            <div class="method-tabs">
+                <button class="tab-button active" data-target="method-1"><i class="fas fa-star"></i> Recommended</button>
+                <button class="tab-button" data-target="method-2"><i class="fas fa-network-wired"></i> Virtual Hosts</button>
+                <button class="tab-button" data-target="method-3"><i class="fas fa-shield-alt"></i> PowerTunnel</button>
+            </div>
+
+            <!-- NEW: Tab Content Blocks -->
+            <div class="instructions-content">
+                
+                <!-- Method 1 Content -->
+                <div id="method-1" class="method-content active">
+                    <h2>Method 1: Firefly APK (Recommended)</h2>
+                    <ol>
+                        <li>Download and install the Firefly APK.</li>
+                        <a href="https://hotaru.id/download/Firefly.apk" target="_blank" class="download-button">
+                            <i class="fas fa-download"></i> Download Firefly.apk (v5.05)
+                        </a>
+                        <li>Open the Firefly app after installing.</li>
+                        <li>Click on "Start".</li>
+                        <li>The app will automatically open Growtopia and connect you to the Firefly Private Server.</li>
+                    </ol>
+                </div>
+
+                <!-- Method 2 Content -->
+                <div id="method-2" class="method-content">
+                    <h2>Method 2: Virtual Hosts</h2>
+                    <ol>
+                        <li>Download and install the Virtual Hosts app.</li>
+                        <a href="https://hotaru.id/download/virtual_host.apk" target="_blank" class="download-button">
+                            <i class="fas fa-download"></i> Download virtual_host.apk
+                        </a>
+                        <li>Download the hosts file.</li>
+                        <a href="https://hotaru.id/download/firefly.txt" target="_blank" class="download-button">
+                            <i class="fas fa-download"></i> Download firefly.txt
+                        </a>
+                        <li>Open Virtual Hosts and click on "Select/Reselect hosts file".</li>
+                        <li>Select the `firefly.txt` file you just downloaded.</li>
+                        <li>Click the large toggle switch to turn it on (it should turn green).</li>
+                        <li>Open Growtopia and connect!</li>
+                    </ol>
+                </div>
+
+                <!-- Method 3 Content -->
+                <div id="method-3" class="method-content">
+                    <h2>Method 3: PowerTunnel</h2>
+                    <ol>
+                        <li>Download and install the PowerTunnel App from the Play Store.</li>
+                        <li>In the app, add this URL to the "Hosts File URL" field.</li>
+                        <div class="copy-block">
+                            <input type="text" value="https://hotaru.id/download/firefly" readonly>
+                            <button class="copy-button" title="Copy to Clipboard">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <li>Change the "Hosts file update period" to "On start".</li>
+                        <li>Go back to the main menu and click "Connect".</li>
+                        <li>Once connected, open Growtopia and log in.</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Tab Content -->
+
+            <a href="../../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+        <!-- End Content -->
+
+        <!-- Footer (paths updated to ../../) -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column about">
+                    <h3>Hotaru Interactive</h3>
+                    <p>Crafting new adventures in Growtopia. Home of Firefly GTPS and Evernight GTPS.</p>
+                </div>
+                <div class="footer-column links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html#home">Home</a></li>
+                        <li><a href="../../index.html#games">Our Games</a></li>
+                        <li><a href="../../index.html#about">About Firefly</a></li>
+                        <li><a href="../../index.html#staff">The Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column community">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="/discord" target="_blank"><i class="fab fa-discord"></i> Discord Server</a></li>
+                        <li><a href="/whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Group</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hotaru Interactive. All Rights Reserved.</p>
+            </div>
+        </footer>
+    
+    </main> <!-- End swup wrapper -->
+
+    <!-- Swup and main script -->
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="../../script.js"></script>
+</body>
+</html>
