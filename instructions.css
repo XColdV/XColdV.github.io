@@ -1,268 +1,524 @@
-/* Import the same font for consistency */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* ============================================================
+   Firefly Private Server | Setup Guide Styles
+   ============================================================ */
 
-/* --- USING THE *SAME* HOTARU INTERACTIVE PALETTE --- */
-:root {
-    --bg-color: #050505;
-    --primary-accent: #F5D970; /* Gold */
-    --secondary-accent: #4D9DE0; /* Blue */
-    --text-color: #EAEAEA;
-    --text-muted: #AAAAAA;
-    --card-bg: rgba(20, 20, 20, 0.7);
-    --border-color: rgba(245, 217, 112, 0.2);
-    --code-bg: #010409;
+.guide-page {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 2.2rem 0 0;
 }
 
-/* --- Basic Setup --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.guide-hero {
+  padding-top: 1rem;
 }
 
-/* * The body is no longer centered.
- * It's now just a normal page, letting the
- * navbar, content, and footer flow naturally.
-*/
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    min-height: 100vh;
-}
-
-/* --- Main Instructions Container --- */
-.container {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem 3rem;
-    max-width: 800px;
-    width: 90%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    text-align: left;
-    margin: 2rem auto; /* Center it on the page */
-    
-    /* This pushes it down from the fixed navbar */
-    margin-top: 100px; 
-}
-
-.platform-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1.5rem;
-}
-
-.platform-header i {
-    font-size: 4rem;
-    color: var(--primary-accent); /* Gold */
-}
-
-.platform-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-/* --- Content Styling --- */
-.instructions-content h2 {
-    font-size: 1.8rem;
-    color: var(--primary-accent); /* Gold */
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.instructions-content ol {
-    padding-left: 20px; /* Indent list items */
-}
-
-.instructions-content li {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.instructions-content li::marker {
-    color: var(--primary-accent); /* Gold */
-    font-weight: bold;
-}
-
-.instructions-content a {
-    color: var(--primary-accent); /* Gold */
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-.instructions-content a:hover {
-    text-decoration: underline;
-    color: white;
-}
-
-/* --- Code Block Styling --- */
-pre {
-    background-color: var(--code-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem 0;
-    white-space: pre-wrap; /* Allow long lines to wrap */
-    word-wrap: break-word;
-}
-
-code {
-    font-family: 'Courier New', Courier, monospace;
-    color: #a5d6ff; /* Light blue for code text */
-    font-size: 1rem;
-}
-
-/* --- Back Button --- */
 .back-link {
-    display: inline-block;
-    margin-top: 2rem;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted-strong);
+  transition: background var(--transition), transform var(--transition), border-color var(--transition);
 }
 
 .back-link:hover {
-    color: var(--primary-accent); /* Gold */
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.back-link i {
-    margin-right: 0.5rem;
+.guide-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 1.2rem;
+  align-items: start;
+  margin-top: 1.4rem;
 }
 
-/* --- Page Load/Exit Animations --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.guide-hero-copy,
+.guide-summary,
+.side-card,
+.instructions-content .step,
+.note,
+.tab-panel {
+  border-radius: var(--radius-lg);
 }
 
-@keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(10px); }
+.guide-hero-copy {
+  padding: 0.4rem 0 0;
 }
 
-/* Apply the fade-in animation */
-.container, .back-link {
-    animation: fadeIn 0.8s ease-in-out forwards;
+.guide-hero-copy h1 {
+  margin: 0.95rem 0 0.85rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.98;
+  max-width: 11ch;
 }
 
-/* This is the class your instructions.js adds */
-body.fade-out {
-    animation: fadeOut 0.5s ease-out forwards;
-}
-/* ... existing code ... */
-body.fade-out {
-    animation: fadeOut 0.5s ease-out forwards;
+.guide-hero-copy p {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--muted);
 }
 
-/* --- NEW: Android Method Tabs --- */
+.guide-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.guide-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(134, 255, 210, 0.16);
+  background: rgba(134, 255, 210, 0.08);
+  color: var(--muted-strong);
+  font-size: 0.88rem;
+}
+
+.guide-summary,
+.side-card,
+.tab-panel,
+.instructions-content .step,
+.note {
+  position: relative;
+  overflow: hidden;
+  padding: 1.3rem;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    var(--surface);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-soft);
+}
+
+.guide-summary::before,
+.side-card::before,
+.tab-panel::before,
+.instructions-content .step::before,
+.note::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.06), transparent 30%, transparent 64%, rgba(134, 255, 210, 0.045));
+}
+
+.platform-page-title,
+.guide-summary h2,
+.side-card h3,
+.step h3,
+.method-tabs-label {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.guide-summary h2,
+.side-card h3 {
+  margin: 0 0 0.9rem;
+  font-size: 1.12rem;
+}
+
+.guide-checklist,
+.side-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--muted-strong);
+}
+
+.guide-checklist li,
+.side-list li {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.guide-checklist li::before,
+.side-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.56rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(134, 255, 210, 0.45);
+}
+
+.guide-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.guide-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.flow-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.flow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.06), transparent 30%, transparent 64%, rgba(134, 255, 210, 0.045));
+}
+
+.flow-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(134, 255, 210, 0.18);
+  background: rgba(134, 255, 210, 0.1);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.flow-card h3 {
+  margin: 0.9rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+.flow-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.guide-main {
+  min-width: 0;
+}
+
+.guide-side {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.platform-switcher {
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+  z-index: 8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin-top: 1.2rem;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: rgba(7, 15, 15, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-soft);
+}
+
+.platform-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted-strong);
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.platform-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.platform-pill.is-active,
+.platform-pill[aria-current='page'] {
+  background: linear-gradient(135deg, rgba(184, 255, 232, 0.16), rgba(80, 255, 197, 0.14));
+  border-color: rgba(134, 255, 210, 0.32);
+  color: var(--text);
+  box-shadow: 0 14px 40px rgba(45, 220, 162, 0.14);
+}
+
+.platform-pill-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.method-tabs-wrap {
+  margin-bottom: 1rem;
+}
+
+.method-tabs-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--muted-strong);
+  font-size: 0.95rem;
+}
 
 .method-tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
-.tab-button {
-    background: transparent;
-    border: none;
-    border-bottom: 3px solid transparent;
-    color: var(--text-muted);
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    transform: translateY(2px); /* Aligns with the bottom border */
+.tab-btn {
+  padding: 0.82rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted-strong);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
 }
 
-.tab-button:hover {
-    color: var(--text-color);
+.tab-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--line-strong);
 }
 
-.tab-button.active {
-    color: var(--primary-accent);
-    border-bottom-color: var(--primary-accent);
+.tab-btn.active {
+  color: #04110d;
+  border-color: transparent;
+  background: linear-gradient(135deg, #b8ffe8, #63ffca 54%, #30d8a9);
+  box-shadow: 0 12px 32px rgba(45, 220, 162, 0.22);
 }
 
-.tab-button i {
-    margin-right: 8px;
+.tab-content {
+  display: none;
 }
 
-.method-content {
-    display: none;
-    animation: fadeIn 0.5s ease; /* Use existing fadeIn animation */
+.tab-content.active {
+  display: block;
 }
 
-.method-content.active {
-    display: block;
+.tab-panel-head {
+  margin-bottom: 1rem;
 }
 
-
-/* --- NEW: Download & Copy Buttons --- */
-
-.download-button {
-    display: inline-block;
-    background: #25D366; /* Green for download */
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    margin: 1rem 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+.tab-panel-head h2,
+.tab-panel-head p {
+  margin: 0;
 }
 
-.download-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+.tab-panel-head p {
+  margin-top: 0.45rem;
+  color: var(--muted);
 }
 
-.download-button i {
-    margin-right: 10px;
+.guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.guide-actions .btn,
+.guide-actions .download-btn {
+  min-height: 3.2rem;
+}
+
+.instructions-content {
+  counter-reset: step;
+  display: grid;
+  gap: 1rem;
+}
+
+.instructions-content .step {
+  padding-left: 4.45rem;
+}
+
+.instructions-content .step::before {
+  counter-increment: step;
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 1.3rem;
+  top: 1.35rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(134, 255, 210, 0.18);
+  background: rgba(134, 255, 210, 0.1);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.step h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.08rem;
+}
+
+.step p,
+.step ul,
+.side-card p,
+.guide-summary p,
+.note {
+  color: var(--muted);
+}
+
+.step p:last-child,
+.side-card p:last-child,
+.note p:last-child {
+  margin-bottom: 0;
 }
 
 .copy-block {
-    display: flex;
-    background: var(--code-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 1rem 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  padding: 1rem 1rem 1rem 1.05rem;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(3, 9, 9, 0.72);
 }
 
-.copy-block input[type="text"] {
-    flex-grow: 1;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    padding: 12px 15px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
+.copy-block code {
+  flex: 1;
+  color: var(--accent);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
-.copy-button {
-    background: var(--primary-accent);
-    border: none;
-    color: var(--bg-color);
-    padding: 12px 15px;
-    cursor: pointer;
-    transition: background 0.2s ease;
+.copy-btn {
+  flex-shrink: 0;
+  padding: 0.68rem 0.95rem;
+  border-radius: 14px;
+  border: 1px solid rgba(134, 255, 210, 0.18);
+  background: rgba(134, 255, 210, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
 }
 
-.copy-button:hover {
-    background: #fff; /* White hover */
+.copy-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(134, 255, 210, 0.28);
+  background: rgba(134, 255, 210, 0.14);
 }
 
-.copy-button i {
-    font-size: 1rem;
+.copy-btn.is-copied {
+  color: #03110c;
+  background: linear-gradient(135deg, #b8ffe8, #63ffca 54%, #30d8a9);
+  border-color: transparent;
+}
+
+.note {
+  margin-top: 1rem;
+}
+
+.note strong {
+  color: var(--text);
+}
+
+.mini-card-title {
+  margin: 0 0 0.55rem;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.side-copy + .side-copy {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 1080px) {
+  .guide-flow,
+  .guide-hero-grid,
+  .guide-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-switcher {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .guide-page {
+    padding-top: 1.2rem;
+  }
+
+  .guide-hero-copy h1 {
+    max-width: none;
+  }
+
+  .copy-block {
+    flex-direction: column;
+  }
+
+  .copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .instructions-content .step {
+    padding-left: 1.2rem;
+    padding-top: 4.3rem;
+  }
+
+  .instructions-content .step::before {
+    left: 1.2rem;
+    top: 1.1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .platform-switcher {
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .guide-actions {
+    display: grid;
+  }
+
+  .platform-pill {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .method-tabs {
+    display: grid;
+  }
+
+  .tab-btn {
+    width: 100%;
+  }
 }

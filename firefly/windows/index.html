@@ -1,94 +1,174 @@
-<!DOCTYPE html>
-<html lang="en" class="transition-fade">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Play on Windows - Hotaru Interactive</title>
-    
-    <!-- Paths updated to ../../ -->
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../instructions.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows Setup | Firefly Private Server</title>
+  <link rel="icon" href="../../assets/logo.jpeg">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../instructions.css">
 </head>
-<body>
+<body class="platform-page" data-platform="windows">
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-aurora bg-aurora-a"></div>
+    <div class="bg-aurora bg-aurora-b"></div>
+    <div class="bg-halo bg-halo-b"></div>
+    <div class="bg-mesh"></div>
+    <span class="bg-particle bg-particle-3"></span>
+    <span class="bg-particle bg-particle-5"></span>
+  </div>
 
-    <!-- Swup wrapper for seamless transitions -->
-    <main id="swup">
+  <nav class="navbar">
+    <a href="../../index.html#home" class="nav-logo" aria-label="Firefly homepage">
+      <img src="../../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
+      <span class="nav-logo-copy">
+        <strong class="nav-logo-text">Firefly</strong>
+        <span class="nav-logo-sub">Private Server</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#home">Home</a>
+      <a href="../../index.html#play">Setup</a>
+      <a href="../../index.html#features">Features</a>
+      <a href="../../index.html#faq">FAQ</a>
+      <a href="../../index.html#community">Community</a>
+    </div>
+    <a href="../../index.html#play" class="nav-cta">Back to Setup</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-        <!-- Navbar (paths updated to ../../) -->
-        <nav class="navbar">
-            <a href="../../index.html#home" class="nav-logo">
-                <img src="../../assets/Circle.png" alt="Hotaru Interactive Logo" class="nav-logo-icon">
-                <img src="../../assets/hotaru_transparent2.png" alt="Hotaru Interactive" class="nav-logo-text">
-            </a>
-            <div class="nav-links">
-                <a href="../../index.html#home"><i class="fas fa-home fa-fw"></i> Home</a>
-                <a href="../../index.html#games"><i class="fas fa-gamepad fa-fw"></i> Our Games</a>
-                <a href="../../index.html#about"><i class="fas fa-circle-info fa-fw"></i> About Firefly</a>
-                <a href="../../index.html#staff"><i class="fas fa-users fa-fw"></i> The Team</a>
-                <a href="../../index.html#community"><i class="fas fa-comments fa-fw"></i> Community</a>
+  <div id="swup" class="transition-fade">
+    <main class="guide-page">
+      <section class="guide-hero">
+        <a href="../../index.html#play" class="back-link">← Back to setup overview</a>
+        <div class="guide-hero-grid">
+          <div class="guide-hero-copy reveal">
+            <span class="eyebrow">Windows Guide</span>
+            <h1>Windows is the simplest desktop route into Firefly Private Server.</h1>
+            <p>On Windows, the full route is direct: open the hosts file, add the two Firefly lines, save with Administrator permission if Windows asks, and then launch Growtopia.</p>
+            <div class="guide-badges">
+              <span class="guide-pill">Fast hosts-file route</span>
+              <span class="guide-pill">Works with standard Growtopia</span>
+              <span class="guide-pill">Easy rollback later</span>
             </div>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-        </nav>
-        
-        <!-- Windows-Specific Content -->
-        <div class="container">
-            <div class="platform-header">
-                <i class="fab fa-windows"></i>
-                <h1>Play on Windows</h1>
+          </div>
+
+          <aside class="guide-summary reveal d1">
+            <h2 class="platform-page-title">Before you start</h2>
+            <ul class="guide-checklist">
+              <li>You may need Administrator permission to save the hosts file.</li>
+              <li>Keep both Firefly lines together so both Growtopia domains resolve correctly.</li>
+              <li>Remove or comment the lines later if you want to return to the official server.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <nav class="platform-switcher reveal" aria-label="Platform switcher">
+        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">🤖</span>Android</a>
+        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">📱</span>iOS</a>
+        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">🍎</span>macOS</a>
+        <a href="../windows/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">🪟</span>Windows</a>
+      </nav>
+
+      <section class="guide-flow reveal">
+        <article class="flow-card">
+          <span class="flow-index">01</span>
+          <h3>Open the hosts file path</h3>
+          <p>Windows only needs one file path, so you can go straight there with Win + R or open Notepad as Administrator first.</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-index">02</span>
+          <h3>Paste both Firefly lines together</h3>
+          <p>Keep both Growtopia domain lines as one block. You can copy them below or download the prepared text file.</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-index">03</span>
+          <h3>Save, then launch Growtopia</h3>
+          <p>If the file saves successfully, the next game launch should resolve to Firefly instead of the official server.</p>
+        </article>
+      </section>
+
+      <section class="guide-layout">
+        <div class="guide-main reveal">
+          <div class="tab-panel">
+            <div class="tab-panel-head">
+              <h2>Windows hosts-file route</h2>
+              <p>Once the hosts file contains both Firefly lines, Growtopia should resolve to Firefly the next time you open it.</p>
             </div>
             <div class="instructions-content">
-                <ol>
-                    <li>Press <strong>Win + R</strong> to open the "Run" dialog.</li>
-                    <li>Type the following path into the textbox and press Enter:<pre><code>C:\Windows\System32\drivers\etc</code></pre></li>
-                    <li>Find the file named <strong>hosts</strong>.</li>
-                    <li>Right-click the `hosts` file, and open it with an editor like Notepad (you may need to run Notepad as an Administrator).</li>
-                    <li>Add the following two lines to the very bottom of the file:
-                        <pre><code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code></pre>
-                    </li>
-                    <li>Save the file and close the editor.</li>
-                    <li>You can now log into the game. Enjoy!</li>
-                </ol>
+              <div class="step">
+                <h3>Open the hosts file path</h3>
+                <p>Press <strong>Win + R</strong>, paste the path below, and open it with Notepad or another editor.</p>
+                <div class="copy-block">
+                  <code>C:\Windows\System32\drivers\etc\hosts</code>
+                  <button class="copy-btn" type="button">Copy</button>
+                </div>
+              </div>
+              <div class="step">
+                <h3>Add the Firefly lines</h3>
+                <p>Go to the bottom of the hosts file and paste both mappings exactly as shown here so the client resolves to Firefly. If you prefer, download the prepared text file first and copy from there.</p>
+                <div class="copy-block">
+                  <code>103.150.227.49 www.growtopia1.com
+103.150.227.49 www.growtopia2.com</code>
+                  <button class="copy-btn" type="button">Copy</button>
+                </div>
+                <div class="guide-actions">
+                  <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
+                </div>
+              </div>
+              <div class="step">
+                <h3>Save with Administrator access if needed</h3>
+                <p>If Windows refuses the save, reopen your editor as Administrator, apply the same change again, and then save it with elevated permission.</p>
+              </div>
+              <div class="step">
+                <h3>Launch Growtopia</h3>
+                <p>Open the game normally. If the file was saved correctly, Growtopia should now connect to Firefly instead of the official server.</p>
+              </div>
             </div>
-            <a href="../../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="note"><strong>Note:</strong> To go back to the official server, remove the Firefly lines or add <code>#</code> in front of them so they no longer apply.</div>
+          </div>
         </div>
-        <!-- End Content -->
 
-        <!-- Footer (paths updated to ../../) -->
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-column about">
-                    <h3>Hotaru Interactive</h3>
-                    <p>Crafting new adventures in Growtopia. Home of Firefly GTPS and Evernight GTPS.</p>
-                </div>
-                <div class="footer-column links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../../index.html#home">Home</a></li>
-                        <li><a href="../../index.html#games">Our Games</a></li>
-                        <li><a href="../../index.html#about">About Firefly</a></li>
-                        <li><a href="../../index.html#staff">The Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column community">
-                    <h3>Community</h3>
-                    <ul>
-                        <li><a href="/discord" target="_blank"><i class="fab fa-discord"></i> Discord Server</a></li>
-                        <li><a href="/whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Group</a></li>
-                    </ul>
-                </div>
+        <aside class="guide-side reveal d1">
+          <div class="side-card">
+            <h3>Quick actions</h3>
+            <div class="guide-actions">
+              <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Hotaru Interactive. All Rights Reserved.</p>
+          </div>
+          <div class="side-card">
+            <h3>Paste block</h3>
+            <div class="copy-block side-copy">
+              <code>103.150.227.49 www.growtopia1.com
+103.150.227.49 www.growtopia2.com</code>
+              <button class="copy-btn" type="button">Copy</button>
             </div>
-        </footer>
-    
-    </main> <!-- End swup wrapper -->
+          </div>
+          <div class="side-card">
+            <h3>Quick checks</h3>
+            <ul class="side-list">
+              <li>If the game still points to the old server, check whether there are duplicate growtopia entries elsewhere in the hosts file.</li>
+              <li>If Notepad opens read-only, restart it as Administrator first.</li>
+              <li>Use the platform switcher above if you also play on macOS, iOS, or Android.</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
 
-    <!-- Swup and main script -->
-    <script src="https://unpkg.com/swup@4"></script>
-    <script src="../../script.js"></script>
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Firefly Private Server.</p>
+        <p>Not affiliated with Ubisoft or Growtopia.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../script.js"></script>
 </body>
 </html>

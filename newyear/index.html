@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR-26710 // FIREFLY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="video-layer" id="video-layer">
+        <iframe id="bg-video" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="vignette"></div>
+
+    <div class="main-card">
+        <div class="scan-bar"></div>
+
+        <div class="card-header">
+            <div class="unit-id">AR-26710 // FIREFLY</div>
+            <div class="unit-status">
+                <span class="blink-dot"></span>
+                SYSTEM ONLINE
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="clock-display" id="clock">00:00:00</div>
+            <div class="date-display" id="date">CALCULATING DATE...</div>
+            
+            <div class="tech-divider"></div>
+
+            <div class="countdown-wrapper">
+                <div class="cd-box"><span class="cd-num" id="d">00</span><span class="cd-label">DAYS</span></div>
+                <div class="cd-box"><span class="cd-num" id="h">00</span><span class="cd-label">HRS</span></div>
+                <div class="cd-box"><span class="cd-num" id="m">00</span><span class="cd-label">MIN</span></div>
+                <div class="cd-box"><span class="cd-num" id="s">00</span><span class="cd-label">SEC</span></div>
+            </div>
+            
+            <div style="font-size: 0.8rem; color: #666; letter-spacing: 2px;">
+                TARGET: OPERATION NEW YEAR
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="stat-row">
+                <span>Sync Rate</span>
+                <span>98.4%</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 98%; animation-duration: 2s;"></div>
+            </div>
+
+            <div class="stat-row" style="margin-top: 5px;">
+                <span>Entropy Loss</span>
+                <span style="color: var(--secondary);">STABLE</span>
+            </div>
+            <div class="bar-container">
+                <div class="bar-fill" style="width: 15%; background: var(--secondary); animation-duration: 4s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="memory-lane" id="memory-container"></div>
+
+    <script>
+        /* --- CONFIG --- */
+        const videos = ["eFXQqY3ia6k", "AHhp86KXNiA", "LnPrurbRQ7k", "-ey0eXm5rfo"];
+        
+        // ! IMPORTANT ! UPDATE IMAGE COUNT HERE AFTER RUNNING PYTHON SCRIPT
+        const imagePath = "./images/"; 
+        const imageCount = 5; // <--- UPDATE THIS
+        const imageExtension = ".jpg"; 
+
+        /* --- VIDEO ENGINE --- */
+        function initVideo() {
+            const vidId = videos[Math.floor(Math.random() * videos.length)];
+            const iframe = document.getElementById('bg-video');
+            iframe.src = `https://www.youtube-nocookie.com/embed/${vidId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${vidId}`;
+            iframe.onload = () => { document.getElementById('video-layer').classList.add('loaded'); };
+        }
+
+        /* --- TIME ENGINE --- */
+        function updateTime() {
+            const now = new Date();
+            // Using 24-hour format for military vibe
+            document.getElementById('clock').innerText = now.toLocaleTimeString('en-GB', { hour12: false });
+            document.getElementById('date').innerText = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }).toUpperCase();
+
+            const nextYear = now.getFullYear() + 1;
+            const target = new Date(`January 1, ${nextYear} 00:00:00`).getTime();
+            const diff = target - now.getTime();
+
+            if (diff > 0) {
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('d').innerText = String(d).padStart(2, '0');
+                document.getElementById('h').innerText = String(h).padStart(2, '0');
+                document.getElementById('m').innerText = String(m).padStart(2, '0');
+                document.getElementById('s').innerText = String(s).padStart(2, '0');
+            } else {
+                document.querySelector('.unit-status').innerText = "MISSION COMPLETE";
+            }
+        }
+
+        /* --- MEMORY SPAWNER (THE "A LOT" VERSION) --- */
+        let imgIndexTracker = 1;
+        
+        function spawnImage() {
+            const container = document.getElementById('memory-container');
+            const img = document.createElement('img');
+            
+            img.src = `${imagePath}${imgIndexTracker}${imageExtension}`;
+            img.className = 'memory-img';
+            img.onerror = () => { img.remove(); };
+
+            // Randomize Size (Big)
+            const randomSize = Math.floor(Math.random() * 120) + 180; // 180px - 300px
+            img.style.height = `${randomSize}px`;
+
+            // Random Position
+            const randomLeft = Math.floor(Math.random() * 90) + 5;
+            img.style.left = `${randomLeft}vw`;
+
+            // Random Speed
+            const durationS = (Math.random() * 8 + 15).toFixed(1);
+            img.style.animation = `floatUpMemory ${durationS}s linear forwards`;
+
+            container.appendChild(img);
+            setTimeout(() => { img.remove(); }, parseFloat(durationS) * 1000);
+
+            imgIndexTracker++;
+            if (imgIndexTracker > imageCount) imgIndexTracker = 1;
+        }
+
+        /* --- INIT --- */
+        initVideo();
+        setInterval(updateTime, 1000);
+        updateTime();
+        setInterval(spawnImage, 1000); // 1.0s spawn rate (Heavy flow)
+        spawnImage();
+
+    </script>
+</body>
+</html>

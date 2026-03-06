@@ -1,0 +1,175 @@
+/* --- GLOBAL VARS & RESET --- */
+:root {
+    --primary: #4fffc3;       /* Firefly Teal */
+    --primary-dim: rgba(79, 255, 195, 0.15);
+    --secondary: #fff3a6;     /* Fire Warmth */
+    --warning: #ff6b6b;       /* SAM Red */
+    --bg-dark: #020403;
+    --glass: rgba(10, 20, 18, 0.85);
+    --font-main: 'Rajdhani', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-main);
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- VIDEO BACKGROUND --- */
+.video-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2; overflow: hidden;
+}
+
+iframe {
+    position: absolute; top: 50%; left: 50%;
+    width: 100vw; height: 56.25vw;
+    min-height: 100vh; min-width: 177.77vh; 
+    transform: translate(-50%, -50%); 
+    pointer-events: none;
+    filter: brightness(0.6) contrast(1.2) grayscale(0.2);
+    opacity: 0; transition: opacity 3s ease-in;
+}
+
+.video-layer.loaded iframe { opacity: 1; }
+
+.vignette {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 95%);
+    z-index: -1;
+    background-image: linear-gradient(rgba(79, 255, 195, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 255, 195, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* --- MAIN HUD CARD --- */
+.main-card {
+    position: relative;
+    z-index: 20;
+    width: 700px;
+    max-width: 95%;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(79, 255, 195, 0.3);
+    border-radius: 4px; 
+    padding: 0;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8), inset 0 0 100px rgba(79, 255, 195, 0.05);
+    animation: breathe 6s ease-in-out infinite;
+    margin-bottom: 8vh;
+    overflow: hidden;
+}
+
+.main-card::before, .main-card::after {
+    content: ''; position: absolute; width: 20px; height: 20px;
+    border: 2px solid var(--primary); transition: all 0.3s;
+}
+.main-card::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+.main-card::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+.scan-bar {
+    position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--primary); opacity: 0.3; box-shadow: 0 0 15px var(--primary);
+    animation: scan 4s linear infinite; z-index: 25;
+}
+
+/* --- CARD CONTENT --- */
+.card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 25px; background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(79, 255, 195, 0.2);
+}
+.unit-id { font-size: 0.9rem; letter-spacing: 2px; color: var(--primary); font-weight: 700; }
+.unit-status {
+    font-size: 0.7rem; letter-spacing: 1px; color: var(--secondary); text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+}
+.blink-dot {
+    width: 6px; height: 6px; background: var(--secondary); border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+.card-body { padding: 2rem 3rem; text-align: center; position: relative; }
+
+.clock-display {
+    font-size: 5rem; font-weight: 700; line-height: 0.9; color: white;
+    text-shadow: 0 0 30px rgba(79, 255, 195, 0.4); font-variant-numeric: tabular-nums; margin-top: 10px;
+}
+.date-display {
+    font-size: 1.1rem; color: #8fa; letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 2.5rem; opacity: 0.7;
+}
+
+.tech-divider {
+    height: 1px; background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    margin: 20px 0; opacity: 0.3;
+}
+
+.countdown-wrapper { display: flex; gap: 2rem; justify-content: center; margin-bottom: 20px; }
+.cd-box { display: flex; flex-direction: column; align-items: center; position: relative; }
+.cd-num { font-size: 2.5rem; font-weight: 600; color: var(--primary); }
+.cd-label { font-size: 0.7rem; text-transform: uppercase; color: #889; letter-spacing: 2px; }
+
+.card-footer {
+    padding: 15px 25px; background: rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(79, 255, 195, 0.2);
+    display: flex; flex-direction: column; gap: 10px;
+}
+.stat-row {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px;
+}
+.bar-container {
+    width: 100%; height: 4px; background: rgba(255,255,255,0.1);
+    margin-top: 5px; position: relative; overflow: hidden;
+}
+.bar-fill {
+    height: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary);
+    width: 0%; animation: loadBar 3s ease-out forwards;
+}
+
+/* --- MEMORY OCEAN (GHOST MODE) --- */
+.memory-lane {
+    position: fixed; bottom: 0; left: 0; width: 100%; height: 50vh;
+    z-index: 5; pointer-events: none;
+    mask-image: linear-gradient(to top, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%);
+}
+
+.memory-img {
+    position: absolute; bottom: -200px;
+    border-radius: 8px;
+    /* Made border much more transparent so it doesn't look like an empty frame */
+    border: 1px solid rgba(79, 255, 195, 0.2); 
+    box-shadow: 0 0 30px rgba(79, 255, 195, 0.1);
+    opacity: 0; will-change: transform, opacity;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes breathe { 0%, 100% { box-shadow: 0 0 50px rgba(0,0,0,0.8); } 50% { box-shadow: 0 0 70px rgba(79, 255, 195, 0.1); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes scan { 0% { top: -10%; } 100% { top: 110%; } }
+@keyframes loadBar { 0% { width: 0%; } 100% { width: 98%; } }
+
+/* EDITED: Made opacity much lower for ghost effect */
+@keyframes floatUpMemory {
+    0% { transform: translateY(0) scale(0.8); opacity: 0; }
+    20% { opacity: 0.15; } /* Only fades in to 15% visibility */
+    80% { opacity: 0.1; }  /* Stays very faint */
+    100% { transform: translateY(-55vh) scale(1); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .main-card { width: 95%; }
+    .clock-display { font-size: 3.5rem; }
+    .countdown-wrapper { gap: 1rem; }
+}

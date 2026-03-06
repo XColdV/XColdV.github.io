@@ -1,88 +1,164 @@
-<!DOCTYPE html>
-<html lang="en" class="transition-fade">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Play on iOS - Hotaru Interactive</title>
-    
-    <!-- Paths updated to ../../ -->
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../instructions.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Setup | Firefly Private Server</title>
+  <link rel="icon" href="../../assets/logo.jpeg">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../../instructions.css">
 </head>
-<body>
+<body class="platform-page" data-platform="ios">
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-aurora bg-aurora-a"></div>
+    <div class="bg-aurora bg-aurora-b"></div>
+    <div class="bg-halo bg-halo-a"></div>
+    <div class="bg-mesh"></div>
+    <span class="bg-particle bg-particle-1"></span>
+    <span class="bg-particle bg-particle-4"></span>
+    <span class="bg-particle bg-particle-6"></span>
+  </div>
 
-    <!-- Swup wrapper for seamless transitions -->
-    <main id="swup">
+  <nav class="navbar">
+    <a href="../../index.html#home" class="nav-logo" aria-label="Firefly homepage">
+      <img src="../../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
+      <span class="nav-logo-copy">
+        <strong class="nav-logo-text">Firefly</strong>
+        <span class="nav-logo-sub">Private Server</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#home">Home</a>
+      <a href="../../index.html#play">Setup</a>
+      <a href="../../index.html#features">Features</a>
+      <a href="../../index.html#faq">FAQ</a>
+      <a href="../../index.html#community">Community</a>
+    </div>
+    <a href="../../index.html#play" class="nav-cta">Back to Setup</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-        <!-- Navbar (paths updated to ../../) -->
-        <nav class="navbar">
-            <a href="../../index.html#home" class="nav-logo">
-                <img src="../../assets/Circle.png" alt="Hotaru Interactive Logo" class="nav-logo-icon">
-                <img src="../../assets/hotaru_transparent2.png" alt="Hotaru Interactive" class="nav-logo-text">
-            </a>
-            <div class="nav-links">
-                <a href="../../index.html#home"><i class="fas fa-home fa-fw"></i> Home</a>
-                <a href="../../index.html#games"><i class="fas fa-gamepad fa-fw"></i> Our Games</a>
-                <a href="../../index.html#about"><i class="fas fa-circle-info fa-fw"></i> About Firefly</a>
-                <a href="../../index.html#staff"><i class="fas fa-users fa-fw"></i> The Team</a>
-                <a href="../../index.html#community"><i class="fas fa-comments fa-fw"></i> Community</a>
+  <div id="swup" class="transition-fade">
+    <main class="guide-page">
+      <section class="guide-hero">
+        <a href="../../index.html#play" class="back-link">← Back to setup overview</a>
+        <div class="guide-hero-grid">
+          <div class="guide-hero-copy reveal">
+            <span class="eyebrow">iOS Guide</span>
+            <h1>On iOS, Firefly is easiest through one clean Surge profile.</h1>
+            <p>iOS does not expose the same host-editing flow as Android or desktop, so the most reliable route is a small Surge profile that maps both Growtopia domains to the Firefly IP.</p>
+            <div class="guide-badges">
+              <span class="guide-pill">Recommended app: Surge</span>
+              <span class="guide-pill">Uses local VPN profile</span>
+              <span class="guide-pill">Fast switch back to official</span>
             </div>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-        </nav>
-        
-        <!-- iOS-Specific Content -->
-        <div class="container">
-            <div class="platform-header">
-                <i class="fab fa-app-store-ios"></i>
-                <h1>Play on iOS</h1>
+          </div>
+
+          <aside class="guide-summary reveal d1">
+            <h2 class="platform-page-title">Before you start</h2>
+            <ul class="guide-checklist">
+              <li>Install Surge from the App Store before starting the setup.</li>
+              <li>iOS will ask for VPN configuration permission the first time you enable the profile.</li>
+              <li>Disable the profile later if you want Growtopia to resolve back to the official server.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <nav class="platform-switcher reveal" aria-label="Platform switcher">
+        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">🤖</span>Android</a>
+        <a href="../ios/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">📱</span>iOS</a>
+        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">🍎</span>macOS</a>
+        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">🪟</span>Windows</a>
+      </nav>
+
+      <section class="guide-flow reveal">
+        <article class="flow-card">
+          <span class="flow-index">01</span>
+          <h3>Install Surge once</h3>
+          <p>Surge is the routing layer. You only need to install it and create one profile for Firefly.</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-index">02</span>
+          <h3>Paste the Firefly block</h3>
+          <p>Add the two Growtopia domains under the Host section so both domains resolve to the Firefly IP.</p>
+        </article>
+        <article class="flow-card">
+          <span class="flow-index">03</span>
+          <h3>Enable the profile and play</h3>
+          <p>Once the profile is active, launch Growtopia normally. Disable it later when you want to revert.</p>
+        </article>
+      </section>
+
+      <section class="guide-layout">
+        <div class="guide-main reveal">
+          <div class="tab-panel">
+            <div class="tab-panel-head">
+              <h2>Surge profile setup</h2>
+              <p>Surge keeps the iOS setup small and readable: make one profile, paste one host block, enable it, then open Growtopia.</p>
             </div>
             <div class="instructions-content">
-                <ol>
-                    <li>Install <strong>Surge 5</strong> from the App Store.</li>
-                    <li>Import the following profile into the app:<br><a href="https://hotaru.id/download/ios" target="_blank">https://hotaru.id/download/ios</a></li>
-                    <li>Allow the app to configure a VPN when prompted.</li>
-                    <li>Connect using the new profile, then open Growtopia!</li>
-                </ol>
+              <div class="step">
+                <h3>Install Surge</h3>
+                <p>Download Surge from the App Store. If you already use another iOS routing tool, the same Firefly host mapping can usually be adapted there too.</p>
+              </div>
+              <div class="step">
+                <h3>Create a Firefly profile</h3>
+                <p>Create a new profile and name it something clear, such as <strong>Firefly Server</strong>, so it is easy to enable and disable later.</p>
+              </div>
+              <div class="step">
+                <h3>Paste the host mapping into the profile</h3>
+                <p>Add the block below under the Host section so both Growtopia domains resolve to the Firefly IP instead of the official server.</p>
+                <div class="copy-block">
+                  <code>[Host]
+www.growtopia1.com = 103.150.227.49
+www.growtopia2.com = 103.150.227.49</code>
+                  <button class="copy-btn" type="button">Copy</button>
+                </div>
+              </div>
+              <div class="step">
+                <h3>Enable the profile and launch Growtopia</h3>
+                <p>Turn the profile on, accept the VPN configuration prompt if iOS asks, and then open Growtopia. If the block was entered correctly, the game should resolve to Firefly.</p>
+              </div>
             </div>
-            <a href="../../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <div class="note"><strong>Note:</strong> Surge is a paid tool, but it remains the cleanest iOS recommendation here because the setup is simple and easy to reverse when needed.</div>
+          </div>
         </div>
-        <!-- End Content -->
 
-        <!-- Footer (paths updated to ../../) -->
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-column about">
-                    <h3>Hotaru Interactive</h3>
-                    <p>Crafting new adventures in Growtopia. Home of Firefly GTPS and Evernight GTPS.</p>
-                </div>
-                <div class="footer-column links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../../index.html#home">Home</a></li>
-                        <li><a href="../../index.html#games">Our Games</a></li>
-                        <li><a href="../../index.html#about">About Firefly</a></li>
-                        <li><a href="../../index.html#staff">The Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column community">
-                    <h3>Community</h3>
-                    <ul>
-                        <li><a href="/discord" target="_blank"><i class="fab fa-discord"></i> Discord Server</a></li>
-                        <li><a href="/whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Group</a></li>
-                    </ul>
-                </div>
+        <aside class="guide-side reveal d1">
+          <div class="side-card">
+            <h3>Copy block</h3>
+            <div class="copy-block side-copy">
+              <code>[Host]
+www.growtopia1.com = 103.150.227.49
+www.growtopia2.com = 103.150.227.49</code>
+              <button class="copy-btn" type="button">Copy</button>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Hotaru Interactive. All Rights Reserved.</p>
-            </div>
-        </footer>
-    
-    </main> <!-- End swup wrapper -->
+          </div>
+          <div class="side-card">
+            <h3>What matters on iOS</h3>
+            <ul class="side-list">
+              <li>Do not split the two domain lines. Both need to stay in the same profile.</li>
+              <li>Stop the Surge profile whenever you want the official Growtopia route back.</li>
+              <li>If Growtopia still resolves incorrectly, disable and re-enable the profile before trying again.</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
 
-    <!-- Swup and main script -->
-    <script src="https://unpkg.com/swup@4"></script>
-    <script src="../../script.js"></script>
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Firefly Private Server.</p>
+        <p>Not affiliated with Ubisoft or Growtopia.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../script.js"></script>
 </body>
 </html>
