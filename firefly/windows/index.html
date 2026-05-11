@@ -1,129 +1,116 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows Setup | Firefly Private Server</title>
+  <title>Windows Setup | Firefly GTPS</title>
   <link rel="icon" href="../../assets/logo.jpeg">
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="../../instructions.css">
 </head>
 <body class="platform-page" data-platform="windows">
-  <div class="site-bg" aria-hidden="true">
-    <div class="bg-aurora bg-aurora-a"></div>
-    <div class="bg-aurora bg-aurora-b"></div>
-    <div class="bg-halo bg-halo-b"></div>
-    <div class="bg-mesh"></div>
-    <span class="bg-particle bg-particle-3"></span>
-    <span class="bg-particle bg-particle-5"></span>
-  </div>
+  <div class="site-bg" aria-hidden="true"><div class="bg-mesh"></div></div>
 
   <nav class="navbar">
     <a href="../../index.html#home" class="nav-logo" aria-label="Firefly homepage">
       <img src="../../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
       <span class="nav-logo-copy">
         <strong class="nav-logo-text">Firefly</strong>
-        <span class="nav-logo-sub">Private Server</span>
+        <span class="nav-logo-sub">GTPS</span>
       </span>
     </a>
     <div class="nav-links">
       <a href="../../index.html#home">Home</a>
-      <a href="../../index.html#play">Setup</a>
+      <a href="../../index.html#play">Join</a>
       <a href="../../index.html#features">Features</a>
       <a href="../../index.html#faq">FAQ</a>
-      <a href="../../index.html#community">Community</a>
     </div>
-    <a href="../../index.html#play" class="nav-cta">Back to Setup</a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a href="../../index.html#play" class="nav-cta">Other Devices</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
   </nav>
 
   <div id="swup" class="transition-fade">
     <main class="guide-page">
       <section class="guide-hero">
-        <a href="../../index.html#play" class="back-link">← Back to setup overview</a>
+        <a href="../../index.html#play" class="back-link">Back to Join Now</a>
         <div class="guide-hero-grid">
           <div class="guide-hero-copy reveal">
-            <span class="eyebrow">Windows Guide</span>
-            <h1>Windows can connect through Firefly Helper or the manual hosts route.</h1>
-            <p>The easiest route is Firefly Helper: run it as Administrator, let it copy the Firefly lines for you, open the hosts file automatically, save, and then launch Growtopia. If you want to do it fully by hand, the manual hosts method is still below.</p>
+            <span class="eyebrow">Windows</span>
+            <h1>Join Firefly on Windows.</h1>
+            <p>Use Firefly Helper for the easiest setup. It opens the Windows hosts file for you, copies the Firefly lines, and refreshes DNS after you save.</p>
             <div class="guide-badges">
-              <span class="guide-pill">Recommended: Firefly Helper</span>
-              <span class="guide-pill">Works with standard Growtopia</span>
-              <span class="guide-pill">Manual fallback included</span>
+              <span class="guide-pill">Recommended: Helper</span>
+              <span class="guide-pill">Manual method included</span>
+              <span class="guide-pill">Needs Administrator access</span>
             </div>
           </div>
 
           <aside class="guide-summary reveal d1">
-            <h2 class="platform-page-title">Before you start</h2>
+            <h2 class="platform-page-title">You need</h2>
             <ul class="guide-checklist">
-              <li>Firefly Helper already requests Administrator access for you when Windows needs it.</li>
-              <li>Both Firefly lines still need to stay together, whether you use the helper or the manual route.</li>
-              <li>Remove or comment the lines later if you want to return to the official server.</li>
+              <li>Growtopia installed on Windows.</li>
+              <li>Administrator permission to edit the hosts file.</li>
+              <li>Both Firefly host lines saved together.</li>
             </ul>
           </aside>
         </div>
       </section>
 
       <nav class="platform-switcher reveal" aria-label="Platform switcher">
-        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">🤖</span>Android</a>
-        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">📱</span>iOS</a>
-        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">🍎</span>macOS</a>
-        <a href="../windows/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">🪟</span>Windows</a>
+        <a href="../windows/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">Win</span>Windows</a>
+        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">Mac</span>macOS</a>
+        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">And</span>Android</a>
+        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">iOS</span>iOS</a>
       </nav>
 
       <section class="guide-flow reveal">
         <article class="flow-card">
           <span class="flow-index">01</span>
-          <h3>Download Firefly Helper</h3>
-          <p>Use the helper if you want Windows to request admin permission, copy the Firefly lines, and open the hosts file for you automatically.</p>
+          <h3>Run the helper</h3>
+          <p>Download it, open it, and allow Administrator access.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">02</span>
-          <h3>Save the hosts file</h3>
-          <p>Whether you use the helper or do it manually, the job is the same: save both Firefly lines at the bottom of the hosts file.</p>
+          <h3>Paste and save</h3>
+          <p>When Notepad opens, paste the Firefly lines at the bottom and save.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">03</span>
-          <h3>Flush DNS and launch Growtopia</h3>
-          <p>The helper flushes DNS for you. If you do the manual route, launch Growtopia after saving and Windows should resolve to Firefly.</p>
+          <h3>Open Growtopia</h3>
+          <p>After DNS refreshes, launch Growtopia and connect.</p>
         </article>
       </section>
 
       <section class="guide-layout">
         <div class="guide-main reveal">
           <div class="method-tabs-wrap">
-            <span class="method-tabs-label">Switch method</span>
+            <span class="method-tabs-label">Choose method</span>
             <div class="method-tabs" role="tablist" aria-label="Windows setup methods">
               <button class="tab-btn active" type="button" data-tab="tab-helper">Firefly Helper</button>
-              <button class="tab-btn" type="button" data-tab="tab-manual">Manual hosts edit</button>
+              <button class="tab-btn" type="button" data-tab="tab-manual">Manual hosts</button>
             </div>
           </div>
 
           <div id="tab-helper" class="tab-content active">
             <div class="tab-panel">
               <div class="tab-panel-head">
-                <h2>Recommended: Firefly Helper</h2>
-                <p>Firefly Helper is the easier Windows route. It asks for admin permission, copies the Firefly lines to your clipboard, opens the hosts file in Notepad, and flushes DNS after you save.</p>
+                <h2>Recommended method</h2>
+                <p>Best for most Windows players.</p>
               </div>
               <div class="instructions-content">
                 <div class="step">
                   <h3>Download Firefly Helper</h3>
-                  <p>Download the helper script below, then run it. If Windows asks, allow it to run as Administrator.</p>
+                  <p>Run it as Administrator when Windows asks.</p>
                   <div class="guide-actions">
                     <a href="../../download/Firefly%20Helper.bat" class="download-btn" download="Firefly Helper.bat">Download Firefly Helper</a>
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Choose your language</h3>
-                  <p>The helper lets players choose English or Bahasa Indonesia before it continues.</p>
+                  <h3>Let it open the hosts file</h3>
+                  <p>The helper copies the Firefly lines to your clipboard and opens Notepad.</p>
                 </div>
                 <div class="step">
-                  <h3>Paste the Firefly lines when Notepad opens</h3>
-                  <p>The helper copies the two Firefly lines to your clipboard, opens the hosts file automatically, and tells you to scroll to the bottom and press <strong>Ctrl + V</strong>.</p>
+                  <h3>Paste this at the bottom</h3>
                   <div class="copy-block">
                     <code>103.150.227.49 www.growtopia1.com
 103.150.227.49 www.growtopia2.com</code>
@@ -131,24 +118,27 @@
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Save and let the helper finish</h3>
-                  <p>Save the hosts file in Notepad, close it, and the helper will flush DNS automatically. After that, open Growtopia and connect.</p>
+                  <h3>Save, close, and play</h3>
+                  <p>Save the file, close Notepad, let the helper finish, then open Growtopia.</p>
                 </div>
               </div>
-              <div class="note"><strong>Note:</strong> Firefly Helper does not skip the hosts edit. It just makes the Windows route easier by handling admin access, clipboard copy, and DNS flush for the player.</div>
             </div>
           </div>
 
           <div id="tab-manual" class="tab-content">
             <div class="tab-panel">
               <div class="tab-panel-head">
-                <h2>Manual Windows hosts-file route</h2>
-                <p>Use this if you prefer to edit the hosts file yourself without the helper script.</p>
+                <h2>Manual hosts method</h2>
+                <p>Use this if you do not want to run the helper.</p>
               </div>
               <div class="instructions-content">
                 <div class="step">
-                  <h3>Open the hosts file path</h3>
-                  <p>Press <strong>Win + R</strong>, paste the path below, and open it with Notepad or another editor.</p>
+                  <h3>Open Notepad as Administrator</h3>
+                  <p>Search Notepad, right-click it, then choose Run as administrator.</p>
+                </div>
+                <div class="step">
+                  <h3>Open the hosts file</h3>
+                  <p>In Notepad, open this file path:</p>
                   <div class="copy-block">
                     <code>C:\Windows\System32\drivers\etc\hosts</code>
                     <button class="copy-btn" type="button">Copy</button>
@@ -156,26 +146,18 @@
                 </div>
                 <div class="step">
                   <h3>Add the Firefly lines</h3>
-                  <p>Go to the bottom of the hosts file and paste both mappings exactly as shown here so the client resolves to Firefly. If you prefer, download the prepared text file first and copy from there.</p>
                   <div class="copy-block">
                     <code>103.150.227.49 www.growtopia1.com
 103.150.227.49 www.growtopia2.com</code>
                     <button class="copy-btn" type="button">Copy</button>
                   </div>
-                  <div class="guide-actions">
-                    <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
-                  </div>
                 </div>
                 <div class="step">
-                  <h3>Save with Administrator access if needed</h3>
-                  <p>If Windows refuses the save, reopen your editor as Administrator, apply the same change again, and then save it with elevated permission.</p>
-                </div>
-                <div class="step">
-                  <h3>Launch Growtopia</h3>
-                  <p>Open the game normally. If the file was saved correctly, Growtopia should now connect to Firefly instead of the official server.</p>
+                  <h3>Save and launch</h3>
+                  <p>Save the hosts file, close Notepad, then open Growtopia.</p>
                 </div>
               </div>
-              <div class="note"><strong>Note:</strong> To go back to the official server, remove the Firefly lines or add <code>#</code> in front of them so they no longer apply.</div>
+              <div class="note"><strong>Switch back:</strong> remove the two Firefly lines, save, then restart Growtopia.</div>
             </div>
           </div>
         </div>
@@ -184,12 +166,12 @@
           <div class="side-card">
             <h3>Quick actions</h3>
             <div class="guide-actions">
-              <a href="../../download/Firefly%20Helper.bat" class="download-btn" download="Firefly Helper.bat">Download Firefly Helper</a>
-              <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
+              <a href="../../download/Firefly%20Helper.bat" class="download-btn" download="Firefly Helper.bat">Download Helper</a>
+              <a href="../../download/firefly.txt" class="btn btn-secondary" download="firefly-hosts.txt">Download hosts text</a>
             </div>
           </div>
           <div class="side-card">
-            <h3>Paste block</h3>
+            <h3>Host lines</h3>
             <div class="copy-block side-copy">
               <code>103.150.227.49 www.growtopia1.com
 103.150.227.49 www.growtopia2.com</code>
@@ -197,12 +179,11 @@
             </div>
           </div>
           <div class="side-card">
-            <h3>Quick checks</h3>
+            <h3>If it does not work</h3>
             <ul class="side-list">
-              <li>If you want the easiest route, use Firefly Helper first and only switch to manual if you prefer editing the file yourself.</li>
-              <li>If the game still points to the old server, check whether there are duplicate growtopia entries elsewhere in the hosts file.</li>
-              <li>If Notepad opens read-only, restart it as Administrator first.</li>
-              <li>Use the platform switcher above if you also play on macOS, iOS, or Android.</li>
+              <li>Make sure both lines are saved.</li>
+              <li>Remove duplicate Growtopia host lines above them.</li>
+              <li>Restart Growtopia after saving.</li>
             </ul>
           </div>
         </aside>

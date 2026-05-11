@@ -1,95 +1,83 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>macOS Setup | Firefly Private Server</title>
+  <title>macOS Setup | Firefly GTPS</title>
   <link rel="icon" href="../../assets/logo.jpeg">
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="../../instructions.css">
 </head>
 <body class="platform-page" data-platform="macos">
-  <div class="site-bg" aria-hidden="true">
-    <div class="bg-aurora bg-aurora-a"></div>
-    <div class="bg-aurora bg-aurora-c"></div>
-    <div class="bg-halo bg-halo-a"></div>
-    <div class="bg-mesh"></div>
-    <span class="bg-particle bg-particle-2"></span>
-    <span class="bg-particle bg-particle-5"></span>
-  </div>
+  <div class="site-bg" aria-hidden="true"><div class="bg-mesh"></div></div>
 
   <nav class="navbar">
     <a href="../../index.html#home" class="nav-logo" aria-label="Firefly homepage">
       <img src="../../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
       <span class="nav-logo-copy">
         <strong class="nav-logo-text">Firefly</strong>
-        <span class="nav-logo-sub">Private Server</span>
+        <span class="nav-logo-sub">GTPS</span>
       </span>
     </a>
     <div class="nav-links">
       <a href="../../index.html#home">Home</a>
-      <a href="../../index.html#play">Setup</a>
+      <a href="../../index.html#play">Join</a>
       <a href="../../index.html#features">Features</a>
       <a href="../../index.html#faq">FAQ</a>
-      <a href="../../index.html#community">Community</a>
     </div>
-    <a href="../../index.html#play" class="nav-cta">Back to Setup</a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a href="../../index.html#play" class="nav-cta">Other Devices</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
   </nav>
 
   <div id="swup" class="transition-fade">
     <main class="guide-page">
       <section class="guide-hero">
-        <a href="../../index.html#play" class="back-link">← Back to setup overview</a>
+        <a href="../../index.html#play" class="back-link">Back to Join Now</a>
         <div class="guide-hero-grid">
           <div class="guide-hero-copy reveal">
-            <span class="eyebrow">macOS Guide</span>
-            <h1>macOS connects to Firefly through a simple hosts-file change.</h1>
-            <p>The full job on macOS is simple: open the hosts file, add the two Firefly lines, save the file, flush DNS, and then launch Growtopia.</p>
+            <span class="eyebrow">macOS</span>
+            <h1>Join Firefly on macOS.</h1>
+            <p>macOS uses the hosts file. Add two Firefly lines, save the file, flush DNS, then open Growtopia.</p>
             <div class="guide-badges">
               <span class="guide-pill">Uses /etc/hosts</span>
-              <span class="guide-pill">Admin password required</span>
+              <span class="guide-pill">Password required</span>
               <span class="guide-pill">DNS refresh included</span>
             </div>
           </div>
 
           <aside class="guide-summary reveal d1">
-            <h2 class="platform-page-title">Before you start</h2>
+            <h2 class="platform-page-title">You need</h2>
             <ul class="guide-checklist">
-              <li>You need permission to edit or replace the system hosts file.</li>
-              <li>Keep a copy of the original file if you want a quick rollback later.</li>
-              <li>Flush DNS after saving so Growtopia resolves to Firefly immediately.</li>
+              <li>Permission to edit the system hosts file.</li>
+              <li>The two Firefly lines below.</li>
+              <li>Terminal for the DNS refresh command.</li>
             </ul>
           </aside>
         </div>
       </section>
 
       <nav class="platform-switcher reveal" aria-label="Platform switcher">
-        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">🤖</span>Android</a>
-        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">📱</span>iOS</a>
-        <a href="../macos/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">🍎</span>macOS</a>
-        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">🪟</span>Windows</a>
+        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">Win</span>Windows</a>
+        <a href="../macos/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">Mac</span>macOS</a>
+        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">And</span>Android</a>
+        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">iOS</span>iOS</a>
       </nav>
 
       <section class="guide-flow reveal">
         <article class="flow-card">
           <span class="flow-index">01</span>
-          <h3>Open the system hosts file</h3>
-          <p>You only need one file path on macOS, and it stays the same on every guide run.</p>
+          <h3>Edit hosts</h3>
+          <p>Open <code>/etc/hosts</code> with permission to save changes.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">02</span>
-          <h3>Add both Firefly lines together</h3>
-          <p>Both Growtopia domains must resolve to the same IP, so paste both lines as one block at the bottom.</p>
+          <h3>Add Firefly</h3>
+          <p>Paste both Growtopia domain lines at the bottom.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">03</span>
-          <h3>Flush DNS before launching</h3>
-          <p>Run the included Terminal command after saving so macOS stops caching the old destination.</p>
+          <h3>Refresh and play</h3>
+          <p>Flush DNS, then launch Growtopia.</p>
         </article>
       </section>
 
@@ -97,60 +85,51 @@
         <div class="guide-main reveal">
           <div class="tab-panel">
             <div class="tab-panel-head">
-              <h2>macOS hosts-file route</h2>
-              <p>Once both Growtopia domains point to the Firefly IP and DNS has been refreshed, Growtopia should open on the Firefly route.</p>
+              <h2>macOS hosts method</h2>
+              <p>Follow these steps in order.</p>
             </div>
             <div class="instructions-content">
               <div class="step">
-                <h3>Open the hosts file location</h3>
-                <p>In Finder, use <strong>Go → Go to Folder</strong> and open the system path below.</p>
+                <h3>Open the hosts file</h3>
+                <p>Use Finder's Go to Folder, or open it from Terminal.</p>
                 <div class="copy-block">
                   <code>/etc/hosts</code>
                   <button class="copy-btn" type="button">Copy</button>
                 </div>
               </div>
               <div class="step">
-                <h3>Make an editable copy</h3>
-                <p>Copy the hosts file to your Desktop or open it with elevated permissions. The goal is to safely add the Firefly mappings at the bottom.</p>
-              </div>
-              <div class="step">
-                <h3>Add the Firefly mappings</h3>
-                <p>Paste these two lines at the end of the hosts file so both Growtopia domains resolve to Firefly. If you prefer, download the prepared text file first and copy from there.</p>
+                <h3>Paste the Firefly lines</h3>
+                <p>Add these at the bottom of the file:</p>
                 <div class="copy-block">
                   <code>103.150.227.49 www.growtopia1.com
 103.150.227.49 www.growtopia2.com</code>
                   <button class="copy-btn" type="button">Copy</button>
                 </div>
-                <div class="guide-actions">
-                  <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
-                </div>
               </div>
               <div class="step">
-                <h3>Save and replace the original file</h3>
-                <p>Move the updated file back into <strong>/etc/</strong> and confirm the replacement. macOS will ask for your password if elevated access is needed.</p>
+                <h3>Save the file</h3>
+                <p>macOS may ask for your password. That is normal because this is a system file.</p>
               </div>
               <div class="step">
-                <h3>Flush DNS and launch Growtopia</h3>
-                <p>Run the command below in Terminal, then launch Growtopia.</p>
+                <h3>Flush DNS</h3>
+                <p>Run this in Terminal:</p>
                 <div class="copy-block">
                   <code>sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code>
                   <button class="copy-btn" type="button">Copy</button>
                 </div>
               </div>
+              <div class="step">
+                <h3>Open Growtopia</h3>
+                <p>Start the game normally. It should now route to Firefly.</p>
+              </div>
             </div>
-            <div class="note"><strong>Note:</strong> To return to the official server, remove the two Firefly lines from the hosts file and run the DNS flush command again.</div>
+            <div class="note"><strong>Switch back:</strong> remove the Firefly lines, save, flush DNS again, then restart Growtopia.</div>
           </div>
         </div>
 
         <aside class="guide-side reveal d1">
           <div class="side-card">
-            <h3>Quick actions</h3>
-            <div class="guide-actions">
-              <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
-            </div>
-          </div>
-          <div class="side-card">
-            <h3>Paste block</h3>
+            <h3>Host lines</h3>
             <div class="copy-block side-copy">
               <code>103.150.227.49 www.growtopia1.com
 103.150.227.49 www.growtopia2.com</code>
@@ -158,11 +137,17 @@
             </div>
           </div>
           <div class="side-card">
-            <h3>Need help?</h3>
+            <h3>Quick actions</h3>
+            <div class="guide-actions">
+              <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts text</a>
+            </div>
+          </div>
+          <div class="side-card">
+            <h3>If it does not work</h3>
             <ul class="side-list">
-              <li>If Finder refuses to replace the file, use a text editor with elevated permission instead.</li>
-              <li>If Growtopia still points to the old server, run the DNS flush command one more time.</li>
-              <li>Use the platform switcher above if you also play on Windows, iOS, or Android.</li>
+              <li>Confirm both lines are still in <code>/etc/hosts</code>.</li>
+              <li>Run the DNS command again.</li>
+              <li>Fully close and reopen Growtopia.</li>
             </ul>
           </div>
         </aside>
