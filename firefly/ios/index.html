@@ -1,96 +1,83 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iOS Setup | Firefly Private Server</title>
+  <title>iOS Setup | Firefly GTPS</title>
   <link rel="icon" href="../../assets/logo.jpeg">
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="../../instructions.css">
 </head>
 <body class="platform-page" data-platform="ios">
-  <div class="site-bg" aria-hidden="true">
-    <div class="bg-aurora bg-aurora-a"></div>
-    <div class="bg-aurora bg-aurora-b"></div>
-    <div class="bg-halo bg-halo-a"></div>
-    <div class="bg-mesh"></div>
-    <span class="bg-particle bg-particle-1"></span>
-    <span class="bg-particle bg-particle-4"></span>
-    <span class="bg-particle bg-particle-6"></span>
-  </div>
+  <div class="site-bg" aria-hidden="true"><div class="bg-mesh"></div></div>
 
   <nav class="navbar">
     <a href="../../index.html#home" class="nav-logo" aria-label="Firefly homepage">
       <img src="../../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
       <span class="nav-logo-copy">
         <strong class="nav-logo-text">Firefly</strong>
-        <span class="nav-logo-sub">Private Server</span>
+        <span class="nav-logo-sub">GTPS</span>
       </span>
     </a>
     <div class="nav-links">
       <a href="../../index.html#home">Home</a>
-      <a href="../../index.html#play">Setup</a>
+      <a href="../../index.html#play">Join</a>
       <a href="../../index.html#features">Features</a>
       <a href="../../index.html#faq">FAQ</a>
-      <a href="../../index.html#community">Community</a>
     </div>
-    <a href="../../index.html#play" class="nav-cta">Back to Setup</a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a href="../../index.html#play" class="nav-cta">Other Devices</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
   </nav>
 
   <div id="swup" class="transition-fade">
     <main class="guide-page">
       <section class="guide-hero">
-        <a href="../../index.html#play" class="back-link">← Back to setup overview</a>
+        <a href="../../index.html#play" class="back-link">Back to Join Now</a>
         <div class="guide-hero-grid">
           <div class="guide-hero-copy reveal">
-            <span class="eyebrow">iOS Guide</span>
-            <h1>On iOS, Firefly is easiest through one clean Surge profile.</h1>
-            <p>iOS does not expose the same host-editing flow as Android or desktop, so the most reliable route is a small Surge profile that maps both Growtopia domains to the Firefly IP.</p>
+            <span class="eyebrow">iOS</span>
+            <h1>Join Firefly on iOS.</h1>
+            <p>iOS needs a routing profile. The cleanest method here is Surge: create one Firefly profile, paste the Host block, turn it on, then open Growtopia.</p>
             <div class="guide-badges">
-              <span class="guide-pill">Recommended app: Surge</span>
-              <span class="guide-pill">Uses local VPN profile</span>
-              <span class="guide-pill">Fast switch back to official</span>
+              <span class="guide-pill">Recommended: Surge</span>
+              <span class="guide-pill">Local VPN profile</span>
+              <span class="guide-pill">Easy to turn off</span>
             </div>
           </div>
 
           <aside class="guide-summary reveal d1">
-            <h2 class="platform-page-title">Before you start</h2>
+            <h2 class="platform-page-title">You need</h2>
             <ul class="guide-checklist">
-              <li>Install Surge from the App Store before starting the setup.</li>
-              <li>iOS will ask for VPN configuration permission the first time you enable the profile.</li>
-              <li>Disable the profile later if you want Growtopia to resolve back to the official server.</li>
+              <li>Surge installed from the App Store.</li>
+              <li>Permission to add a VPN configuration.</li>
+              <li>The Firefly Host block below.</li>
             </ul>
           </aside>
         </div>
       </section>
 
       <nav class="platform-switcher reveal" aria-label="Platform switcher">
-        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">🤖</span>Android</a>
-        <a href="../ios/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">📱</span>iOS</a>
-        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">🍎</span>macOS</a>
-        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">🪟</span>Windows</a>
+        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">Win</span>Windows</a>
+        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">Mac</span>macOS</a>
+        <a href="../android/index.html" class="platform-pill"><span class="platform-pill-icon">And</span>Android</a>
+        <a href="../ios/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">iOS</span>iOS</a>
       </nav>
 
       <section class="guide-flow reveal">
         <article class="flow-card">
           <span class="flow-index">01</span>
-          <h3>Install Surge once</h3>
-          <p>Surge is the routing layer. You only need to install it and create one profile for Firefly.</p>
+          <h3>Install Surge</h3>
+          <p>Use it as the routing profile for Growtopia.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">02</span>
-          <h3>Paste the Firefly block</h3>
-          <p>Add the two Growtopia domains under the Host section so both domains resolve to the Firefly IP.</p>
+          <h3>Add Host block</h3>
+          <p>Paste both Growtopia domains into one profile.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">03</span>
-          <h3>Enable the profile and play</h3>
-          <p>Once the profile is active, launch Growtopia normally. Disable it later when you want to revert.</p>
+          <h3>Enable and play</h3>
+          <p>Turn on the profile, accept the prompt, and launch Growtopia.</p>
         </article>
       </section>
 
@@ -98,21 +85,20 @@
         <div class="guide-main reveal">
           <div class="tab-panel">
             <div class="tab-panel-head">
-              <h2>Surge profile setup</h2>
-              <p>Surge keeps the iOS setup small and readable: make one profile, paste one host block, enable it, then open Growtopia.</p>
+              <h2>Surge method</h2>
+              <p>Keep the two Host lines together. That is the important part.</p>
             </div>
             <div class="instructions-content">
               <div class="step">
                 <h3>Install Surge</h3>
-                <p>Download Surge from the App Store. If you already use another iOS routing tool, the same Firefly host mapping can usually be adapted there too.</p>
+                <p>Open the App Store, install Surge, then open it.</p>
               </div>
               <div class="step">
-                <h3>Create a Firefly profile</h3>
-                <p>Create a new profile and name it something clear, such as <strong>Firefly Server</strong>, so it is easy to enable and disable later.</p>
+                <h3>Create a new profile</h3>
+                <p>Name it Firefly so you can find it later.</p>
               </div>
               <div class="step">
-                <h3>Paste the host mapping into the profile</h3>
-                <p>Add the block below under the Host section so both Growtopia domains resolve to the Firefly IP instead of the official server.</p>
+                <h3>Paste this Host block</h3>
                 <div class="copy-block">
                   <code>[Host]
 www.growtopia1.com = 103.150.227.49
@@ -121,17 +107,21 @@ www.growtopia2.com = 103.150.227.49</code>
                 </div>
               </div>
               <div class="step">
-                <h3>Enable the profile and launch Growtopia</h3>
-                <p>Turn the profile on, accept the VPN configuration prompt if iOS asks, and then open Growtopia. If the block was entered correctly, the game should resolve to Firefly.</p>
+                <h3>Enable the profile</h3>
+                <p>Allow the VPN configuration prompt if iOS asks.</p>
+              </div>
+              <div class="step">
+                <h3>Open Growtopia</h3>
+                <p>Launch the game normally and connect.</p>
               </div>
             </div>
-            <div class="note"><strong>Note:</strong> Surge is a paid tool, but it remains the cleanest iOS recommendation here because the setup is simple and easy to reverse when needed.</div>
+            <div class="note"><strong>Switch back:</strong> turn off the Surge profile, then restart Growtopia.</div>
           </div>
         </div>
 
         <aside class="guide-side reveal d1">
           <div class="side-card">
-            <h3>Copy block</h3>
+            <h3>Host block</h3>
             <div class="copy-block side-copy">
               <code>[Host]
 www.growtopia1.com = 103.150.227.49
@@ -140,11 +130,11 @@ www.growtopia2.com = 103.150.227.49</code>
             </div>
           </div>
           <div class="side-card">
-            <h3>What matters on iOS</h3>
+            <h3>If it does not work</h3>
             <ul class="side-list">
-              <li>Do not split the two domain lines. Both need to stay in the same profile.</li>
-              <li>Stop the Surge profile whenever you want the official Growtopia route back.</li>
-              <li>If Growtopia still resolves incorrectly, disable and re-enable the profile before trying again.</li>
+              <li>Check that both Host lines are in the same profile.</li>
+              <li>Turn the profile off and on again.</li>
+              <li>Fully close and reopen Growtopia.</li>
             </ul>
           </div>
         </aside>

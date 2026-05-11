@@ -1,108 +1,92 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Android Setup | Firefly Private Server</title>
+  <title>Android Setup | Firefly GTPS</title>
   <link rel="icon" href="../../assets/logo.jpeg">
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="../../instructions.css">
 </head>
 <body class="platform-page" data-platform="android">
-  <div class="site-bg" aria-hidden="true">
-    <div class="bg-aurora bg-aurora-a"></div>
-    <div class="bg-aurora bg-aurora-b"></div>
-    <div class="bg-aurora bg-aurora-c"></div>
-    <div class="bg-halo bg-halo-a"></div>
-    <div class="bg-halo bg-halo-b"></div>
-    <div class="bg-mesh"></div>
-    <span class="bg-particle bg-particle-1"></span>
-    <span class="bg-particle bg-particle-2"></span>
-    <span class="bg-particle bg-particle-3"></span>
-    <span class="bg-particle bg-particle-4"></span>
-  </div>
+  <div class="site-bg" aria-hidden="true"><div class="bg-mesh"></div></div>
 
   <nav class="navbar">
     <a href="../../index.html#home" class="nav-logo" aria-label="Firefly homepage">
       <img src="../../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
       <span class="nav-logo-copy">
         <strong class="nav-logo-text">Firefly</strong>
-        <span class="nav-logo-sub">Private Server</span>
+        <span class="nav-logo-sub">GTPS</span>
       </span>
     </a>
     <div class="nav-links">
       <a href="../../index.html#home">Home</a>
-      <a href="../../index.html#play">Setup</a>
+      <a href="../../index.html#play">Join</a>
       <a href="../../index.html#features">Features</a>
       <a href="../../index.html#faq">FAQ</a>
-      <a href="../../index.html#community">Community</a>
     </div>
-    <a href="../../index.html#play" class="nav-cta">Back to Setup</a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a href="../../index.html#play" class="nav-cta">Other Devices</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
   </nav>
 
   <div id="swup" class="transition-fade">
     <main class="guide-page">
       <section class="guide-hero">
-        <a href="../../index.html#play" class="back-link">← Back to setup overview</a>
+        <a href="../../index.html#play" class="back-link">Back to Join Now</a>
         <div class="guide-hero-grid">
           <div class="guide-hero-copy reveal">
-            <span class="eyebrow">Android Guide</span>
-            <h1>Android gives you three workable routes into Firefly.</h1>
-            <p>You can join through Virtual Hosts, through PowerTunnel, or through the direct Firefly APK. The APK route is the quickest, while Virtual Hosts and PowerTunnel let you keep the normal Growtopia app.</p>
+            <span class="eyebrow">Android</span>
+            <h1>Join Firefly on Android.</h1>
+            <p>Use Firefly APK if you want the fastest setup. Use Virtual Hosts or PowerTunnel if you want to keep the normal Growtopia app.</p>
             <div class="guide-badges">
-              <span class="guide-pill">Fastest route: Firefly APK</span>
+              <span class="guide-pill">Fastest: Firefly APK</span>
               <span class="guide-pill">No root required</span>
-              <span class="guide-pill">Virtual Hosts and PowerTunnel supported</span>
+              <span class="guide-pill">Three methods</span>
             </div>
           </div>
 
           <aside class="guide-summary reveal d1">
-            <h2 class="platform-page-title">Before you start</h2>
+            <h2 class="platform-page-title">Pick this</h2>
             <ul class="guide-checklist">
-              <li>Use Firefly APK if you want the quickest route and do not want to configure a routing app.</li>
-              <li>Use Virtual Hosts or PowerTunnel if you want to stay on the regular Growtopia app.</li>
-              <li>Firefly.txt is the hosts file used by Virtual Hosts, while PowerTunnel uses the Firefly hosts URL directly.</li>
+              <li>APK: easiest and fastest.</li>
+              <li>Virtual Hosts: regular Growtopia app plus a hosts file.</li>
+              <li>PowerTunnel: regular app plus a hosts URL.</li>
             </ul>
           </aside>
         </div>
       </section>
 
       <nav class="platform-switcher reveal" aria-label="Platform switcher">
-        <a href="../android/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">🤖</span>Android</a>
-        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">📱</span>iOS</a>
-        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">🍎</span>macOS</a>
-        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">🪟</span>Windows</a>
+        <a href="../windows/index.html" class="platform-pill"><span class="platform-pill-icon">Win</span>Windows</a>
+        <a href="../macos/index.html" class="platform-pill"><span class="platform-pill-icon">Mac</span>macOS</a>
+        <a href="../android/index.html" class="platform-pill is-active" aria-current="page"><span class="platform-pill-icon">And</span>Android</a>
+        <a href="../ios/index.html" class="platform-pill"><span class="platform-pill-icon">iOS</span>iOS</a>
       </nav>
 
       <section class="guide-flow reveal">
         <article class="flow-card">
           <span class="flow-index">01</span>
-          <h3>Pick the route that matches your phone</h3>
-          <p>Use Firefly APK for the fastest setup, or choose Virtual Hosts or PowerTunnel if you want to stay on the normal app.</p>
+          <h3>Choose a method</h3>
+          <p>Start with APK unless you specifically want a routing app.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">02</span>
-          <h3>Apply the correct Firefly source</h3>
-          <p>Virtual Hosts uses the downloaded firefly.txt file, while PowerTunnel uses the Firefly hosts URL and updates it on start.</p>
+          <h3>Enable the route</h3>
+          <p>Install the APK, select firefly.txt, or add the hosts URL.</p>
         </article>
         <article class="flow-card">
           <span class="flow-index">03</span>
-          <h3>Start the route and open the game</h3>
-          <p>Once the routing app or package is active, launch Growtopia normally and it should resolve to Firefly.</p>
+          <h3>Open Growtopia</h3>
+          <p>Once active, launch the game and connect.</p>
         </article>
       </section>
 
       <section class="guide-layout">
         <div class="guide-main reveal">
           <div class="method-tabs-wrap">
-            <span class="method-tabs-label">Switch method</span>
+            <span class="method-tabs-label">Choose method</span>
             <div class="method-tabs" role="tablist" aria-label="Android setup methods">
-              <button class="tab-btn active" type="button" data-tab="tab-apk">Recommended APK</button>
+              <button class="tab-btn active" type="button" data-tab="tab-apk">Firefly APK</button>
               <button class="tab-btn" type="button" data-tab="tab-vhosts">Virtual Hosts</button>
               <button class="tab-btn" type="button" data-tab="tab-powertunnel">PowerTunnel</button>
             </div>
@@ -111,101 +95,90 @@
           <div id="tab-apk" class="tab-content active">
             <div class="tab-panel">
               <div class="tab-panel-head">
-                <h2>Recommended: direct Firefly.apk</h2>
-                <p>This is the fastest Android route. Download Firefly APK, open it, press start, and it will launch Growtopia already pointed at Firefly Private Server.</p>
+                <h2>Fastest method: Firefly APK</h2>
+                <p>Use this if you just want to get in.</p>
               </div>
               <div class="instructions-content">
                 <div class="step">
-                  <h3>Download Firefly.apk</h3>
-                  <p>Download Firefly APK here. This is the direct package route and does not require Virtual Hosts or PowerTunnel.</p>
+                  <h3>Download Firefly APK</h3>
                   <div class="guide-actions">
-                    <a href="https://hotaru.id/download/Firefly.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download Firefly.apk</a>
+                    <a href="https://hotaru.id/download/Firefly.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download Firefly APK</a>
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Install and open the APK</h3>
-                  <p>Install the downloaded APK. If Android asks, allow installs from your browser or file manager first, then open Firefly APK.</p>
+                  <h3>Install it</h3>
+                  <p>If Android blocks the install, allow installs from your browser or file manager.</p>
                 </div>
                 <div class="step">
-                  <h3>Click start</h3>
-                  <p>Press <strong>Start</strong> inside the Firefly APK. It will automatically open Growtopia and automatically connect to Firefly Private Server.</p>
+                  <h3>Press Start</h3>
+                  <p>Open Firefly APK, press Start, then let it open Growtopia.</p>
                 </div>
               </div>
-              <div class="note"><strong>Note:</strong> PowerTunnel and Virtual Hosts are not required for this method.</div>
+              <div class="note"><strong>Best for:</strong> players who want the simplest Android route.</div>
             </div>
           </div>
 
           <div id="tab-vhosts" class="tab-content">
             <div class="tab-panel">
               <div class="tab-panel-head">
-                <h2>Virtual Hosts route</h2>
-                <p>Use this route if you want to keep the regular Growtopia app and load Firefly through the downloaded hosts file.</p>
+                <h2>Virtual Hosts method</h2>
+                <p>Use this if you want the regular Growtopia app to route through a local hosts file.</p>
               </div>
               <div class="instructions-content">
                 <div class="step">
-                  <h3>Download and install Virtual Hosts</h3>
-                  <p>Download the Virtual Hosts app from the Firefly link below, then install it on your phone.</p>
+                  <h3>Download Virtual Hosts</h3>
                   <div class="guide-actions">
                     <a href="https://hotaru.id/download/virtual_host.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download Virtual Hosts</a>
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Download the hosts file</h3>
-                  <p>Download the prepared Firefly hosts file, then keep it in the folder where your browser saves downloads.</p>
-                  <div class="copy-block">
-                    <code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code>
-                    <button class="copy-btn" type="button">Copy</button>
-                  </div>
+                  <h3>Download firefly.txt</h3>
+                  <p>Keep it in Downloads so it is easy to find.</p>
                   <div class="guide-actions">
-                    <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
+                    <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download firefly.txt</a>
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Load firefly.txt in Virtual Hosts</h3>
-                  <p>Open Virtual Hosts, press <strong>Select/Reselect hosts file</strong>, then choose the downloaded firefly.txt file from your Downloads folder.</p>
+                  <h3>Select the hosts file</h3>
+                  <p>Open Virtual Hosts, tap Select hosts file, then choose firefly.txt.</p>
                 </div>
                 <div class="step">
-                  <h3>Enable it and connect</h3>
-                  <p>Click the big white checkbox until it turns green, then open Growtopia and connect.</p>
+                  <h3>Turn it on</h3>
+                  <p>Enable Virtual Hosts, then open Growtopia.</p>
                 </div>
               </div>
-              <div class="note"><strong>Note:</strong> Turn Virtual Hosts off again whenever you want to connect back to the official server flow.</div>
             </div>
           </div>
 
           <div id="tab-powertunnel" class="tab-content">
             <div class="tab-panel">
               <div class="tab-panel-head">
-                <h2>PowerTunnel route</h2>
-                <p>PowerTunnel uses the Firefly hosts URL directly, so you do not need to import firefly.txt into it.</p>
+                <h2>PowerTunnel method</h2>
+                <p>Use this if you prefer a hosts URL instead of selecting a downloaded file.</p>
               </div>
               <div class="instructions-content">
                 <div class="step">
-                  <h3>Download and install PowerTunnel</h3>
-                  <p>Download the PowerTunnel app, then install it on your phone.</p>
+                  <h3>Download PowerTunnel setup</h3>
                   <div class="guide-actions">
-                    <a href="https://hotaru.id/download/firefly" class="download-btn" target="_blank" rel="noopener noreferrer">Download PowerTunnel setup</a>
+                    <a href="https://hotaru.id/download/firefly" class="download-btn" target="_blank" rel="noopener noreferrer">Open PowerTunnel setup</a>
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Add the Firefly hosts file URL</h3>
-                  <p>In PowerTunnel, set the Hosts File URL to the exact address below.</p>
+                  <h3>Add the hosts URL</h3>
                   <div class="copy-block">
                     <code>https://hotaru.id/download/firefly/</code>
                     <button class="copy-btn" type="button">Copy</button>
                   </div>
                 </div>
                 <div class="step">
-                  <h3>Change the update period</h3>
-                  <p>Make sure the Hosts file update period is set to <strong>On start</strong>.</p>
+                  <h3>Set update to On start</h3>
+                  <p>This makes PowerTunnel refresh the Firefly route when it opens.</p>
                 </div>
                 <div class="step">
-                  <h3>Connect and open Growtopia</h3>
-                  <p>Go back to the main menu, click <strong>Connect</strong>, wait for PowerTunnel to connect, then open Growtopia and log in.</p>
+                  <h3>Connect and play</h3>
+                  <p>Tap Connect, wait until it is active, then launch Growtopia.</p>
                 </div>
               </div>
-              <div class="note"><strong>Note:</strong> Stop PowerTunnel whenever you want to move back to the official Growtopia server.</div>
             </div>
           </div>
         </div>
@@ -214,15 +187,14 @@
           <div class="side-card">
             <h3>Quick actions</h3>
             <div class="guide-actions">
-              <a href="https://hotaru.id/download/Firefly.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download Firefly.apk</a>
-              <a href="https://hotaru.id/download/virtual_host.apk" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download Virtual Hosts</a>
-              <a href="../../download/firefly.txt" class="download-btn" download="firefly-hosts.txt">Download hosts file</a>
-              <a href="https://hotaru.id/download/firefly" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open PowerTunnel link</a>
+              <a href="https://hotaru.id/download/Firefly.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download APK</a>
+              <a href="https://hotaru.id/download/virtual_host.apk" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Virtual Hosts</a>
+              <a href="../../download/firefly.txt" class="btn btn-secondary" download="firefly-hosts.txt">firefly.txt</a>
+              <a href="https://hotaru.id/download/firefly" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">PowerTunnel</a>
             </div>
           </div>
           <div class="side-card">
-            <h3>Need these mappings?</h3>
-            <p class="mini-card-title">Firefly host block</p>
+            <h3>Host lines</h3>
             <div class="copy-block side-copy">
               <code>103.150.227.49 www.growtopia1.com
 103.150.227.49 www.growtopia2.com</code>
@@ -230,11 +202,11 @@
             </div>
           </div>
           <div class="side-card">
-            <h3>Which route should you use?</h3>
+            <h3>Switch back</h3>
             <ul class="side-list">
-              <li>Use Firefly APK if you want the fastest route with no routing app required.</li>
-              <li>Use Virtual Hosts if you want to load firefly.txt directly from your Downloads folder.</li>
-              <li>Use PowerTunnel if you want it to fetch the Firefly hosts URL automatically on start.</li>
+              <li>APK: open normal Growtopia instead.</li>
+              <li>Virtual Hosts: turn the switch off.</li>
+              <li>PowerTunnel: disconnect it.</li>
             </ul>
           </div>
         </aside>

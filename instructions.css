@@ -17,7 +17,7 @@
   align-items: center;
   gap: 0.55rem;
   padding: 0.72rem 1rem;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
   color: var(--muted-strong);
@@ -53,7 +53,7 @@
 
 .guide-hero-copy h1 {
   margin: 0.95rem 0 0.85rem;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: 4rem;
   line-height: 0.98;
   max-width: 11ch;
 }
@@ -75,9 +75,9 @@
   display: inline-flex;
   align-items: center;
   padding: 0.55rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(134, 255, 210, 0.16);
-  background: rgba(134, 255, 210, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(214, 185, 112, 0.18);
+  background: rgba(214, 185, 112, 0.08);
   color: var(--muted-strong);
   font-size: 0.88rem;
 }
@@ -104,11 +104,7 @@
 .tab-panel::before,
 .instructions-content .step::before,
 .note::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(125deg, rgba(255, 255, 255, 0.06), transparent 30%, transparent 64%, rgba(134, 255, 210, 0.045));
+  display: none;
 }
 
 .platform-page-title,
@@ -151,7 +147,7 @@
   height: 0.45rem;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 18px rgba(134, 255, 210, 0.45);
+  box-shadow: none;
 }
 
 .guide-layout {
@@ -181,11 +177,7 @@
 }
 
 .flow-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(125deg, rgba(255, 255, 255, 0.06), transparent 30%, transparent 64%, rgba(134, 255, 210, 0.045));
+  display: none;
 }
 
 .flow-index {
@@ -194,9 +186,9 @@
   justify-content: center;
   width: 2.2rem;
   height: 2.2rem;
-  border-radius: 14px;
-  border: 1px solid rgba(134, 255, 210, 0.18);
-  background: rgba(134, 255, 210, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(214, 185, 112, 0.18);
+  background: rgba(214, 185, 112, 0.1);
   color: var(--accent);
   font-size: 0.82rem;
   font-weight: 800;
@@ -231,7 +223,7 @@
   gap: 0.75rem;
   padding: 1rem;
   margin-top: 1.2rem;
-  border-radius: 26px;
+  border-radius: 8px;
   border: 1px solid var(--line);
   background: rgba(7, 15, 15, 0.72);
   backdrop-filter: blur(20px);
@@ -244,7 +236,7 @@
   align-items: center;
   gap: 0.55rem;
   padding: 0.78rem 1rem;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(255, 255, 255, 0.03);
   color: var(--muted-strong);
@@ -258,10 +250,10 @@
 
 .platform-pill.is-active,
 .platform-pill[aria-current='page'] {
-  background: linear-gradient(135deg, rgba(184, 255, 232, 0.16), rgba(80, 255, 197, 0.14));
-  border-color: rgba(134, 255, 210, 0.32);
+  background: linear-gradient(135deg, rgba(214, 185, 112, 0.16), rgba(214, 185, 112, 0.1));
+  border-color: rgba(214, 185, 112, 0.32);
   color: var(--text);
-  box-shadow: 0 14px 40px rgba(45, 220, 162, 0.14);
+  box-shadow: none;
 }
 
 .platform-pill-icon {
@@ -269,7 +261,7 @@
   height: 1.9rem;
   display: inline-grid;
   place-items: center;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -292,7 +284,7 @@
 
 .tab-btn {
   padding: 0.82rem 1rem;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   color: var(--muted-strong);
@@ -308,8 +300,8 @@
 .tab-btn.active {
   color: #04110d;
   border-color: transparent;
-  background: linear-gradient(135deg, #b8ffe8, #63ffca 54%, #30d8a9);
-  box-shadow: 0 12px 32px rgba(45, 220, 162, 0.22);
+  background: linear-gradient(135deg, #f4e4a6, #d6b970);
+  box-shadow: 0 12px 28px rgba(214, 185, 112, 0.14);
 }
 
 .tab-content {
@@ -366,9 +358,9 @@
   height: 2.35rem;
   display: grid;
   place-items: center;
-  border-radius: 16px;
-  border: 1px solid rgba(134, 255, 210, 0.18);
-  background: rgba(134, 255, 210, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(214, 185, 112, 0.18);
+  background: rgba(214, 185, 112, 0.1);
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 800;
@@ -402,7 +394,7 @@
   gap: 1rem;
   margin-top: 0.9rem;
   padding: 1rem 1rem 1rem 1.05rem;
-  border-radius: 22px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(3, 9, 9, 0.72);
 }
@@ -420,9 +412,9 @@
 .copy-btn {
   flex-shrink: 0;
   padding: 0.68rem 0.95rem;
-  border-radius: 14px;
-  border: 1px solid rgba(134, 255, 210, 0.18);
-  background: rgba(134, 255, 210, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(214, 185, 112, 0.18);
+  background: rgba(214, 185, 112, 0.08);
   color: var(--text);
   cursor: pointer;
   transition: transform var(--transition), background var(--transition), border-color var(--transition);
@@ -430,13 +422,13 @@
 
 .copy-btn:hover {
   transform: translateY(-1px);
-  border-color: rgba(134, 255, 210, 0.28);
-  background: rgba(134, 255, 210, 0.14);
+  border-color: rgba(214, 185, 112, 0.28);
+  background: rgba(214, 185, 112, 0.14);
 }
 
 .copy-btn.is-copied {
   color: #03110c;
-  background: linear-gradient(135deg, #b8ffe8, #63ffca 54%, #30d8a9);
+  background: linear-gradient(135deg, #f4e4a6, #d6b970);
   border-color: transparent;
 }
 
@@ -477,6 +469,7 @@
 
   .guide-hero-copy h1 {
     max-width: none;
+    font-size: 2.55rem;
   }
 
   .copy-block {

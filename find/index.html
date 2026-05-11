@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firefly Item Database</title>
+    <title>Firefly Item Finder</title>
+    <link rel="icon" href="../assets/logo.jpeg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,30 +13,23 @@
 </head>
 <body>
 
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-    <div class="firefly"></div>
-
     <header class="site-header">
-        <a href="../" class="back-link">&larr; Back to Main Site</a>
+        <a href="../" class="brand-link">
+            <img src="../assets/logo.jpeg" alt="Firefly logo">
+            <span>Firefly</span>
+        </a>
+        <a href="../" class="back-link">Back to main site</a>
     </header>
 
     <main class="container">
         <div class="title-section">
             <h1>Firefly Item Finder</h1>
-            <p>A lightweight, client-side database for all in-game items.</p>
+            <p>Search Firefly item data by name.</p>
         </div>
 
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
-            <input type="search" id="searchInput" placeholder="Search for an item (e.g., Angel Wings)...">
+            <input type="search" id="searchInput" placeholder="Search item name...">
         </div>
 
         <div id="resultsContainer" class="results-grid">
