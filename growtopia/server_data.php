@@ -1,4 +1,4 @@
-server|os.hotaru.id
+server|os.ffps.fun
 port|33333
 type|1
 type2|1
