@@ -4,10 +4,10 @@ setlocal EnableDelayedExpansion
 title Firefly Private Server Connector
 color 0F
 
-:: Check for administrative privileges and request them if missing
+:: Elevate if not admin
 >nul 2>&1 "%SystemRoot%\system32\cacls.exe" "%SystemRoot%\system32\config\system"
 if %errorlevel% NEQ 0 (
-    echo Requesting administrative privileges / Meminta hak akses administrator...
+    echo Requesting admin access...
     powershell -Command "Start-Process '%~f0' -Verb runAs"
     exit /b
 )
@@ -15,76 +15,106 @@ if %errorlevel% NEQ 0 (
 :lang_select
 cls
 echo =====================================================
-echo           FIREFLY PRIVATE SERVER CONNECTOR
+echo         FIREFLY PRIVATE SERVER CONNECTOR
 echo =====================================================
-echo Select your language / Pilih bahasa Anda:
-echo.
-echo [1] English
-echo [2] Bahasa Indonesia
+echo  [1] English
+echo  [2] Bahasa Indonesia
 echo =====================================================
-echo.
-set /p LANG_CHOICE="Choice / Pilihan (1/2): "
-
-if "%LANG_CHOICE%"=="1" goto en_menu
-if "%LANG_CHOICE%"=="2" goto id_menu
+set /p LANG_CHOICE="Choice (1/2): "
+if "%LANG_CHOICE%"=="1" goto en_main
+if "%LANG_CHOICE%"=="2" goto id_main
 goto lang_select
 
-:en_menu
-echo 103.150.227.49 www.growtopia1.com> "%TEMP%\ff_clip.txt"
-echo 103.150.227.49 www.growtopia2.com>> "%TEMP%\ff_clip.txt"
-clip < "%TEMP%\ff_clip.txt"
-del "%TEMP%\ff_clip.txt"
-
+:: ============ ENGLISH ============
+:en_main
 cls
 echo =====================================================
-echo           FIREFLY PRIVATE SERVER CONNECTOR
+echo         FIREFLY PRIVATE SERVER CONNECTOR
 echo =====================================================
 echo.
-echo [SUCCESS] The connection IPs have been COPIED to your clipboard!
+echo  This will add Firefly to your hosts file and
+echo  flush DNS automatically. Nothing to edit manually.
 echo.
-echo STEP 1: Press any key to open the network configuration.
-echo STEP 2: Scroll to the VERY BOTTOM of the document.
-echo STEP 3: Press Ctrl + V to paste the copied lines.
-echo STEP 4: Save the file (Ctrl + S) and close Notepad.
-echo =====================================================
-echo.
+echo  Press any key to apply...
+pause >nul
+
+:: Check if already applied
+findstr /i "103.150.227.49" "C:\Windows\System32\drivers\etc\hosts" | findstr /i "growtopia1.com" >nul 2>&1
+if %errorlevel% EQU 0 (
+    cls
+    echo =====================================================
+    echo  [OK] Firefly is already in your hosts file.
+    echo  Nothing to do. Launch Growtopia and play!
+    echo =====================================================
+    ipconfig /flushdns >nul
+    pause
+    exit
+)
+
+:: Add lines via PowerShell
+powershell -NoProfile -Command "Add-Content -Path 'C:\Windows\System32\drivers\etc\hosts' -Value ([System.Environment]::NewLine + '103.150.227.49 www.growtopia1.com' + [System.Environment]::NewLine + '103.150.227.49 www.growtopia2.com') -Encoding ASCII"
+
+if %errorlevel% EQU 0 (
+    cls
+    echo =====================================================
+    echo  [DONE] Firefly applied successfully!
+    echo.
+    ipconfig /flushdns >nul
+    echo  DNS refreshed. You can open Growtopia now.
+    echo =====================================================
+) else (
+    cls
+    echo =====================================================
+    echo  [ERROR] Something went wrong.
+    echo  Make sure you ran this as Administrator.
+    echo =====================================================
+)
 pause
-goto open_hosts
+exit
 
-:id_menu
-echo 103.150.227.49 www.growtopia1.com> "%TEMP%\ff_clip.txt"
-echo 103.150.227.49 www.growtopia2.com>> "%TEMP%\ff_clip.txt"
-clip < "%TEMP%\ff_clip.txt"
-del "%TEMP%\ff_clip.txt"
-
+:: ============ BAHASA INDONESIA ============
+:id_main
 cls
 echo =====================================================
-echo           FIREFLY PRIVATE SERVER CONNECTOR
+echo         FIREFLY PRIVATE SERVER CONNECTOR
 echo =====================================================
 echo.
-echo [BERHASIL] IP Koneksi telah DISALIN ke clipboard Anda!
+echo  Ini akan menambahkan Firefly ke hosts file
+echo  dan flush DNS secara otomatis. Tidak perlu edit manual.
 echo.
-echo LANGKAH 1: Tekan tombol apa saja untuk membuka konfigurasi jaringan.
-echo LANGKAH 2: Scroll ke bagian PALING BAWAH pada dokumen tersebut.
-echo LANGKAH 3: Tekan Ctrl + V untuk menempelkan baris yang sudah disalin.
-echo LANGKAH 4: Simpan file (Ctrl + S) dan tutup Notepad.
-echo =====================================================
-echo.
-pause
-goto open_hosts
+echo  Tekan tombol apa saja untuk melanjutkan...
+pause >nul
 
-:open_hosts
-start /wait notepad C:\Windows\System32\drivers\etc\hosts
+:: Cek apakah sudah ada
+findstr /i "103.150.227.49" "C:\Windows\System32\drivers\etc\hosts" | findstr /i "growtopia1.com" >nul 2>&1
+if %errorlevel% EQU 0 (
+    cls
+    echo =====================================================
+    echo  [OK] Firefly sudah ada di hosts file kamu.
+    echo  Tidak perlu melakukan apa-apa. Buka Growtopia!
+    echo =====================================================
+    ipconfig /flushdns >nul
+    pause
+    exit
+)
 
-cls
-echo =====================================================
-if "%LANG_CHOICE%"=="1" echo Applying changes and flushing DNS cache...
-if "%LANG_CHOICE%"=="2" echo Menerapkan perubahan dan membersihkan cache DNS...
-echo =====================================================
-ipconfig /flushdns >nul
-echo.
-if "%LANG_CHOICE%"=="1" echo Configuration complete. You may now launch the game.
-if "%LANG_CHOICE%"=="2" echo Konfigurasi selesai. Anda sekarang dapat menjalankan game.
-echo =====================================================
+:: Tambah baris via PowerShell
+powershell -NoProfile -Command "Add-Content -Path 'C:\Windows\System32\drivers\etc\hosts' -Value ([System.Environment]::NewLine + '103.150.227.49 www.growtopia1.com' + [System.Environment]::NewLine + '103.150.227.49 www.growtopia2.com') -Encoding ASCII"
+
+if %errorlevel% EQU 0 (
+    cls
+    echo =====================================================
+    echo  [SELESAI] Firefly berhasil diterapkan!
+    echo.
+    ipconfig /flushdns >nul
+    echo  DNS sudah diperbarui. Buka Growtopia sekarang.
+    echo =====================================================
+) else (
+    cls
+    echo =====================================================
+    echo  [ERROR] Ada yang salah.
+    echo  Pastikan kamu menjalankan file ini sebagai Administrator.
+    echo =====================================================
+)
 pause
 exit

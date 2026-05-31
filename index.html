@@ -1,426 +1,601 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firefly Private Server | GTPS</title>
-  <meta name="description" content="Firefly is a Growtopia private server by Hotaru Interactive with banners, pity, custom items, events, dungeons, fishing, and clear setup guides for every platform.">
-  <link rel="icon" href="assets/logo.jpeg">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="home-page">
-  <div class="site-bg" aria-hidden="true">
-    <div class="bg-mesh"></div>
-  </div>
-
-  <nav class="navbar">
-    <a href="#home" class="nav-logo" aria-label="Firefly homepage">
-      <img src="assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
-      <span class="nav-logo-copy">
-        <strong class="nav-logo-text">Firefly</strong>
-        <span class="nav-logo-sub">GTPS</span>
-      </span>
-    </a>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#play">Join</a>
-      <a href="#features">Features</a>
-      <a href="#benefits">Ranks</a>
-      <a href="#faq">FAQ</a>
-      <a href="#community">Links</a>
-    </div>
-    <a href="#play" class="nav-cta">Join Now</a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-
-  <div id="swup" class="transition-fade">
-    <main>
-      <section class="hero section-shell" id="home">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Firefly Private Server</span>
-          <h1>Firefly</h1>
-          <p class="hero-lead">A Growtopia private server by Hotaru Interactive. Released on 19 February 2024, Firefly is built around banners, pity, custom items, events, dungeons, fishing, and reward routes that keep the server moving.</p>
-          <div class="hero-actions">
-            <a href="#play" class="btn btn-primary">Join Now</a>
-            <a href="find/index.html" class="btn btn-secondary">Open Item Finder</a>
-          </div>
-          <ul class="hero-meta">
-            <li>
-              <span>Released</span>
-              <strong>19 February 2024</strong>
-            </li>
-            <li>
-              <span>Team</span>
-              <strong>Hotaru Interactive</strong>
-            </li>
-            <li>
-              <span>Style</span>
-              <strong>Banner-focused GTPS</strong>
-            </li>
-          </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Firefly Private Server | GTPS</title>
+        <meta
+            name="description"
+            content="Firefly is a Growtopia private server by Hotaru Interactive with banners, pity, custom items, events, dungeons, fishing, and clear setup guides for every platform."
+        />
+        <link rel="icon" href="assets/logo.jpeg" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="home-page">
+        <div class="site-bg" aria-hidden="true">
+            <div class="bg-mesh"></div>
         </div>
 
-        <div class="hero-visual reveal d2">
-          <div class="hero-core">
-            <div class="hero-logo-wrap">
-              <img src="assets/logo.jpeg" alt="Firefly logo" class="hero-logo">
+        <nav class="navbar">
+            <a href="#home" class="nav-logo" aria-label="Firefly homepage">
+                <img
+                    src="assets/logo.jpeg"
+                    alt="Firefly"
+                    class="nav-logo-img"
+                />
+                <span class="nav-logo-copy">
+                    <strong class="nav-logo-text">Firefly</strong>
+                    <span class="nav-logo-sub">GTPS</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#play">Join</a>
+                <a href="#features">Features</a>
+                <a href="#benefits">Ranks</a>
+                <a href="#faq">FAQ</a>
+                <a href="#community">Links</a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="quickstart-strip section-shell reveal">
-        <div class="section-heading compact-heading">
-          <span class="eyebrow">Quick Start</span>
-          <h2>Pick your device, follow one route, then open Growtopia.</h2>
-        </div>
-        <div class="quickstart-grid">
-          <article class="quick-card glass-card">
-            <span class="quick-step">01</span>
-            <h3>Choose your device</h3>
-            <p>Windows, macOS, Android, and iOS each have their own short guide.</p>
-          </article>
-          <article class="quick-card glass-card">
-            <span class="quick-step">02</span>
-            <h3>Apply the Firefly route</h3>
-            <p>Desktop uses hosts. Android can use APK, Virtual Hosts, or PowerTunnel. iOS uses Surge.</p>
-          </article>
-          <article class="quick-card glass-card">
-            <span class="quick-step">03</span>
-            <h3>Launch the game</h3>
-            <p>When the route is active, open Growtopia and you should land on Firefly.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell" id="play">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Join Now</span>
-          <h2>Choose the guide for the device you play on.</h2>
-          <p>Each page keeps the steps short and gives you the exact line, file, or app you need.</p>
-        </div>
-
-        <div class="platform-selector">
-          <a href="firefly/windows/index.html" class="platform-card reveal d1">
-            <span class="platform-icon">Win</span>
-            <div>
-              <h3>Windows</h3>
-              <p>Use Firefly Helper, or paste the hosts lines manually.</p>
-            </div>
-            <span class="platform-tag">Easiest desktop</span>
-          </a>
-          <a href="firefly/macos/index.html" class="platform-card reveal d2">
-            <span class="platform-icon">Mac</span>
-            <div>
-              <h3>macOS</h3>
-              <p>Edit <code>/etc/hosts</code>, flush DNS, then start Growtopia.</p>
-            </div>
-            <span class="platform-tag">Desktop</span>
-          </a>
-          <a href="firefly/android/index.html" class="platform-card reveal d3">
-            <span class="platform-icon">Droid</span>
-            <div>
-              <h3>Android</h3>
-              <p>Fastest with Firefly APK. Other routing methods are included.</p>
-            </div>
-            <span class="platform-tag">Most options</span>
-          </a>
-          <a href="firefly/ios/index.html" class="platform-card reveal d1">
-            <span class="platform-icon">iOS</span>
-            <div>
-              <h3>iOS</h3>
-              <p>Use a Surge profile to route Growtopia to Firefly.</p>
-            </div>
-            <span class="platform-tag">Mobile</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="section-shell about-section" id="about">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Server Overview</span>
-          <h2>A GTPS with banners at the center.</h2>
-          <p>Firefly is not a plain copy of Growtopia. Its main pull is banner progression, pity, custom utility items, and regular content updates.</p>
-        </div>
-
-        <div class="about-layout">
-          <article class="about-story glass-card reveal">
-            <h3>What Firefly is</h3>
-            <p>Firefly is a GTPS made by Hotaru Interactive, formerly Firefly Team. It uses banner events as a core system, with pity to make long-term pulls feel less random.</p>
-            <p>Progression also comes from custom items, events, dungeons, fishing, and Offers to Odyssey, where normal activity can turn into useful rewards.</p>
-          </article>
-
-          <div class="fact-stack">
-            <article class="fact-card glass-card reveal d1">
-              <span class="fact-label">Main Loop</span>
-              <strong>Banners and pity</strong>
-              <p>Pull, save pity, chase rewards, and build around event items.</p>
-            </article>
-            <article class="fact-card glass-card reveal d2">
-              <span class="fact-label">Side Content</span>
-              <strong>Dungeons, fishing, tickets</strong>
-              <p>More ways to play than only farming or waiting for the next banner.</p>
-            </article>
-            <article class="fact-card glass-card reveal d3">
-              <span class="fact-label">Custom Items</span>
-              <strong>Not only cosmetic</strong>
-              <p>Some items help with gems, XP, or other progression value.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="features">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Features</span>
-          <h2>What players come for.</h2>
-          <p>Short version: banners, pity, useful custom items, and events that feed back into progression.</p>
-        </div>
-
-        <div class="features-grid">
-          <article class="feature-card glass-card reveal">
-            <span class="feature-icon">01</span>
-            <h3>Banner events</h3>
-            <p>Firefly treats banners as a main server system, not just a side event.</p>
-          </article>
-          <article class="feature-card glass-card reveal d1">
-            <span class="feature-icon">02</span>
-            <h3>Pity system</h3>
-            <p>Pulls have a clearer long-term path for players chasing rare rewards.</p>
-          </article>
-          <article class="feature-card glass-card reveal d2">
-            <span class="feature-icon">03</span>
-            <h3>Utility items</h3>
-            <p>Custom items can matter for gems, XP, and progression.</p>
-          </article>
-          <article class="feature-card glass-card reveal d3">
-            <span class="feature-icon">04</span>
-            <h3>Dungeons</h3>
-            <p>A more active reward route when you want something beyond farming.</p>
-          </article>
-          <article class="feature-card glass-card reveal">
-            <span class="feature-icon">05</span>
-            <h3>Fishing events</h3>
-            <p>A repeatable side activity with rewards tied into the server economy.</p>
-          </article>
-          <article class="feature-card glass-card reveal d1">
-            <span class="feature-icon">06</span>
-            <h3>Offers to Odyssey</h3>
-            <p>Tickets from activity can be turned in for rewards.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell" id="benefits">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Ranks</span>
-          <h2>Supporter ranks with daily value and utility.</h2>
-          <p>Firefly ranks focus on Lunarium, commands, banner perks, and quality-of-life upgrades.</p>
-        </div>
-
-        <div class="rank-grid benefits-grid">
-          <article class="rank-card glass-card reveal">
-            <div class="rank-topline">
-              <h3>Firefly Special Pass</h3>
-              <span class="price-tag">15K IDR</span>
-            </div>
-            <p class="card-copy">Entry supporter package with daily rewards and basic utility commands.</p>
-            <ul class="detail-list">
-              <li>1 Firefly Lock and 25 Platinum Locks</li>
-              <li>320 Lunarium per day</li>
-              <li>/info, /vsb, /sdb, /ssb</li>
-              <li>All VIP benefits</li>
-            </ul>
-          </article>
-
-          <article class="rank-card glass-card reveal d1">
-            <div class="rank-topline">
-              <h3>Guardian</h3>
-              <span class="price-tag">30K IDR</span>
-            </div>
-            <p class="card-copy">A stronger daily package with banner perks and more server utility.</p>
-            <ul class="detail-list">
-              <li>640 Lunarium daily</li>
-              <li>1 Firefly Lock and 75 Platinum Locks daily</li>
-              <li>Legacy Banner Choice on first login</li>
-              <li>[GUARDIAN] prefix and upgraded /ssb</li>
-            </ul>
-          </article>
-
-          <article class="rank-card glass-card reveal d2">
-            <div class="rank-topline">
-              <h3>Vanguard</h3>
-              <span class="price-tag">70K IDR</span>
-            </div>
-            <p class="card-copy">The highest public player package, built for daily value and banner chasing.</p>
-            <ul class="detail-list">
-              <li>1200 Lunarium daily</li>
-              <li>1 Firefly Lock and 100 Platinum Locks daily</li>
-              <li>Veteran Banner Choice</li>
-              <li>Free /sdb and stronger utility perks</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell" id="staff-roles">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Staff Roles</span>
-          <h2>Higher access roles are listed separately.</h2>
-          <p>These roles include moderation tools, server commands, and stricter rules. Read the details before buying or applying.</p>
-        </div>
-
-        <div class="rank-grid staff-grid">
-          <article class="rank-card glass-card reveal">
-            <div class="rank-topline">
-              <h3>Moderator</h3>
-              <span class="price-tag">10K IDR</span>
-            </div>
-            <ul class="detail-list compact-list">
-              <li>Moderator chat and support tools</li>
-              <li>Warp, summon, freeze, punish menu</li>
-              <li>Basic visibility and player-control commands</li>
-            </ul>
-          </article>
-
-          <article class="rank-card glass-card reveal d1">
-            <div class="rank-topline">
-              <h3>Admin</h3>
-              <span class="price-tag">50K IDR</span>
-            </div>
-            <ul class="detail-list compact-list">
-              <li>Moderator access included</li>
-              <li>Item, world, and event commands</li>
-              <li>Banner and lock item rules apply</li>
-            </ul>
-          </article>
-
-          <article class="rank-card glass-card reveal d2">
-            <div class="rank-topline">
-              <h3>Genius Society</h3>
-              <span class="price-tag">110K IDR</span>
-            </div>
-            <ul class="detail-list compact-list">
-              <li>Admin access included</li>
-              <li>More item and world access</li>
-              <li>Global reward commands</li>
-            </ul>
-          </article>
-
-          <article class="rank-card glass-card reveal">
-            <div class="rank-topline">
-              <h3>Emanator</h3>
-              <span class="price-tag">230K IDR</span>
-            </div>
-            <ul class="detail-list compact-list">
-              <li>High-access role package</li>
-              <li>Server logs and world tools</li>
-              <li>Expanded XP and gem event commands</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell faq-section" id="faq">
-        <div class="section-heading reveal">
-          <span class="eyebrow">FAQ</span>
-          <h2>Before you join.</h2>
-        </div>
-
-        <div class="faq-list">
-          <article class="faq-item glass-card reveal">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span>What is Firefly?</span>
-              <span class="faq-icon">+</span>
+            <a href="#play" class="nav-cta">Join Now</a>
+            <button
+                class="menu-toggle"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                type="button"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <div class="faq-a">
-              <p>Firefly is a Growtopia private server by Hotaru Interactive, focused on banners, pity, custom items, events, dungeons, fishing, and ticket rewards.</p>
-            </div>
-          </article>
-          <article class="faq-item glass-card reveal d1">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span>How do I join?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Choose your platform in the Join Now section. Windows and macOS use hosts routing. Android can use the APK, Virtual Hosts, or PowerTunnel. iOS uses Surge.</p>
-            </div>
-          </article>
-          <article class="faq-item glass-card reveal d2">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span>Can I switch back to official Growtopia?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a">
-              <p>Yes. Remove the Firefly hosts lines or turn off your routing app/profile, then restart the game.</p>
-            </div>
-          </article>
-        </div>
-      </section>
+        </nav>
 
-      <section class="section-shell community-section" id="community">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Links</span>
-          <h2>Useful Firefly pages.</h2>
+        <div id="swup" class="transition-fade">
+            <main>
+                <section class="hero section-shell" id="home">
+                    <div class="hero-copy reveal">
+                        <span class="eyebrow">Firefly Private Server</span>
+                        <h1>Firefly</h1>
+                        <p class="hero-lead">
+                            A Growtopia private server by Hotaru Interactive.
+                            Running since February 2024. We do banners, pity,
+                            custom items, dungeons, fishing, and events. Pick
+                            your device below and join.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#play" class="btn btn-primary">Join Now</a>
+                            <a href="find/index.html" class="btn btn-secondary"
+                                >Open Item Finder</a
+                            >
+                        </div>
+                        <ul class="hero-meta">
+                            <li>
+                                <span>Released</span>
+                                <strong>19 February 2024</strong>
+                            </li>
+                            <li>
+                                <span>Team</span>
+                                <strong>Hotaru Interactive</strong>
+                            </li>
+                            <li>
+                                <span>Style</span>
+                                <strong>Banner-focused GTPS</strong>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="hero-visual reveal d2">
+                        <div class="hero-core">
+                            <div class="hero-logo-wrap">
+                                <img
+                                    src="assets/logo.jpeg"
+                                    alt="Firefly logo"
+                                    class="hero-logo"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="quickstart-strip section-shell reveal">
+                    <div class="section-heading compact-heading">
+                        <span class="eyebrow">Quick Start</span>
+                        <h2>Pick your device, follow the steps, you're in.</h2>
+                    </div>
+                    <div class="quickstart-grid">
+                        <article class="quick-card glass-card">
+                            <span class="quick-step">01</span>
+                            <h3>Pick your device</h3>
+                            <p>
+                                Android, iOS, Windows, and macOS — all on one
+                                page.
+                            </p>
+                        </article>
+                        <article class="quick-card glass-card">
+                            <span class="quick-step">02</span>
+                            <h3>Apply the route</h3>
+                            <p>
+                                Android: FireflyConnector or FFPS.apk. iOS:
+                                Surge 5 profile. PC: edit hosts or use Firefly
+                                Helper.
+                            </p>
+                        </article>
+                        <article class="quick-card glass-card">
+                            <span class="quick-step">03</span>
+                            <h3>Launch the game</h3>
+                            <p>
+                                When the route is active, open Growtopia and you
+                                should land on Firefly.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell" id="play">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Join Now</span>
+                        <h2>What device are you on?</h2>
+                        <p>
+                            All guides are on one page. Click your device and
+                            follow the steps.
+                        </p>
+                    </div>
+
+                    <div class="platform-selector">
+                        <a
+                            href="firefly/index.html#windows"
+                            class="platform-card reveal d1"
+                        >
+                            <span class="platform-icon">Win</span>
+                            <div>
+                                <h3>Windows</h3>
+                                <p>
+                                    Run Firefly Helper — it adds the route for
+                                    you automatically.
+                                </p>
+                            </div>
+                            <span class="platform-tag">Easiest desktop</span>
+                        </a>
+                        <a
+                            href="firefly/index.html#macos"
+                            class="platform-card reveal d2"
+                        >
+                            <span class="platform-icon">Mac</span>
+                            <div>
+                                <h3>macOS</h3>
+                                <p>
+                                    Add two lines to <code>/etc/hosts</code>,
+                                    flush DNS, and play.
+                                </p>
+                            </div>
+                            <span class="platform-tag">Desktop</span>
+                        </a>
+                        <a
+                            href="firefly/index.html#android"
+                            class="platform-card reveal d3"
+                        >
+                            <span class="platform-icon">Droid</span>
+                            <div>
+                                <h3>Android</h3>
+                                <p>
+                                    Use FireflyConnector or FFPS.apk for the
+                                    fastest setup.
+                                </p>
+                            </div>
+                            <span class="platform-tag">FireflyConnector</span>
+                        </a>
+                        <a
+                            href="firefly/index.html#ios"
+                            class="platform-card reveal d1"
+                        >
+                            <span class="platform-icon">iOS</span>
+                            <div>
+                                <h3>iOS</h3>
+                                <p>
+                                    Use Surge 5 and download the Firefly profile
+                                    from a URL.
+                                </p>
+                            </div>
+                            <span class="platform-tag">Mobile</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="section-shell about-section" id="about">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Server Overview</span>
+                        <h2>A GTPS with banners at the center.</h2>
+                        <p>
+                            Firefly is not a plain copy of Growtopia. Its main
+                            pull is banner progression, pity, custom utility
+                            items, and regular content updates.
+                        </p>
+                    </div>
+
+                    <div class="about-layout">
+                        <article class="about-story glass-card reveal">
+                            <h3>What Firefly is</h3>
+                            <p>
+                                Firefly is a GTPS made by Hotaru Interactive,
+                                formerly Firefly Team. It uses banner events as
+                                a core system, with pity to make long-term pulls
+                                feel less random.
+                            </p>
+                            <p>
+                                Progression also comes from custom items,
+                                events, dungeons, fishing, and Offers to
+                                Odyssey, where normal activity can turn into
+                                useful rewards.
+                            </p>
+                        </article>
+
+                        <div class="fact-stack">
+                            <article class="fact-card glass-card reveal d1">
+                                <span class="fact-label">Main Loop</span>
+                                <strong>Banners and pity</strong>
+                                <p>
+                                    Pull, save pity, chase rewards, and build
+                                    around event items.
+                                </p>
+                            </article>
+                            <article class="fact-card glass-card reveal d2">
+                                <span class="fact-label">Side Content</span>
+                                <strong>Dungeons, fishing, tickets</strong>
+                                <p>
+                                    More ways to play than only farming or
+                                    waiting for the next banner.
+                                </p>
+                            </article>
+                            <article class="fact-card glass-card reveal d3">
+                                <span class="fact-label">Custom Items</span>
+                                <strong>Not only cosmetic</strong>
+                                <p>
+                                    Some items help with gems, XP, or other
+                                    progression value.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-shell" id="features">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Features</span>
+                        <h2>What players come for.</h2>
+                        <p>
+                            Short version: banners, pity, useful custom items,
+                            and events that feed back into progression.
+                        </p>
+                    </div>
+
+                    <div class="features-grid">
+                        <article class="feature-card glass-card reveal">
+                            <span class="feature-icon">01</span>
+                            <h3>Banner events</h3>
+                            <p>
+                                Firefly treats banners as a main server system,
+                                not just a side event.
+                            </p>
+                        </article>
+                        <article class="feature-card glass-card reveal d1">
+                            <span class="feature-icon">02</span>
+                            <h3>Pity system</h3>
+                            <p>
+                                Pulls have a clearer long-term path for players
+                                chasing rare rewards.
+                            </p>
+                        </article>
+                        <article class="feature-card glass-card reveal d2">
+                            <span class="feature-icon">03</span>
+                            <h3>Utility items</h3>
+                            <p>
+                                Custom items can matter for gems, XP, and
+                                progression.
+                            </p>
+                        </article>
+                        <article class="feature-card glass-card reveal d3">
+                            <span class="feature-icon">04</span>
+                            <h3>Dungeons</h3>
+                            <p>
+                                A more active reward route when you want
+                                something beyond farming.
+                            </p>
+                        </article>
+                        <article class="feature-card glass-card reveal">
+                            <span class="feature-icon">05</span>
+                            <h3>Fishing events</h3>
+                            <p>
+                                A repeatable side activity with rewards tied
+                                into the server economy.
+                            </p>
+                        </article>
+                        <article class="feature-card glass-card reveal d1">
+                            <span class="feature-icon">06</span>
+                            <h3>Offers to Odyssey</h3>
+                            <p>
+                                Tickets from activity can be turned in for
+                                rewards.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell" id="benefits">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Ranks</span>
+                        <h2>Supporter ranks with daily value and utility.</h2>
+                        <p>
+                            Firefly ranks focus on Lunarium, commands, banner
+                            perks, and quality-of-life upgrades.
+                        </p>
+                    </div>
+
+                    <div class="rank-grid benefits-grid">
+                        <article class="rank-card glass-card reveal">
+                            <div class="rank-topline">
+                                <h3>Firefly Special Pass</h3>
+                                <span class="price-tag">15K IDR</span>
+                            </div>
+                            <p class="card-copy">
+                                Entry supporter package with daily rewards and
+                                basic utility commands.
+                            </p>
+                            <ul class="detail-list">
+                                <li>1 Firefly Lock and 25 Platinum Locks</li>
+                                <li>320 Lunarium per day</li>
+                                <li>/info, /vsb, /sdb, /ssb</li>
+                                <li>All VIP benefits</li>
+                            </ul>
+                        </article>
+
+                        <article class="rank-card glass-card reveal d1">
+                            <div class="rank-topline">
+                                <h3>Guardian</h3>
+                                <span class="price-tag">30K IDR</span>
+                            </div>
+                            <p class="card-copy">
+                                A stronger daily package with banner perks and
+                                more server utility.
+                            </p>
+                            <ul class="detail-list">
+                                <li>640 Lunarium daily</li>
+                                <li>
+                                    1 Firefly Lock and 75 Platinum Locks daily
+                                </li>
+                                <li>Legacy Banner Choice on first login</li>
+                                <li>[GUARDIAN] prefix and upgraded /ssb</li>
+                            </ul>
+                        </article>
+
+                        <article class="rank-card glass-card reveal d2">
+                            <div class="rank-topline">
+                                <h3>Vanguard</h3>
+                                <span class="price-tag">70K IDR</span>
+                            </div>
+                            <p class="card-copy">
+                                The highest public player package, built for
+                                daily value and banner chasing.
+                            </p>
+                            <ul class="detail-list">
+                                <li>1200 Lunarium daily</li>
+                                <li>
+                                    1 Firefly Lock and 100 Platinum Locks daily
+                                </li>
+                                <li>Veteran Banner Choice</li>
+                                <li>Free /sdb and stronger utility perks</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell" id="staff-roles">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Staff Roles</span>
+                        <h2>Higher access roles are listed separately.</h2>
+                        <p>
+                            These roles include moderation tools, server
+                            commands, and stricter rules. Read the details
+                            before buying or applying.
+                        </p>
+                    </div>
+
+                    <div class="rank-grid staff-grid">
+                        <article class="rank-card glass-card reveal">
+                            <div class="rank-topline">
+                                <h3>Moderator</h3>
+                                <span class="price-tag">10K IDR</span>
+                            </div>
+                            <ul class="detail-list compact-list">
+                                <li>Moderator chat and support tools</li>
+                                <li>Warp, summon, freeze, punish menu</li>
+                                <li>
+                                    Basic visibility and player-control commands
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="rank-card glass-card reveal d1">
+                            <div class="rank-topline">
+                                <h3>Admin</h3>
+                                <span class="price-tag">50K IDR</span>
+                            </div>
+                            <ul class="detail-list compact-list">
+                                <li>Moderator access included</li>
+                                <li>Item, world, and event commands</li>
+                                <li>Banner and lock item rules apply</li>
+                            </ul>
+                        </article>
+
+                        <article class="rank-card glass-card reveal d2">
+                            <div class="rank-topline">
+                                <h3>Genius Society</h3>
+                                <span class="price-tag">110K IDR</span>
+                            </div>
+                            <ul class="detail-list compact-list">
+                                <li>Admin access included</li>
+                                <li>More item and world access</li>
+                                <li>Global reward commands</li>
+                            </ul>
+                        </article>
+
+                        <article class="rank-card glass-card reveal">
+                            <div class="rank-topline">
+                                <h3>Emanator</h3>
+                                <span class="price-tag">230K IDR</span>
+                            </div>
+                            <ul class="detail-list compact-list">
+                                <li>High-access role package</li>
+                                <li>Server logs and world tools</li>
+                                <li>Expanded XP and gem event commands</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell faq-section" id="faq">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">FAQ</span>
+                        <h2>Before you join.</h2>
+                    </div>
+
+                    <div class="faq-list">
+                        <article class="faq-item glass-card reveal">
+                            <button
+                                class="faq-q"
+                                type="button"
+                                aria-expanded="false"
+                            >
+                                <span>What is Firefly?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-a">
+                                <p>
+                                    Firefly is a Growtopia private server by
+                                    Hotaru Interactive, focused on banners,
+                                    pity, custom items, events, dungeons,
+                                    fishing, and ticket rewards.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="faq-item glass-card reveal d1">
+                            <button
+                                class="faq-q"
+                                type="button"
+                                aria-expanded="false"
+                            >
+                                <span>How do I join?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-a">
+                                <p>
+                                    Go to the Join Now section and pick your
+                                    device. Android: use FireflyConnector or
+                                    FFPS.apk. iOS: Surge 5 profile. Windows and
+                                    macOS: edit the hosts file (Firefly Helper
+                                    does it automatically on Windows).
+                                </p>
+                            </div>
+                        </article>
+                        <article class="faq-item glass-card reveal d2">
+                            <button
+                                class="faq-q"
+                                type="button"
+                                aria-expanded="false"
+                            >
+                                <span
+                                    >Can I switch back to official
+                                    Growtopia?</span
+                                >
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-a">
+                                <p>
+                                    Yes. Remove the Firefly hosts lines or turn
+                                    off your routing app/profile, then restart
+                                    the game.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section-shell community-section" id="community">
+                    <div class="section-heading reveal">
+                        <span class="eyebrow">Links</span>
+                        <h2>Useful Firefly pages.</h2>
+                    </div>
+
+                    <div class="community-grid reveal">
+                        <a
+                            href="discord/index.html"
+                            class="community-card community-discord"
+                        >
+                            <span class="community-icon">Chat</span>
+                            <div>
+                                <h3>Discord</h3>
+                                <p>
+                                    Announcements, support, and community chat.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            href="whatsapp/index.html"
+                            class="community-card community-whatsapp"
+                        >
+                            <span class="community-icon">WA</span>
+                            <div>
+                                <h3>WhatsApp</h3>
+                                <p>
+                                    Quick group access for players who use
+                                    WhatsApp.
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            href="find/index.html"
+                            class="community-card community-database"
+                        >
+                            <span class="community-icon">Find</span>
+                            <div>
+                                <h3>Item Finder</h3>
+                                <p>
+                                    Search Firefly item data from the website.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer-grid">
+                    <div>
+                        <h4>Firefly Private Server</h4>
+                        <p>
+                            A banner-focused GTPS by Hotaru Interactive. Not
+                            affiliated with Ubisoft or Growtopia.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Join</h4>
+                        <a href="firefly/index.html#windows">Windows</a>
+                        <a href="firefly/index.html#macos">macOS</a>
+                        <a href="firefly/index.html#android">Android</a>
+                        <a href="firefly/index.html#ios">iOS</a>
+                    </div>
+                    <div>
+                        <h4>Links</h4>
+                        <a href="find/index.html">Item Finder</a>
+                        <a href="discord/index.html">Discord</a>
+                        <a href="whatsapp/index.html">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Firefly Private Server.</p>
+                    <p>Made by Hotaru Interactive.</p>
+                </div>
+            </footer>
         </div>
 
-        <div class="community-grid reveal">
-          <a href="discord/index.html" class="community-card community-discord">
-            <span class="community-icon">Chat</span>
-            <div>
-              <h3>Discord</h3>
-              <p>Announcements, support, and community chat.</p>
-            </div>
-          </a>
-          <a href="whatsapp/index.html" class="community-card community-whatsapp">
-            <span class="community-icon">WA</span>
-            <div>
-              <h3>WhatsApp</h3>
-              <p>Quick group access for players who use WhatsApp.</p>
-            </div>
-          </a>
-          <a href="find/index.html" class="community-card community-database">
-            <span class="community-icon">Find</span>
-            <div>
-              <h3>Item Finder</h3>
-              <p>Search Firefly item data from the website.</p>
-            </div>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-grid">
-        <div>
-          <h4>Firefly Private Server</h4>
-          <p>A banner-focused GTPS by Hotaru Interactive. Not affiliated with Ubisoft or Growtopia.</p>
-        </div>
-        <div>
-          <h4>Join</h4>
-          <a href="firefly/windows/index.html">Windows</a>
-          <a href="firefly/macos/index.html">macOS</a>
-          <a href="firefly/android/index.html">Android</a>
-          <a href="firefly/ios/index.html">iOS</a>
-        </div>
-        <div>
-          <h4>Links</h4>
-          <a href="find/index.html">Item Finder</a>
-          <a href="discord/index.html">Discord</a>
-          <a href="whatsapp/index.html">WhatsApp</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Firefly Private Server.</p>
-        <p>Made by Hotaru Interactive.</p>
-      </div>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
