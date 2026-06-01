@@ -7,6 +7,7 @@ let revealObserver;
 document.addEventListener("DOMContentLoaded", () => {
   bindGlobalEvents();
   initializePageState();
+  initLanguageSwitcher();
 });
 
 function bindGlobalEvents() {
@@ -70,6 +71,11 @@ function handleDocumentClick(event) {
   const copyButton = event.target.closest(".copy-btn");
   if (copyButton) {
     copyCodeBlock(copyButton);
+  }
+
+  const langButton = event.target.closest(".lang-btn");
+  if (langButton) {
+    switchLanguage(langButton.dataset.lang);
   }
 }
 
@@ -180,7 +186,12 @@ async function copyCodeBlock(button) {
     return;
   }
 
-  const text = code.textContent.trim();
+  // Trim each line to strip indentation added by HTML formatters
+  const text = code.textContent
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
+    .join("\n");
   const originalText = button.textContent;
 
   try {
@@ -212,13 +223,19 @@ function setupRevealObserver() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
+          // Add stagger effect for multiple items
+          const delay =
+            Array.from(entry.target.parentElement.children).indexOf(
+              entry.target,
+            ) * 100;
+          entry.target.style.transitionDelay = `${delay}ms`;
           revealObserver.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.12,
-      rootMargin: "0px 0px -32px 0px",
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
     },
   );
 
@@ -296,7 +313,78 @@ function switchPlatformPanel(platform) {
     target.classList.add("active");
     // Update URL hash without scrolling
     history.replaceState(null, "", `#${platform}`);
+    // Smooth scroll to top of panel
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
     // Re-run reveal observer for newly visible elements
     setupRevealObserver();
   }
+}
+
+// Add smooth scroll behavior for anchor links
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href === "#" || href === "") return;
+
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+});
+
+// Add parallax effect to hero section
+window.addEventListener("scroll", () => {
+  const heroVisual = document.querySelector(".hero-visual");
+  if (heroVisual) {
+    const scrolled = window.pageYOffset;
+    heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+  }
+});
+
+// Add hover effect enhancement for cards
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(
+    ".glass-card, .platform-card, .feature-card, .rank-card, .community-card",
+  );
+
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      this.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+    });
+  });
+});
+
+// Language Switcher Functionality
+function initLanguageSwitcher() {
+  const savedLang = localStorage.getItem("firefly-lang") || "en";
+  switchLanguage(savedLang);
+}
+
+function switchLanguage(lang) {
+  // Update active button state
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+
+  // Update all elements with language data attributes
+  document.querySelectorAll("[data-en][data-id]").forEach((element) => {
+    if (lang === "id" && element.dataset.id) {
+      element.textContent = element.dataset.id;
+    } else if (element.dataset.en) {
+      element.textContent = element.dataset.en;
+    }
+  });
+
+  // Save preference
+  localStorage.setItem("firefly-lang", lang);
+
+  // Update HTML lang attribute
+  document.documentElement.lang = lang === "id" ? "id" : "en";
 }

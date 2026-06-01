@@ -1,469 +1,1426 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Join | Firefly GTPS</title>
-  <link rel="icon" href="../assets/logo.jpeg">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../instructions.css">
-</head>
-<body class="platform-page">
-  <div class="site-bg" aria-hidden="true"><div class="bg-mesh"></div></div>
-
-  <nav class="navbar">
-    <a href="../index.html" class="nav-logo" aria-label="Firefly homepage">
-      <img src="../assets/logo.jpeg" alt="Firefly" class="nav-logo-img">
-      <span class="nav-logo-copy">
-        <strong class="nav-logo-text">Firefly</strong>
-        <span class="nav-logo-sub">GTPS</span>
-      </span>
-    </a>
-    <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#features">Features</a>
-      <a href="../index.html#benefits">Ranks</a>
-      <a href="../index.html#faq">FAQ</a>
-      <a href="../index.html#community">Links</a>
-    </div>
-    <a href="../index.html" class="nav-cta">Back to Home</a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" type="button">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div id="swup" class="transition-fade">
-    <main class="guide-page">
-
-      <div class="guide-header reveal">
-        <a href="../index.html#play" class="back-link">&#8592; Back</a>
-        <h1 class="guide-page-title">How to join Firefly</h1>
-        <p class="guide-page-sub">Pick your device below and follow the steps. Takes about 2 minutes.</p>
-      </div>
-
-      <nav class="platform-switcher reveal" aria-label="Platform switcher">
-        <button class="platform-pill is-active" data-platform="android" type="button">
-          <span class="platform-pill-icon">Droid</span>
-          Android
-        </button>
-        <button class="platform-pill" data-platform="ios" type="button">
-          <span class="platform-pill-icon">iOS</span>
-          iOS
-        </button>
-        <button class="platform-pill" data-platform="windows" type="button">
-          <span class="platform-pill-icon">Win</span>
-          Windows
-        </button>
-        <button class="platform-pill" data-platform="macos" type="button">
-          <span class="platform-pill-icon">Mac</span>
-          macOS
-        </button>
-      </nav>
-
-      <div class="platform-panels">
-
-        <!-- ===================== ANDROID ===================== -->
-        <div id="panel-android" class="platform-panel active">
-          <div class="guide-layout">
-            <div class="guide-main">
-              <div class="method-tabs-wrap">
-                <span class="method-tabs-label">Pick a method</span>
-                <div class="method-tabs" role="tablist" aria-label="Android methods">
-                  <button class="tab-btn active" type="button" data-tab="android-connector">FireflyConnector</button>
-                  <button class="tab-btn" type="button" data-tab="android-ffps">FFPS.apk</button>
-                  <button class="tab-btn" type="button" data-tab="android-legacy">Legacy</button>
-                </div>
-              </div>
-
-              <div id="android-connector" class="tab-content active">
-                <div class="tab-panel">
-                  <div class="tab-panel-head">
-                    <h2>FireflyConnector <span class="badge-rec">Recommended</span></h2>
-                    <p>The official connector app. Easiest way in.</p>
-                  </div>
-                  <div class="instructions-content">
-                    <div class="step">
-                      <h3>Download FireflyConnector</h3>
-                      <div class="guide-actions">
-                        <a href="https://ffps.fun/download/FireflyConnector.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download FireflyConnector</a>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <h3>Install it</h3>
-                      <p>If Android blocks the install, tap "Install anyway" or allow installs from your browser in Settings.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Open it and tap Start</h3>
-                      <p>FireflyConnector will open Growtopia and route it to Firefly automatically.</p>
-                    </div>
-                  </div>
-                  <div class="note"><strong>To switch back:</strong> just open the normal Growtopia app instead of using FireflyConnector.</div>
-                </div>
-              </div>
-
-              <div id="android-ffps" class="tab-content">
-                <div class="tab-panel">
-                  <div class="tab-panel-head">
-                    <h2>FFPS.apk</h2>
-                    <p>A Growtopia APK already pointed at Firefly. Install and play.</p>
-                  </div>
-                  <div class="instructions-content">
-                    <div class="step">
-                      <h3>Download FFPS.apk</h3>
-                      <div class="guide-actions">
-                        <a href="https://ffps.fun/download/FFPS.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download FFPS.apk</a>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <h3>Install it</h3>
-                      <p>Allow installs from unknown sources if Android asks. It's safe.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Open it and play</h3>
-                      <p>It works just like normal Growtopia but already connects to Firefly.</p>
-                    </div>
-                  </div>
-                  <div class="note"><strong>To switch back:</strong> open the original Growtopia app instead.</div>
-                </div>
-              </div>
-
-              <div id="android-legacy" class="tab-content">
-                <div class="tab-panel">
-                  <div class="tab-panel-head">
-                    <h2>Legacy methods <span class="badge-warn">Not supported</span></h2>
-                    <p>These still technically work but we no longer support them. Use FireflyConnector or FFPS.apk above instead.</p>
-                  </div>
-
-                  <div class="legacy-section">
-                    <h3 class="legacy-title">Virtual Hosts</h3>
-                    <div class="instructions-content">
-                      <div class="step">
-                        <h3>Download Virtual Hosts</h3>
-                        <div class="guide-actions">
-                          <a href="https://ffps.fun/download/virtual_host.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download Virtual Hosts</a>
-                        </div>
-                      </div>
-                      <div class="step">
-                        <h3>Download firefly.txt</h3>
-                        <div class="guide-actions">
-                          <a href="../download/firefly.txt" class="btn btn-secondary" download="firefly-hosts.txt">Download firefly.txt</a>
-                        </div>
-                      </div>
-                      <div class="step">
-                        <h3>Load the file</h3>
-                        <p>Open Virtual Hosts &#8594; Select hosts file &#8594; pick the firefly.txt you downloaded.</p>
-                      </div>
-                      <div class="step">
-                        <h3>Enable and open Growtopia</h3>
-                        <p>Turn on Virtual Hosts, then launch Growtopia normally.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="legacy-divider"></div>
-
-                  <div class="legacy-section">
-                    <h3 class="legacy-title">PowerTunnel</h3>
-                    <div class="instructions-content">
-                      <div class="step">
-                        <h3>Download PowerTunnel</h3>
-                        <div class="guide-actions">
-                          <a href="https://ffps.fun/download/powertunnel.apk" class="download-btn" target="_blank" rel="noopener noreferrer">Download PowerTunnel</a>
-                        </div>
-                      </div>
-                      <div class="step">
-                        <h3>Add the hosts URL</h3>
-                        <div class="copy-block">
-                          <code>https://ffps.fun/download/firefly/</code>
-                          <button class="copy-btn" type="button">Copy</button>
-                        </div>
-                      </div>
-                      <div class="step">
-                        <h3>Set update to On start</h3>
-                        <p>So it refreshes the route every time you open it.</p>
-                      </div>
-                      <div class="step">
-                        <h3>Connect and play</h3>
-                        <p>Tap Connect, wait for it to go active, then launch Growtopia.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-            <aside class="guide-side reveal d1">
-              <div class="side-card">
-                <h3>Downloads</h3>
-                <div class="guide-actions">
-                  <a href="https://ffps.fun/download/FireflyConnector.apk" class="download-btn" target="_blank" rel="noopener noreferrer">FireflyConnector</a>
-                  <a href="https://ffps.fun/download/FFPS.apk" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">FFPS.apk</a>
-                </div>
-              </div>
-              <div class="side-card">
-                <h3>Host lines</h3>
-                <div class="copy-block side-copy">
-                  <code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code>
-                  <button class="copy-btn" type="button">Copy</button>
-                </div>
-              </div>
-            </aside>
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>How to Join | Firefly Private Server</title>
+        <link rel="icon" href="../assets/logo_firefly.png" />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="../instructions.css" />
+    </head>
+    <body class="platform-page">
+        <div class="site-bg" aria-hidden="true">
+            <div class="bg-mesh"></div>
         </div>
 
-        <!-- ===================== iOS ===================== -->
-        <div id="panel-ios" class="platform-panel">
-          <div class="guide-layout">
-            <div class="guide-main">
-              <div class="tab-panel">
-                <div class="tab-panel-head">
-                  <h2>iOS &#8212; Surge 5</h2>
-                  <p>You need Surge 5 from the App Store. Load the Firefly profile and you're done.</p>
-                </div>
-                <div class="instructions-content">
-                  <div class="step">
-                    <h3>Install Surge 5</h3>
-                    <p>Get it from the App Store. It costs money, but it's the cleanest method on iOS right now.</p>
-                  </div>
-                  <div class="step">
-                    <h3>Download the Firefly profile</h3>
-                    <p>In Surge, go to <strong>Profiles &#8594; Download from URL</strong> and enter:</p>
-                    <div class="copy-block">
-                      <code>https://ffps.fun/download/ios</code>
-                      <button class="copy-btn" type="button">Copy</button>
-                    </div>
-                  </div>
-                  <div class="step">
-                    <h3>Select and enable the profile</h3>
-                    <p>Pick the downloaded Firefly profile and enable it. Accept the VPN prompt if iOS asks.</p>
-                  </div>
-                  <div class="step">
-                    <h3>Open Growtopia</h3>
-                    <p>Launch Growtopia normally. It'll connect to Firefly.</p>
-                  </div>
-                </div>
-                <div class="note"><strong>To switch back:</strong> turn off the Surge profile in the app, then restart Growtopia.</div>
-              </div>
+        <nav class="navbar">
+            <a
+                href="../index.html"
+                class="nav-logo"
+                aria-label="Firefly homepage"
+            >
+                <img
+                    src="../assets/logo_firefly.png"
+                    alt="Firefly"
+                    class="nav-logo-img"
+                />
+                <span class="nav-logo-copy">
+                    <strong class="nav-logo-text">Firefly</strong>
+                    <span class="nav-logo-sub">Private Server</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" data-en="Home" data-id="Beranda"
+                    >Home</a
+                >
+                <a
+                    href="../index.html#features"
+                    data-en="Features"
+                    data-id="Fitur"
+                    >Features</a
+                >
+                <a
+                    href="../index.html#benefits"
+                    data-en="Ranks"
+                    data-id="Pangkat"
+                    >Ranks</a
+                >
+                <a href="../index.html#faq">FAQ</a>
+                <a
+                    href="../index.html#community"
+                    data-en="Links"
+                    data-id="Tautan"
+                    >Links</a
+                >
             </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en" type="button">
+                    <img
+                        src="https://flagcdn.com/w40/us.png"
+                        alt="English"
+                        class="flag-icon"
+                    />
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="id" type="button">
+                    <img
+                        src="https://flagcdn.com/w40/id.png"
+                        alt="Bahasa"
+                        class="flag-icon"
+                    />
+                    <span>ID</span>
+                </button>
+            </div>
+            <a
+                href="../index.html"
+                class="nav-cta"
+                data-en="Back to Home"
+                data-id="Kembali"
+                >Back to Home</a
+            >
+            <button
+                class="menu-toggle"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                type="button"
+            >
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
 
-            <aside class="guide-side reveal d1">
-              <div class="side-card">
-                <h3>Profile URL</h3>
-                <div class="copy-block side-copy">
-                  <code>https://ffps.fun/download/ios</code>
-                  <button class="copy-btn" type="button">Copy</button>
+        <div id="swup" class="transition-fade">
+            <main class="guide-page">
+                <div class="guide-header reveal">
+                    <a href="../index.html#play" class="back-link"
+                        >&#8592;
+                        <span data-en="Back" data-id="Kembali">Back</span></a
+                    >
+                    <h1
+                        class="guide-page-title"
+                        data-en="How to join Firefly"
+                        data-id="Cara Bergabung ke Firefly"
+                    >
+                        How to join Firefly
+                    </h1>
+                    <p
+                        class="guide-page-sub"
+                        data-en="Pick your device below and follow the steps. Takes about 2 minutes."
+                        data-id="Pilih perangkatmu di bawah dan ikuti langkahnya. Hanya sekitar 2 menit."
+                    >
+                        Pick your device below and follow the steps. Takes about
+                        2 minutes.
+                    </p>
                 </div>
-              </div>
-              <div class="side-card">
-                <h3>Not working?</h3>
-                <ul class="side-list">
-                  <li>Make sure the profile is active, not just downloaded.</li>
-                  <li>Turn Surge off and back on.</li>
-                  <li>Fully close and reopen Growtopia.</li>
-                </ul>
-              </div>
-            </aside>
-          </div>
+
+                <nav
+                    class="platform-switcher reveal"
+                    aria-label="Platform switcher"
+                >
+                    <button
+                        class="platform-pill is-active"
+                        data-platform="android"
+                        type="button"
+                    >
+                        <span class="platform-pill-icon">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.28-.55-.37-.83-.22-.3.16-.42.54-.26.85l1.84 3.18C2.92 11.03 1 14.22 1 17.8h22c0-3.58-1.92-6.77-5.4-8.32zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"
+                                />
+                            </svg>
+                        </span>
+                        Android
+                    </button>
+                    <button
+                        class="platform-pill"
+                        data-platform="ios"
+                        type="button"
+                    >
+                        <span class="platform-pill-icon">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                                />
+                            </svg>
+                        </span>
+                        iOS
+                    </button>
+                    <button
+                        class="platform-pill"
+                        data-platform="windows"
+                        type="button"
+                    >
+                        <span class="platform-pill-icon">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M3 5.45v6.55l7-1v-6.8zm7 13.1l-7-1v-6.55l7 1zm1-13.1l10-1.45v7.45l-10 1zm10 7.45v7.45l-10-1.45v-7.45z"
+                                />
+                            </svg>
+                        </span>
+                        Windows
+                    </button>
+                    <button
+                        class="platform-pill"
+                        data-platform="macos"
+                        type="button"
+                    >
+                        <span class="platform-pill-icon">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+                                />
+                            </svg>
+                        </span>
+                        macOS
+                    </button>
+                </nav>
+
+                <div class="platform-panels">
+                    <!-- ===================== ANDROID ===================== -->
+                    <div id="panel-android" class="platform-panel active">
+                        <div class="guide-layout">
+                            <div class="guide-main">
+                                <div class="method-tabs-wrap">
+                                    <span
+                                        class="method-tabs-label"
+                                        data-en="Pick a method"
+                                        data-id="Pilih metode"
+                                        >Pick a method</span
+                                    >
+                                    <div
+                                        class="method-tabs"
+                                        role="tablist"
+                                        aria-label="Android methods"
+                                    >
+                                        <button
+                                            class="tab-btn active"
+                                            type="button"
+                                            data-tab="android-connector"
+                                        >
+                                            FireflyConnector
+                                        </button>
+                                        <button
+                                            class="tab-btn"
+                                            type="button"
+                                            data-tab="android-ffps"
+                                        >
+                                            FFPS.apk
+                                        </button>
+                                        <button
+                                            class="tab-btn"
+                                            type="button"
+                                            data-tab="android-legacy"
+                                            data-en="Legacy"
+                                            data-id="Lama"
+                                        >
+                                            Legacy
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- FireflyConnector -->
+                                <div
+                                    id="android-connector"
+                                    class="tab-content active"
+                                >
+                                    <div class="tab-panel">
+                                        <div class="tab-panel-head">
+                                            <h2>
+                                                FireflyConnector
+                                                <span
+                                                    class="badge-rec"
+                                                    data-en="Recommended"
+                                                    data-id="Disarankan"
+                                                    >Recommended</span
+                                                >
+                                            </h2>
+                                            <p
+                                                data-en="The official connector app. Easiest way in."
+                                                data-id="Aplikasi konektor resmi. Cara termudah untuk masuk."
+                                            >
+                                                The official connector app.
+                                                Easiest way in.
+                                            </p>
+                                        </div>
+                                        <div class="instructions-content">
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Download FireflyConnector"
+                                                    data-id="Unduh FireflyConnector"
+                                                >
+                                                    Download FireflyConnector
+                                                </h3>
+                                                <div class="guide-actions">
+                                                    <a
+                                                        href="https://ffps.fun/download/FireflyConnector.apk"
+                                                        class="download-btn"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        data-en="Download FireflyConnector"
+                                                        data-id="Unduh FireflyConnector"
+                                                        >Download
+                                                        FireflyConnector</a
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Install it"
+                                                    data-id="Instal Aplikasi"
+                                                >
+                                                    Install it
+                                                </h3>
+                                                <p
+                                                    data-en="If Android blocks the install, tap 'Install anyway' or allow installs from your browser in Settings."
+                                                    data-id="Jika Android memblokir instalasi, ketuk 'Instal saja' atau izinkan instalasi dari browser di Pengaturan."
+                                                >
+                                                    If Android blocks the
+                                                    install, tap "Install
+                                                    anyway" or allow installs
+                                                    from your browser in
+                                                    Settings.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Open it and tap Start"
+                                                    data-id="Buka dan Ketuk Mulai"
+                                                >
+                                                    Open it and tap Start
+                                                </h3>
+                                                <p
+                                                    data-en="FireflyConnector will open Growtopia and route it to Firefly automatically."
+                                                    data-id="FireflyConnector akan membuka Growtopia dan mengarahkannya ke Firefly secara otomatis."
+                                                >
+                                                    FireflyConnector will open
+                                                    Growtopia and route it to
+                                                    Firefly automatically.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="note">
+                                            <strong
+                                                data-en="To switch back:"
+                                                data-id="Untuk kembali:"
+                                                >To switch back:</strong
+                                            >
+                                            <span
+                                                data-en="just open the normal Growtopia app instead of using FireflyConnector."
+                                                data-id="cukup buka aplikasi Growtopia normal, bukan FireflyConnector."
+                                            >
+                                                just open the normal Growtopia
+                                                app instead of using
+                                                FireflyConnector.</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FFPS.apk -->
+                                <div id="android-ffps" class="tab-content">
+                                    <div class="tab-panel">
+                                        <div class="tab-panel-head">
+                                            <h2>FFPS.apk</h2>
+                                            <p
+                                                data-en="A Growtopia APK already pointed at Firefly. Install and play."
+                                                data-id="APK Growtopia yang sudah diarahkan ke Firefly. Instal dan main."
+                                            >
+                                                A Growtopia APK already pointed
+                                                at Firefly. Install and play.
+                                            </p>
+                                        </div>
+                                        <div class="instructions-content">
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Download FFPS.apk"
+                                                    data-id="Unduh FFPS.apk"
+                                                >
+                                                    Download FFPS.apk
+                                                </h3>
+                                                <div class="guide-actions">
+                                                    <a
+                                                        href="https://ffps.fun/download/FFPS.apk"
+                                                        class="download-btn"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        data-en="Download FFPS.apk"
+                                                        data-id="Unduh FFPS.apk"
+                                                        >Download FFPS.apk</a
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Install it"
+                                                    data-id="Instal Aplikasi"
+                                                >
+                                                    Install it
+                                                </h3>
+                                                <p
+                                                    data-en="Allow installs from unknown sources if Android asks. It's safe."
+                                                    data-id="Izinkan instalasi dari sumber tidak dikenal jika Android meminta. Aman kok."
+                                                >
+                                                    Allow installs from unknown
+                                                    sources if Android asks.
+                                                    It's safe.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Open it and play"
+                                                    data-id="Buka dan Main"
+                                                >
+                                                    Open it and play
+                                                </h3>
+                                                <p
+                                                    data-en="It works just like normal Growtopia but already connects to Firefly."
+                                                    data-id="Bekerja seperti Growtopia biasa tapi sudah terhubung ke Firefly."
+                                                >
+                                                    It works just like normal
+                                                    Growtopia but already
+                                                    connects to Firefly.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="note">
+                                            <strong
+                                                data-en="To switch back:"
+                                                data-id="Untuk kembali:"
+                                                >To switch back:</strong
+                                            >
+                                            <span
+                                                data-en="open the original Growtopia app instead."
+                                                data-id="buka aplikasi Growtopia asli."
+                                            >
+                                                open the original Growtopia app
+                                                instead.</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Legacy -->
+                                <div id="android-legacy" class="tab-content">
+                                    <div class="tab-panel">
+                                        <div class="tab-panel-head">
+                                            <h2>
+                                                <span
+                                                    data-en="Legacy methods"
+                                                    data-id="Metode Lama"
+                                                    >Legacy methods</span
+                                                >
+                                                <span
+                                                    class="badge-warn"
+                                                    data-en="Not supported"
+                                                    data-id="Tidak Didukung"
+                                                    >Not supported</span
+                                                >
+                                            </h2>
+                                            <p
+                                                data-en="These still technically work but we no longer support them. Use FireflyConnector or FFPS.apk above instead."
+                                                data-id="Metode ini masih bisa bekerja secara teknis tapi kami tidak lagi mendukungnya. Gunakan FireflyConnector atau FFPS.apk sebagai gantinya."
+                                            >
+                                                These still technically work but
+                                                we no longer support them. Use
+                                                FireflyConnector or FFPS.apk
+                                                above instead.
+                                            </p>
+                                        </div>
+
+                                        <div class="legacy-section">
+                                            <h3 class="legacy-title">
+                                                Virtual Hosts
+                                            </h3>
+                                            <div class="instructions-content">
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Download Virtual Hosts"
+                                                        data-id="Unduh Virtual Hosts"
+                                                    >
+                                                        Download Virtual Hosts
+                                                    </h3>
+                                                    <div class="guide-actions">
+                                                        <a
+                                                            href="https://ffps.fun/download/virtual_host.apk"
+                                                            class="download-btn"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            data-en="Download Virtual Hosts"
+                                                            data-id="Unduh Virtual Hosts"
+                                                            >Download Virtual
+                                                            Hosts</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Download firefly.txt"
+                                                        data-id="Unduh firefly.txt"
+                                                    >
+                                                        Download firefly.txt
+                                                    </h3>
+                                                    <div class="guide-actions">
+                                                        <a
+                                                            href="../download/firefly.txt"
+                                                            class="btn btn-secondary"
+                                                            download="firefly-hosts.txt"
+                                                            data-en="Download firefly.txt"
+                                                            data-id="Unduh firefly.txt"
+                                                            >Download
+                                                            firefly.txt</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Load the file"
+                                                        data-id="Muat File"
+                                                    >
+                                                        Load the file
+                                                    </h3>
+                                                    <p
+                                                        data-en="Open Virtual Hosts, tap Select hosts file, then pick firefly.txt."
+                                                        data-id="Buka Virtual Hosts, ketuk Select hosts file, lalu pilih firefly.txt."
+                                                    >
+                                                        Open Virtual Hosts
+                                                        &#8594; Select hosts
+                                                        file &#8594; pick the
+                                                        firefly.txt you
+                                                        downloaded.
+                                                    </p>
+                                                </div>
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Enable and open Growtopia"
+                                                        data-id="Aktifkan dan Buka Growtopia"
+                                                    >
+                                                        Enable and open
+                                                        Growtopia
+                                                    </h3>
+                                                    <p
+                                                        data-en="Turn on Virtual Hosts, then launch Growtopia normally."
+                                                        data-id="Aktifkan Virtual Hosts, lalu buka Growtopia."
+                                                    >
+                                                        Turn on Virtual Hosts,
+                                                        then launch Growtopia
+                                                        normally.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="legacy-divider"></div>
+
+                                        <div class="legacy-section">
+                                            <h3 class="legacy-title">
+                                                PowerTunnel
+                                            </h3>
+                                            <div class="instructions-content">
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Download PowerTunnel"
+                                                        data-id="Unduh PowerTunnel"
+                                                    >
+                                                        Download PowerTunnel
+                                                    </h3>
+                                                    <div class="guide-actions">
+                                                        <a
+                                                            href="https://ffps.fun/download/powertunnel.apk"
+                                                            class="download-btn"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            data-en="Download PowerTunnel"
+                                                            data-id="Unduh PowerTunnel"
+                                                            >Download
+                                                            PowerTunnel</a
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Add the hosts URL"
+                                                        data-id="Tambahkan URL Hosts"
+                                                    >
+                                                        Add the hosts URL
+                                                    </h3>
+                                                    <div class="copy-block">
+                                                        <code
+                                                            >https://ffps.fun/download/firefly/</code
+                                                        >
+                                                        <button
+                                                            class="copy-btn"
+                                                            type="button"
+                                                        >
+                                                            Copy
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Set update to On start"
+                                                        data-id="Atur update ke On start"
+                                                    >
+                                                        Set update to On start
+                                                    </h3>
+                                                    <p
+                                                        data-en="So it refreshes the route every time you open it."
+                                                        data-id="Agar rute diperbarui setiap kali kamu membuka aplikasi."
+                                                    >
+                                                        So it refreshes the
+                                                        route every time you
+                                                        open it.
+                                                    </p>
+                                                </div>
+                                                <div class="step">
+                                                    <h3
+                                                        data-en="Connect and play"
+                                                        data-id="Hubungkan dan Main"
+                                                    >
+                                                        Connect and play
+                                                    </h3>
+                                                    <p
+                                                        data-en="Tap Connect, wait for it to go active, then launch Growtopia."
+                                                        data-id="Ketuk Connect, tunggu hingga aktif, lalu buka Growtopia."
+                                                    >
+                                                        Tap Connect, wait for it
+                                                        to go active, then
+                                                        launch Growtopia.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <aside class="guide-side reveal d1">
+                                <div class="side-card">
+                                    <h3 data-en="Downloads" data-id="Unduhan">
+                                        Downloads
+                                    </h3>
+                                    <div class="guide-actions">
+                                        <a
+                                            href="https://ffps.fun/download/FireflyConnector.apk"
+                                            class="download-btn"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            data-en="FireflyConnector"
+                                            data-id="FireflyConnector"
+                                            >FireflyConnector</a
+                                        >
+                                        <a
+                                            href="https://ffps.fun/download/FFPS.apk"
+                                            class="btn btn-secondary"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >FFPS.apk</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Host lines"
+                                        data-id="Baris Host"
+                                    >
+                                        Host lines
+                                    </h3>
+                                    <div class="copy-block side-copy">
+                                        <code
+                                            >103.150.227.49 www.growtopia1.com
+                                            103.150.227.49
+                                            www.growtopia2.com</code
+                                        >
+                                        <button class="copy-btn" type="button">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <!-- ===================== iOS ===================== -->
+                    <div id="panel-ios" class="platform-panel">
+                        <div class="guide-layout">
+                            <div class="guide-main">
+                                <div class="tab-panel">
+                                    <div class="tab-panel-head">
+                                        <h2
+                                            data-en="iOS — Surge 5"
+                                            data-id="iOS — Surge 5"
+                                        >
+                                            iOS &#8212; Surge 5
+                                        </h2>
+                                        <p
+                                            data-en="You need Surge 5 from the App Store. Load the Firefly profile and you're done."
+                                            data-id="Kamu butuh Surge 5 dari App Store. Muat profil Firefly dan selesai."
+                                        >
+                                            You need Surge 5 from the App Store.
+                                            Load the Firefly profile and you're
+                                            done.
+                                        </p>
+                                    </div>
+                                    <div class="instructions-content">
+                                        <div class="step">
+                                            <h3
+                                                data-en="Install Surge 5"
+                                                data-id="Instal Surge 5"
+                                            >
+                                                Install Surge 5
+                                            </h3>
+                                            <p
+                                                data-en="Get it from the App Store. It costs money, but it's the cleanest method on iOS right now."
+                                                data-id="Dapatkan dari App Store. Berbayar, tapi ini metode iOS terbersih saat ini."
+                                            >
+                                                Get it from the App Store. It
+                                                costs money, but it's the
+                                                cleanest method on iOS right
+                                                now.
+                                            </p>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Download the Firefly profile"
+                                                data-id="Unduh Profil Firefly"
+                                            >
+                                                Download the Firefly profile
+                                            </h3>
+                                            <p
+                                                data-en="In Surge, go to Profiles then Download from URL and enter:"
+                                                data-id="Di Surge, buka Profiles lalu Download from URL dan masukkan:"
+                                            >
+                                                In Surge, go to Profiles &#8594;
+                                                Download from URL and enter:
+                                            </p>
+                                            <div class="copy-block">
+                                                <code
+                                                    >https://ffps.fun/download/ios</code
+                                                >
+                                                <button
+                                                    class="copy-btn"
+                                                    type="button"
+                                                >
+                                                    Copy
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Select and enable the profile"
+                                                data-id="Pilih dan Aktifkan Profil"
+                                            >
+                                                Select and enable the profile
+                                            </h3>
+                                            <p
+                                                data-en="Pick the downloaded Firefly profile and enable it. Accept the VPN prompt if iOS asks."
+                                                data-id="Pilih profil Firefly yang sudah diunduh dan aktifkan. Terima prompt VPN jika iOS meminta."
+                                            >
+                                                Pick the downloaded Firefly
+                                                profile and enable it. Accept
+                                                the VPN prompt if iOS asks.
+                                            </p>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Open Growtopia"
+                                                data-id="Buka Growtopia"
+                                            >
+                                                Open Growtopia
+                                            </h3>
+                                            <p
+                                                data-en="Launch Growtopia normally. It'll connect to Firefly."
+                                                data-id="Buka Growtopia seperti biasa. Akan terhubung ke Firefly."
+                                            >
+                                                Launch Growtopia normally. It'll
+                                                connect to Firefly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="note">
+                                        <strong
+                                            data-en="To switch back:"
+                                            data-id="Untuk kembali:"
+                                            >To switch back:</strong
+                                        >
+                                        <span
+                                            data-en="turn off the Surge profile in the app, then restart Growtopia."
+                                            data-id="matikan profil Surge di aplikasinya, lalu restart Growtopia."
+                                        >
+                                            turn off the Surge profile in the
+                                            app, then restart Growtopia.</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <aside class="guide-side reveal d1">
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Profile URL"
+                                        data-id="URL Profil"
+                                    >
+                                        Profile URL
+                                    </h3>
+                                    <div class="copy-block side-copy">
+                                        <code
+                                            >https://ffps.fun/download/ios</code
+                                        >
+                                        <button class="copy-btn" type="button">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Not working?"
+                                        data-id="Tidak Bisa?"
+                                    >
+                                        Not working?
+                                    </h3>
+                                    <ul class="side-list">
+                                        <li
+                                            data-en="Make sure the profile is active, not just downloaded."
+                                            data-id="Pastikan profil sudah aktif, bukan hanya diunduh."
+                                        >
+                                            Make sure the profile is active, not
+                                            just downloaded.
+                                        </li>
+                                        <li
+                                            data-en="Turn Surge off and back on."
+                                            data-id="Matikan Surge lalu nyalakan kembali."
+                                        >
+                                            Turn Surge off and back on.
+                                        </li>
+                                        <li
+                                            data-en="Fully close and reopen Growtopia."
+                                            data-id="Tutup sepenuhnya lalu buka kembali Growtopia."
+                                        >
+                                            Fully close and reopen Growtopia.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <!-- ===================== WINDOWS ===================== -->
+                    <div id="panel-windows" class="platform-panel">
+                        <div class="guide-layout">
+                            <div class="guide-main">
+                                <div class="method-tabs-wrap">
+                                    <span
+                                        class="method-tabs-label"
+                                        data-en="Pick a method"
+                                        data-id="Pilih Metode"
+                                        >Pick a method</span
+                                    >
+                                    <div
+                                        class="method-tabs"
+                                        role="tablist"
+                                        aria-label="Windows methods"
+                                    >
+                                        <button
+                                            class="tab-btn active"
+                                            type="button"
+                                            data-tab="win-helper"
+                                            data-en="Firefly Helper"
+                                            data-id="Firefly Helper"
+                                        >
+                                            Firefly Helper
+                                        </button>
+                                        <button
+                                            class="tab-btn"
+                                            type="button"
+                                            data-tab="win-manual"
+                                            data-en="Manual"
+                                            data-id="Manual"
+                                        >
+                                            Manual
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Helper -->
+                                <div id="win-helper" class="tab-content active">
+                                    <div class="tab-panel">
+                                        <div class="tab-panel-head">
+                                            <h2>
+                                                Firefly Helper
+                                                <span
+                                                    class="badge-rec"
+                                                    data-en="Easiest"
+                                                    data-id="Termudah"
+                                                    >Easiest</span
+                                                >
+                                            </h2>
+                                            <p
+                                                data-en="Download and run it. The Helper adds the Firefly lines to your hosts file automatically and refreshes DNS. Nothing to edit manually."
+                                                data-id="Unduh dan jalankan. Helper menambahkan baris Firefly ke hosts file secara otomatis dan flush DNS. Tidak perlu edit manual."
+                                            >
+                                                Download and run it. The Helper
+                                                adds the Firefly lines to your
+                                                hosts file automatically and
+                                                refreshes DNS. Nothing to edit
+                                                manually.
+                                            </p>
+                                        </div>
+                                        <div class="instructions-content">
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Download Firefly Helper"
+                                                    data-id="Unduh Firefly Helper"
+                                                >
+                                                    Download Firefly Helper
+                                                </h3>
+                                                <div class="guide-actions">
+                                                    <a
+                                                        href="../download/Firefly%20Helper.bat"
+                                                        class="download-btn"
+                                                        download="Firefly Helper.bat"
+                                                        data-en="Download Firefly Helper"
+                                                        data-id="Unduh Firefly Helper"
+                                                        >Download Firefly
+                                                        Helper</a
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Run as Administrator"
+                                                    data-id="Jalankan sebagai Administrator"
+                                                >
+                                                    Run as Administrator
+                                                </h3>
+                                                <p
+                                                    data-en="Right-click the file, then Run as administrator. It needs admin to edit the hosts file."
+                                                    data-id="Klik kanan file, lalu Run as administrator. Butuh akses admin untuk mengedit hosts file."
+                                                >
+                                                    Right-click the file &#8594;
+                                                    "Run as administrator". It
+                                                    needs admin to edit the
+                                                    hosts file.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Pick a language and press any key"
+                                                    data-id="Pilih bahasa dan tekan tombol apa saja"
+                                                >
+                                                    Pick a language and press
+                                                    any key
+                                                </h3>
+                                                <p
+                                                    data-en="The Helper writes the Firefly lines and flushes DNS automatically. No manual editing needed."
+                                                    data-id="Helper akan menulis baris Firefly dan flush DNS secara otomatis. Tidak perlu edit manual."
+                                                >
+                                                    The Helper writes the
+                                                    Firefly lines and flushes
+                                                    DNS automatically. No manual
+                                                    editing needed.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Open Growtopia"
+                                                    data-id="Buka Growtopia"
+                                                >
+                                                    Open Growtopia
+                                                </h3>
+                                                <p
+                                                    data-en="Done. Launch the game and you're in."
+                                                    data-id="Selesai. Buka game dan kamu sudah masuk."
+                                                >
+                                                    Done. Launch the game and
+                                                    you're in.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="note">
+                                            <strong
+                                                data-en="To remove later:"
+                                                data-id="Untuk menghapus nanti:"
+                                                >To remove later:</strong
+                                            >
+                                            <span>
+                                                open
+                                                <code
+                                                    >C:\Windows\System32\drivers\etc\hosts</code
+                                                >
+                                                with Notepad++ as admin and
+                                                delete the two Firefly
+                                                lines.</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Manual -->
+                                <div id="win-manual" class="tab-content">
+                                    <div class="tab-panel">
+                                        <div class="tab-panel-head">
+                                            <h2
+                                                data-en="Manual — Notepad++"
+                                                data-id="Manual — Notepad++"
+                                            >
+                                                Manual &#8212; Notepad++
+                                            </h2>
+                                            <p
+                                                data-en="Use this if you prefer doing it yourself or the Helper doesn't work."
+                                                data-id="Gunakan ini jika kamu lebih suka melakukannya sendiri atau Helper tidak bekerja."
+                                            >
+                                                Use this if you prefer doing it
+                                                yourself or the Helper doesn't
+                                                work.
+                                            </p>
+                                        </div>
+                                        <div class="instructions-content">
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Install Notepad++"
+                                                    data-id="Instal Notepad++"
+                                                >
+                                                    Install Notepad++
+                                                </h3>
+                                                <p
+                                                    data-en="Get it from notepad-plus-plus.org. Regular Notepad can't save system files properly."
+                                                    data-id="Dapatkan dari notepad-plus-plus.org. Notepad biasa tidak bisa menyimpan file sistem dengan benar."
+                                                >
+                                                    Get it from
+                                                    notepad-plus-plus.org.
+                                                    Regular Notepad can't save
+                                                    system files properly.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Open the hosts file with Notepad++"
+                                                    data-id="Buka file hosts dengan Notepad++"
+                                                >
+                                                    Open the hosts file with
+                                                    Notepad++
+                                                </h3>
+                                                <p
+                                                    data-en="Right-click Notepad++, Run as administrator, then open:"
+                                                    data-id="Klik kanan Notepad++, Run as administrator, lalu buka:"
+                                                >
+                                                    Right-click Notepad++
+                                                    &#8594; "Run as
+                                                    administrator", then open:
+                                                </p>
+                                                <div class="copy-block">
+                                                    <code
+                                                        >C:\Windows\System32\drivers\etc\hosts</code
+                                                    >
+                                                    <button
+                                                        class="copy-btn"
+                                                        type="button"
+                                                    >
+                                                        Copy
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Add these two lines at the very bottom"
+                                                    data-id="Tambahkan dua baris ini di paling bawah"
+                                                >
+                                                    Add these two lines at the
+                                                    very bottom
+                                                </h3>
+                                                <div class="copy-block">
+                                                    <code
+                                                        >103.150.227.49
+                                                        www.growtopia1.com
+                                                        103.150.227.49
+                                                        www.growtopia2.com</code
+                                                    >
+                                                    <button
+                                                        class="copy-btn"
+                                                        type="button"
+                                                    >
+                                                        Copy
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="step">
+                                                <h3
+                                                    data-en="Save and play"
+                                                    data-id="Simpan dan Main"
+                                                >
+                                                    Save and play
+                                                </h3>
+                                                <p
+                                                    data-en="Save (Ctrl+S), close Notepad++, then open Growtopia."
+                                                    data-id="Simpan (Ctrl+S), tutup Notepad++, lalu buka Growtopia."
+                                                >
+                                                    Save (Ctrl+S), close
+                                                    Notepad++, then open
+                                                    Growtopia.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="note">
+                                            <strong
+                                                data-en="Tip:"
+                                                data-id="Tips:"
+                                                >Tip:</strong
+                                            >
+                                            <span
+                                                data-en="make sure there are no other growtopia1.com or growtopia2.com lines already in the file before adding these."
+                                                data-id="pastikan tidak ada baris growtopia1.com atau growtopia2.com lain yang sudah ada di file sebelum menambahkan ini."
+                                            >
+                                                make sure there are no other
+                                                growtopia1.com or growtopia2.com
+                                                lines already in the file before
+                                                adding these.</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <aside class="guide-side reveal d1">
+                                <div class="side-card">
+                                    <h3 data-en="Downloads" data-id="Unduhan">
+                                        Downloads
+                                    </h3>
+                                    <div class="guide-actions">
+                                        <a
+                                            href="../download/Firefly%20Helper.bat"
+                                            class="download-btn"
+                                            download="Firefly Helper.bat"
+                                            data-en="Firefly Helper"
+                                            data-id="Firefly Helper"
+                                            >Firefly Helper</a
+                                        >
+                                        <a
+                                            href="../download/firefly.txt"
+                                            class="btn btn-secondary"
+                                            download="firefly-hosts.txt"
+                                            data-en="hosts text file"
+                                            data-id="file hosts"
+                                            >hosts text file</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Host lines"
+                                        data-id="Baris Host"
+                                    >
+                                        Host lines
+                                    </h3>
+                                    <div class="copy-block side-copy">
+                                        <code
+                                            >103.150.227.49 www.growtopia1.com
+                                            103.150.227.49
+                                            www.growtopia2.com</code
+                                        >
+                                        <button class="copy-btn" type="button">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Not working?"
+                                        data-id="Tidak Bisa?"
+                                    >
+                                        Not working?
+                                    </h3>
+                                    <ul class="side-list">
+                                        <li
+                                            data-en="Both lines must be saved in the file."
+                                            data-id="Kedua baris harus tersimpan dalam file."
+                                        >
+                                            Both lines must be saved in the
+                                            file.
+                                        </li>
+                                        <li
+                                            data-en="Remove old GT host entries if any exist."
+                                            data-id="Hapus entri host GT lama jika ada."
+                                        >
+                                            Remove old GT host entries if any
+                                            exist.
+                                        </li>
+                                        <li
+                                            data-en="Restart Growtopia after saving."
+                                            data-id="Restart Growtopia setelah menyimpan."
+                                        >
+                                            Restart Growtopia after saving.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <!-- ===================== macOS ===================== -->
+                    <div id="panel-macos" class="platform-panel">
+                        <div class="guide-layout">
+                            <div class="guide-main">
+                                <div class="tab-panel">
+                                    <div class="tab-panel-head">
+                                        <h2
+                                            data-en="macOS — edit your hosts file"
+                                            data-id="macOS — edit file hosts"
+                                        >
+                                            macOS &#8212; edit your hosts file
+                                        </h2>
+                                        <p
+                                            data-en="Add two lines to /etc/hosts, flush DNS, and you're in."
+                                            data-id="Tambahkan dua baris ke /etc/hosts, flush DNS, dan kamu sudah masuk."
+                                        >
+                                            Add two lines to /etc/hosts, flush
+                                            DNS, and you're in.
+                                        </p>
+                                    </div>
+                                    <div class="instructions-content">
+                                        <div class="step">
+                                            <h3
+                                                data-en="Open Terminal"
+                                                data-id="Buka Terminal"
+                                            >
+                                                Open Terminal
+                                            </h3>
+                                            <p
+                                                data-en="Cmd+Space, search Terminal, open it."
+                                                data-id="Cmd+Space, cari Terminal, buka."
+                                            >
+                                                Cmd+Space &#8594; search
+                                                "Terminal" &#8594; open it.
+                                            </p>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Open the hosts file"
+                                                data-id="Buka File Hosts"
+                                            >
+                                                Open the hosts file
+                                            </h3>
+                                            <div class="copy-block">
+                                                <code
+                                                    >sudo nano /etc/hosts</code
+                                                >
+                                                <button
+                                                    class="copy-btn"
+                                                    type="button"
+                                                >
+                                                    Copy
+                                                </button>
+                                            </div>
+                                            <p
+                                                style="margin-top: 0.75rem"
+                                                data-en="Enter your Mac password when asked. It won't show as you type — that's normal."
+                                                data-id="Masukkan password Mac saat diminta. Tidak akan terlihat saat mengetik — itu normal."
+                                            >
+                                                Enter your Mac password when
+                                                asked. It won't show as you type
+                                                &#8212; that's normal.
+                                            </p>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Add these two lines at the bottom"
+                                                data-id="Tambahkan dua baris ini di paling bawah"
+                                            >
+                                                Add these two lines at the
+                                                bottom
+                                            </h3>
+                                            <div class="copy-block">
+                                                <code
+                                                    >103.150.227.49
+                                                    www.growtopia1.com
+                                                    103.150.227.49
+                                                    www.growtopia2.com</code
+                                                >
+                                                <button
+                                                    class="copy-btn"
+                                                    type="button"
+                                                >
+                                                    Copy
+                                                </button>
+                                            </div>
+                                            <p
+                                                style="margin-top: 0.75rem"
+                                                data-en="Use arrow keys to move to the end of the file, then paste."
+                                                data-id="Gunakan tombol panah untuk ke bagian bawah file, lalu tempel."
+                                            >
+                                                Use arrow keys to move to the
+                                                end of the file, then paste.
+                                            </p>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Save and exit nano"
+                                                data-id="Simpan dan Keluar dari nano"
+                                            >
+                                                Save and exit nano
+                                            </h3>
+                                            <p
+                                                data-en="Press Ctrl+O to save, then Ctrl+X to exit."
+                                                data-id="Tekan Ctrl+O untuk menyimpan, lalu Ctrl+X untuk keluar."
+                                            >
+                                                Press Ctrl+O to save, then
+                                                Ctrl+X to exit.
+                                            </p>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Flush DNS"
+                                                data-id="Flush DNS"
+                                            >
+                                                Flush DNS
+                                            </h3>
+                                            <div class="copy-block">
+                                                <code
+                                                    >sudo dscacheutil
+                                                    -flushcache; sudo killall
+                                                    -HUP mDNSResponder</code
+                                                >
+                                                <button
+                                                    class="copy-btn"
+                                                    type="button"
+                                                >
+                                                    Copy
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <h3
+                                                data-en="Open Growtopia"
+                                                data-id="Buka Growtopia"
+                                            >
+                                                Open Growtopia
+                                            </h3>
+                                            <p
+                                                data-en="Launch the game. Should connect to Firefly."
+                                                data-id="Jalankan game. Seharusnya terhubung ke Firefly."
+                                            >
+                                                Launch the game. Should connect
+                                                to Firefly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="note">
+                                        <strong
+                                            data-en="To switch back:"
+                                            data-id="Untuk kembali:"
+                                            >To switch back:</strong
+                                        >
+                                        <span
+                                            data-en="remove the Firefly lines from /etc/hosts, flush DNS again, restart Growtopia."
+                                            data-id="hapus baris Firefly dari /etc/hosts, flush DNS lagi, restart Growtopia."
+                                        >
+                                            remove the Firefly lines from
+                                            /etc/hosts, flush DNS again, restart
+                                            Growtopia.</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <aside class="guide-side reveal d1">
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Host lines"
+                                        data-id="Baris Host"
+                                    >
+                                        Host lines
+                                    </h3>
+                                    <div class="copy-block side-copy">
+                                        <code
+                                            >103.150.227.49 www.growtopia1.com
+                                            103.150.227.49
+                                            www.growtopia2.com</code
+                                        >
+                                        <button class="copy-btn" type="button">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="side-card">
+                                    <h3
+                                        data-en="DNS flush command"
+                                        data-id="Perintah Flush DNS"
+                                    >
+                                        DNS flush command
+                                    </h3>
+                                    <div class="copy-block side-copy">
+                                        <code
+                                            >sudo dscacheutil -flushcache; sudo
+                                            killall -HUP mDNSResponder</code
+                                        >
+                                        <button class="copy-btn" type="button">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="side-card">
+                                    <h3
+                                        data-en="Not working?"
+                                        data-id="Tidak Bisa?"
+                                    >
+                                        Not working?
+                                    </h3>
+                                    <ul class="side-list">
+                                        <li
+                                            data-en="Confirm both lines are in /etc/hosts."
+                                            data-id="Pastikan kedua baris ada di /etc/hosts."
+                                        >
+                                            Confirm both lines are in
+                                            /etc/hosts.
+                                        </li>
+                                        <li
+                                            data-en="Run the DNS flush again."
+                                            data-id="Jalankan flush DNS lagi."
+                                        >
+                                            Run the DNS flush again.
+                                        </li>
+                                        <li
+                                            data-en="Fully close and reopen Growtopia."
+                                            data-id="Tutup sepenuhnya lalu buka kembali Growtopia."
+                                        >
+                                            Fully close and reopen Growtopia.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+                <!-- .platform-panels -->
+            </main>
+
+            <footer class="footer">
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 Firefly Private Server. Not affiliated with
+                        Ubisoft or Growtopia.
+                    </p>
+                </div>
+            </footer>
         </div>
 
-        <!-- ===================== WINDOWS ===================== -->
-        <div id="panel-windows" class="platform-panel">
-          <div class="guide-layout">
-            <div class="guide-main">
-              <div class="method-tabs-wrap">
-                <span class="method-tabs-label">Pick a method</span>
-                <div class="method-tabs" role="tablist" aria-label="Windows methods">
-                  <button class="tab-btn active" type="button" data-tab="win-helper">Firefly Helper</button>
-                  <button class="tab-btn" type="button" data-tab="win-manual">Manual</button>
-                </div>
-              </div>
-
-              <div id="win-helper" class="tab-content active">
-                <div class="tab-panel">
-                  <div class="tab-panel-head">
-                    <h2>Firefly Helper <span class="badge-rec">Easiest</span></h2>
-                    <p>Download and run it. The Helper adds the Firefly lines to your hosts file automatically and refreshes DNS. Nothing to edit manually.</p>
-                  </div>
-                  <div class="instructions-content">
-                    <div class="step">
-                      <h3>Download Firefly Helper</h3>
-                      <div class="guide-actions">
-                        <a href="../download/Firefly%20Helper.bat" class="download-btn" download="Firefly Helper.bat">Download Firefly Helper</a>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <h3>Run as Administrator</h3>
-                      <p>Right-click the file &#8594; "Run as administrator". It needs admin to edit the hosts file.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Pick a language and press any key</h3>
-                      <p>The Helper writes the Firefly lines and flushes DNS automatically. No manual editing needed.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Open Growtopia</h3>
-                      <p>Done. Launch the game and you're in.</p>
-                    </div>
-                  </div>
-                  <div class="note"><strong>To remove later:</strong> open <code>C:\Windows\System32\drivers\etc\hosts</code> with Notepad++ as admin and delete the two Firefly lines.</div>
-                </div>
-              </div>
-
-              <div id="win-manual" class="tab-content">
-                <div class="tab-panel">
-                  <div class="tab-panel-head">
-                    <h2>Manual &#8212; Notepad++</h2>
-                    <p>Use this if you prefer doing it yourself or the Helper doesn't work.</p>
-                  </div>
-                  <div class="instructions-content">
-                    <div class="step">
-                      <h3>Install Notepad++</h3>
-                      <p>Get it from <strong>notepad-plus-plus.org</strong>. Regular Notepad can't save system files properly.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Open the hosts file with Notepad++</h3>
-                      <p>Right-click Notepad++ &#8594; "Run as administrator", then open:</p>
-                      <div class="copy-block">
-                        <code>C:\Windows\System32\drivers\etc\hosts</code>
-                        <button class="copy-btn" type="button">Copy</button>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <h3>Add these two lines at the very bottom</h3>
-                      <div class="copy-block">
-                        <code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code>
-                        <button class="copy-btn" type="button">Copy</button>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <h3>Save and play</h3>
-                      <p>Save (Ctrl+S), close Notepad++, then open Growtopia.</p>
-                    </div>
-                  </div>
-                  <div class="note"><strong>Tip:</strong> make sure there are no other growtopia1.com or growtopia2.com lines already in the file before adding these.</div>
-                </div>
-              </div>
-            </div>
-
-            <aside class="guide-side reveal d1">
-              <div class="side-card">
-                <h3>Downloads</h3>
-                <div class="guide-actions">
-                  <a href="../download/Firefly%20Helper.bat" class="download-btn" download="Firefly Helper.bat">Firefly Helper</a>
-                  <a href="../download/firefly.txt" class="btn btn-secondary" download="firefly-hosts.txt">hosts text file</a>
-                </div>
-              </div>
-              <div class="side-card">
-                <h3>Host lines</h3>
-                <div class="copy-block side-copy">
-                  <code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code>
-                  <button class="copy-btn" type="button">Copy</button>
-                </div>
-              </div>
-              <div class="side-card">
-                <h3>Not working?</h3>
-                <ul class="side-list">
-                  <li>Both lines must be saved in the file.</li>
-                  <li>Remove old GT host entries if any exist.</li>
-                  <li>Restart Growtopia after saving.</li>
-                </ul>
-              </div>
-            </aside>
-          </div>
-        </div>
-
-        <!-- ===================== macOS ===================== -->
-        <div id="panel-macos" class="platform-panel">
-          <div class="guide-layout">
-            <div class="guide-main">
-              <div class="tab-panel">
-                <div class="tab-panel-head">
-                  <h2>macOS &#8212; edit your hosts file</h2>
-                  <p>Add two lines to <code>/etc/hosts</code>, flush DNS, and you're in.</p>
-                </div>
-                <div class="instructions-content">
-                  <div class="step">
-                    <h3>Open Terminal</h3>
-                    <p>Cmd+Space &#8594; search "Terminal" &#8594; open it.</p>
-                  </div>
-                  <div class="step">
-                    <h3>Open the hosts file</h3>
-                    <div class="copy-block">
-                      <code>sudo nano /etc/hosts</code>
-                      <button class="copy-btn" type="button">Copy</button>
-                    </div>
-                    <p style="margin-top:0.6rem">Enter your Mac password when asked. It won't show as you type &#8212; that's normal.</p>
-                  </div>
-                  <div class="step">
-                    <h3>Add these two lines at the bottom</h3>
-                    <div class="copy-block">
-                      <code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code>
-                      <button class="copy-btn" type="button">Copy</button>
-                    </div>
-                    <p style="margin-top:0.6rem">Use arrow keys to move to the end of the file, then paste.</p>
-                  </div>
-                  <div class="step">
-                    <h3>Save and exit nano</h3>
-                    <p>Press <strong>Ctrl+O</strong> to save, then <strong>Ctrl+X</strong> to exit.</p>
-                  </div>
-                  <div class="step">
-                    <h3>Flush DNS</h3>
-                    <div class="copy-block">
-                      <code>sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code>
-                      <button class="copy-btn" type="button">Copy</button>
-                    </div>
-                  </div>
-                  <div class="step">
-                    <h3>Open Growtopia</h3>
-                    <p>Launch the game. Should connect to Firefly.</p>
-                  </div>
-                </div>
-                <div class="note"><strong>To switch back:</strong> remove the Firefly lines from /etc/hosts, flush DNS again, restart Growtopia.</div>
-              </div>
-            </div>
-
-            <aside class="guide-side reveal d1">
-              <div class="side-card">
-                <h3>Host lines</h3>
-                <div class="copy-block side-copy">
-                  <code>103.150.227.49 www.growtopia1.com
-103.150.227.49 www.growtopia2.com</code>
-                  <button class="copy-btn" type="button">Copy</button>
-                </div>
-              </div>
-              <div class="side-card">
-                <h3>DNS flush</h3>
-                <div class="copy-block side-copy">
-                  <code>sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code>
-                  <button class="copy-btn" type="button">Copy</button>
-                </div>
-              </div>
-              <div class="side-card">
-                <h3>Not working?</h3>
-                <ul class="side-list">
-                  <li>Confirm both lines are in /etc/hosts.</li>
-                  <li>Run the DNS flush again.</li>
-                  <li>Fully close and reopen Growtopia.</li>
-                </ul>
-              </div>
-            </aside>
-          </div>
-        </div>
-
-      </div><!-- .platform-panels -->
-    </main>
-
-    <footer class="footer">
-      <div class="footer-bottom">
-        <p>&copy; 2025 Firefly Private Server. Not affiliated with Ubisoft or Growtopia.</p>
-      </div>
-    </footer>
-  </div>
-
-  <script src="../script.js"></script>
-</body>
+        <script src="../script.js"></script>
+    </body>
 </html>
