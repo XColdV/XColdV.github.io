@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Firefly Tools | Proton Hash</title>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
-    />
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <!-- iCheck for checkboxes and radio inputs -->
@@ -18,8 +13,6 @@
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css" />
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css" />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
     <!-- CodeMirror -->
     <link rel="stylesheet" href="plugins/codemirror/codemirror.css" />
     <link rel="stylesheet" href="plugins/codemirror/theme/monokai.css" />
@@ -28,136 +21,54 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
   </head>
-  <body
-    class="dark-mode hold-transition sidebar-mini layout-fixed layout-footer-fixed sidebar-collapse"
-  >
-    <div class="wrapper">
-      <!-- Navbar -->
-      <nav class="main-header navbar navbar-expand">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"
-              ><i class="fas fa-bars text-white"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.navbar -->
-
-      <!-- Main Sidebar Container -->
-      <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="#" class="brand-link">
-          <img
-            src="dist/img/growtopia.png"
-            alt="Growtopia Logo"
-            class="brand-image img-circle elevation-3"
-            style="opacity: 0.8"
-          />
-          <span class="brand-text font-weight-light">Firefly Tools</span>
+  <body class="firefly-app">
+    <div class="app-shell">
+      <aside class="tool-sidebar" aria-label="Firefly Tools navigation">
+        <a href="index.html" class="tool-brand">
+          <img src="dist/img/logo_firefly.png" alt="Firefly Tools Logo" />
+          <span>Firefly Tools</span>
         </a>
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-          <div class="mb-2"></div>
-
-          <!-- SidebarSearch Form -->
-          <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-              <input
-                class="form-control form-control-sidebar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                  <i class="fas fa-search fa-fw"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sidebar Menu -->
-          <nav class="mt-2">
-            <ul
-              class="nav nav-pills nav-sidebar flex-column"
-              data-widget="treeview"
-              role="menu"
-              data-accordion="false"
-            >
-              <li class="nav-item">
-                <a href="index.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Items.dat Tools</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="rtconverter.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>RT File Converter</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Proton Hash</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="tileeditor.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>Tile Editor</p>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
+        <nav class="tool-nav">
+          <a href="index.html"><i class="fas fa-cubes" aria-hidden="true"></i><span>Items.dat Tools</span></a>
+          <a href="rtconverter.html"><i class="fas fa-file-export" aria-hidden="true"></i><span>RT File Converter</span></a>
+          <a href="protonhash.html" class="active"><i class="fas fa-fingerprint" aria-hidden="true"></i><span>Proton Hash</span></a>
+          <a href="tileeditor.html"><i class="fas fa-border-all" aria-hidden="true"></i><span>Tile Editor</span></a>
+          <a href="renderereditor.html"><i class="fas fa-layer-group" aria-hidden="true"></i><span>XML Renderer Editor</span></a>
+        </nav>
       </aside>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1 class="m-0">Proton Hash</h1>
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
+      <main class="tool-main">
+        <header class="tool-topbar">
+          <h1>Proton Hash</h1>
+        </header>
 
-        <!-- Main content -->
-        <div class="content">
+        <section class="tool-page">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
+                <div class="hero-card">
+                  <h2>Proton Hash</h2>
+                  <p>Generate a Proton-compatible hash from any local file.</p>
+                </div>
+
                 <div class="card card-primary">
-                  <div class="card-header">
-                    <h3 class="card-title">Proton Hash</h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <!-- form start -->
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <label id="label1">File you want to Generate Hash</label>
-                        <a>(Press "Browse File" and find file you want to hash)</a>
-                        <br />
-                        <button id="hash_file" class="btn btn-success">Browse File</button>
+                  <div class="card-body modern-stack">
+                    <section class="modern-panel">
+                      <div class="modern-panel-header">
+                        <div>
+                          <label id="label1" class="modern-panel-title">File you want to Generate Hash</label>
+                          <p class="modern-panel-copy">Choose a file and Firefly Tools will calculate the hash.</p>
+                        </div>
+                        <button id="hash_file" class="btn btn-success" type="button">
+                          <i class="fas fa-folder-open" aria-hidden="true"></i>
+                          Browse File
+                        </button>
+                      </div>
+                      <div class="modern-actions">
                         <a id="file_name">File Name: -</a>
-                        <hr style="display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0;" />
                         <h3 id="result_hash">Result Hash: -</h3>
                       </div>
-                    </div>
+                    </section>
                   </div>
                 </div>
               </div>
@@ -165,22 +76,15 @@
             <!-- /.row -->
           </div>
           <!-- /.container-fluid -->
-        </div>
-      </div>
-      <!-- /.content-wrapper -->
+        </section>
 
-      <!-- Main Footer -->
-      <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-          <b>Firefly Tools</b>
-        </div>
-        <!-- Default to the left -->
+      <footer class="tool-footer">
+        <div class="float-right d-none d-sm-inline"><b>Firefly Tools</b></div>
         <strong>Copyright &copy; 2024 <a href="https://gtps.firefly.my.id">Firefly Team</a>.</strong>
         All rights reserved.
       </footer>
+      </main>
     </div>
-    <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
 
@@ -188,8 +92,6 @@
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.min.js"></script>
     <!-- DataTables  & Plugins -->
     <script src="plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

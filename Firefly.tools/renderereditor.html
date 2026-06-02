@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Firefly Tools | XML Renderer Editor</title>
+
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="dist/css/mycss.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  </head>
+  <body class="firefly-app">
+    <div class="app-shell">
+      <aside class="tool-sidebar" aria-label="Firefly Tools navigation">
+        <a href="index.html" class="tool-brand">
+          <img src="dist/img/logo_firefly.png" alt="Firefly Tools Logo" />
+          <span>Firefly Tools</span>
+        </a>
+        <nav class="tool-nav">
+          <a href="index.html"><i class="fas fa-cubes" aria-hidden="true"></i><span>Items.dat Tools</span></a>
+          <a href="rtconverter.html"><i class="fas fa-file-export" aria-hidden="true"></i><span>RT File Converter</span></a>
+          <a href="protonhash.html"><i class="fas fa-fingerprint" aria-hidden="true"></i><span>Proton Hash</span></a>
+          <a href="tileeditor.html"><i class="fas fa-border-all" aria-hidden="true"></i><span>Tile Editor</span></a>
+          <a href="renderereditor.html" class="active"><i class="fas fa-layer-group" aria-hidden="true"></i><span>XML Renderer Editor</span></a>
+        </nav>
+      </aside>
+
+      <main class="tool-main">
+        <header class="tool-topbar">
+          <h1>XML Renderer Editor</h1>
+        </header>
+
+        <section class="tool-page renderer-editor-page">
+          <div class="renderer-hero">
+            <div>
+              <p>ItemRenderer Workspace</p>
+              <h2>XML Renderer Editor</h2>
+            </div>
+            <span>Canvas preview, layer editing, XML live edits, and Growtopian alignment in one dark workspace.</span>
+          </div>
+
+          <div id="app" class="renderer-app">
+            <div id="toolbar">
+              <strong class="renderer-kicker"><i class="fas fa-layer-group" aria-hidden="true"></i> XML Renderer Editor</strong>
+              <span class="sep"></span>
+              <button id="btnGame" type="button"><i class="fas fa-folder-open" aria-hidden="true"></i> game/ folder</button>
+              <button id="btnIR" type="button"><i class="fas fa-folder-tree" aria-hidden="true"></i> ItemRenderers/ folder</button>
+              <button id="btnGtp" type="button"><i class="fas fa-user-astronaut" aria-hidden="true"></i> growtopian.png</button>
+              <button id="btnXml" type="button"><i class="fas fa-file-code" aria-hidden="true"></i> single XML</button>
+              <span class="sep"></span>
+              <select id="rendererSel" title="Load ItemRenderers folder first"><option>no renderers</option></select>
+              <button id="btnReload" class="sm" type="button" title="Reload selected file from disk"><i class="fas fa-redo-alt" aria-hidden="true"></i></button>
+              <span class="sep"></span>
+              <label class="chk"><input type="checkbox" id="cbGrid" checked /> grid</label>
+              <label class="chk"><input type="checkbox" id="cbGtp" checked /> avatar</label>
+              <label class="chk"><input type="checkbox" id="cbAnim" /> animate</label>
+              <label class="chk"><input type="checkbox" id="cbState" checked /> obey state</label>
+              <label class="chk"><input type="checkbox" id="cbDim" /> dim others</label>
+              <label class="chk">action
+                <select id="actionSel">
+                  <option>IDLE</option>
+                  <option>WALK</option>
+                  <option>JUMP</option>
+                  <option>FALL</option>
+                  <option>PUNCH</option>
+                  <option>DANCE</option>
+                </select>
+              </label>
+              <label class="chk">facing
+                <select id="facingSel">
+                  <option value="right">right</option>
+                  <option value="left">left</option>
+                </select>
+              </label>
+              <span class="sep"></span>
+              <label class="chk renderer-zoom">zoom <input type="range" id="zoom" min="2" max="30" step="1" value="9" /></label>
+              <button id="btnReset" class="sm" type="button"><i class="fas fa-crosshairs" aria-hidden="true"></i> recenter</button>
+            </div>
+
+            <div id="main">
+              <div id="stage">
+                <canvas id="cv"></canvas>
+                <div id="coord">0, 0</div>
+                <div id="hint">Origin (0,0) = player's feet | Negative Y = UP | drag sprite = move offset | arrows = nudge | wheel = zoom | right-drag = pan</div>
+              </div>
+
+              <div id="side">
+                <div class="sect">
+                  <div class="row"><span id="status" class="muted">Load game/ + an XML to begin.</span></div>
+                  <div class="row"><span id="texStatus" class="pill">textures 0</span><span id="layerCount" class="pill">layers 0</span></div>
+                </div>
+
+                <div class="sect" id="layersWrap">
+                  <div class="renderer-section-bar">
+                    <h3>Layers</h3>
+                    <button id="btnAdd" class="sm" type="button"><i class="fas fa-plus" aria-hidden="true"></i> layer</button>
+                  </div>
+                  <div id="layers"></div>
+                </div>
+
+                <div id="scroll">
+                  <div class="sect" id="editor">
+                    <h3>SpriteRender</h3>
+                    <div class="none">Select a layer or click a sprite on the canvas.</div>
+                  </div>
+                  <div class="sect" id="spriteEditor">
+                    <h3>Sprite definition</h3>
+                    <div class="none">No sprite selected.</div>
+                  </div>
+                </div>
+
+                <div class="sect renderer-xml-panel">
+                  <div class="renderer-section-bar">
+                    <h3>XML</h3>
+                    <div class="renderer-actions">
+                      <button id="btnFormat" class="sm" type="button">Format</button>
+                      <button id="btnCopy" class="sm" type="button">Copy</button>
+                      <button id="btnDl" class="primary sm" type="button"><i class="fas fa-download" aria-hidden="true"></i> Download</button>
+                    </div>
+                  </div>
+                  <textarea id="xml" spellcheck="false" placeholder="Load or paste ItemRenderer XML here..."></textarea>
+                  <div class="row"><span id="xmlMsg" class="muted">Edits here re-parse live. Anything you cannot reach in the panels, type here.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <input type="file" id="fGame" webkitdirectory directory multiple hidden />
+          <input type="file" id="fIR" webkitdirectory directory multiple hidden />
+          <input type="file" id="fGtp" accept="image/*" hidden />
+          <input type="file" id="fXml" accept=".xml" hidden />
+        </section>
+
+        <footer class="tool-footer">
+          <span><strong>Copyright &copy; 2024 <a href="https://gtps.firefly.my.id">Firefly Team</a>.</strong> All rights reserved.</span>
+          <span class="float-right"><b>Firefly Tools</b></span>
+        </footer>
+      </main>
+    </div>
+
+    <script src="dist/js/renderer_editor.js"></script>
+  </body>
+</html>
